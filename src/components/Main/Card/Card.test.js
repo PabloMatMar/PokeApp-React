@@ -1,10 +1,16 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from '@testing-library/react';
 import Card from "./Card";
 
 describe("Card", () => {
+  const data = {
+    name: "pikachu",
+    sprites: {front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"},
+
+  }
+
   test("matches snapshot", () => {
-    const wrapper = shallow(<Card />);
-    expect(wrapper).toMatchSnapshot();
+    render(<Card data={data}/>);
+    expect(screen).toMatchSnapshot();
   });
 });

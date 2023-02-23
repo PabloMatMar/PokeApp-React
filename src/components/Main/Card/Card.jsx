@@ -11,8 +11,8 @@ const Card = ({data}) => {
       {data.name}</p>
       <p>front view pokemon image: </p>
       <img src={data.sprites.front_default} alt="frontd of pokemon" />
-      <p>Back view pokemon image: </p>
-      <img src={data.sprites.back_default} alt="back of pokemon" />
+      {/* <p>Back view pokemon image: </p>
+      <img src={data.sprites.back_default} alt="back of pokemon" /> */}
     </span> :
     <p>No pokemon search.</p>
   }
