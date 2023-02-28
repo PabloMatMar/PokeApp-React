@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import Card from './Card'
+import PokemonList from './PokemonList/PokemonList';
 
 const Main = () => {
-
+//OBJECT POKEMON ES UN ARRAY DE OBJETOS
   const [namePokemon, setNamePokemon] = useState(""); // Para guardar el nombre del pokemon
-  const [objectPokemon, setObjectPokemon] = useState({}); // Para guardar el objeto
+  const [objectPokemon, setObjectPokemon] = useState([]); // Para guardar el objeto
+  const [input, setInput] = useState('');
 
   // equivale a un componentDidUpdate()
   useEffect(() => {
@@ -14,9 +15,14 @@ const Main = () => {
         // Petición HTTP
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`);
         const dataPokemon = res.data
+        setInput("")
 
         setNamePokemon(dataPokemon.name)
-        setObjectPokemon(dataPokemon)
+        //usar pokemon
+
+        setObjectPokemon([...objectPokemon, dataPokemon])
+
+
         console.log("Este es el objectPokemon:", objectPokemon)
         console.log("Este es el namePokemon:", namePokemon)
       } catch (e) {
@@ -33,17 +39,21 @@ const Main = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setNamePokemon(e.target.input.value)
+    setNamePokemon(e.target.input.value.toLowerCase())
+  };
+
+  const takeChangeInput = (e) => {
+    setInput(e.target.value);
   };
 
 
   return <section>
     <h1>Catch a pokemon:</h1>
     <form onSubmit={handleSubmit}>
-      <input name="input" />
+      <input name="input" type="text" value={input} onChange={takeChangeInput} />
       <button type="submit"> Search </button>
     </form>
-    <Card data={objectPokemon} />
+    <PokemonList data={objectPokemon} />
   </section>
 };
 
