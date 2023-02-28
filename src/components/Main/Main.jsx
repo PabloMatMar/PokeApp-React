@@ -3,58 +3,70 @@ import axios from 'axios'
 import PokemonList from './PokemonList/PokemonList';
 
 const Main = () => {
-//OBJECT POKEMON ES UN ARRAY DE OBJETOS
+  //OBJECT POKEMON ES UN ARRAY DE OBJETOS
   const [namePokemon, setNamePokemon] = useState(""); // Para guardar el nombre del pokemon
   const [objectPokemon, setObjectPokemon] = useState([]); // Para guardar el objeto
-  const [input, setInput] = useState('');
-
-  // equivale a un componentDidUpdate()
+  const [input, setInput] = useState(''); // Para vaciar el input una vez se envia
+  const [status, setStatus] = useState(0)
+  const [arrayNamePokemons, setArrayNamePokemons] = useState([])
   useEffect(() => {
-    async function fetchData() {
-      try {
-        // Petición HTTP
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`);
-        const dataPokemon = res.data
-        setInput("")
+    const getPokemon = setTimeout(() => {
+      async function fetchData() {
+        try {
+          if(!arrayNamePokemons.includes(namePokemon)) {
+            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`);
+            const dataPokemon = res.data
+            const status = res.status
+            setStatus(status)
+            if (status === undefined) {
+              setStatus(res.response.status)
+            }
+            setInput("")
+            if (status === 200) {
+              setNamePokemon(dataPokemon.name)
+              setArrayNamePokemons([...arrayNamePokemons,dataPokemon.name])
+              setObjectPokemon([...objectPokemon, dataPokemon])
+              console.log("***ddsa****")
+              console.log(arrayNamePokemons)
+              console.log("***dsadas****")
+              console.log("-----------------------")
+              console.log("******")
+              console.log(objectPokemon)
+              console.log("******")
+            }
+          }
 
-        setNamePokemon(dataPokemon.name)
-        //usar pokemon
 
-        setObjectPokemon([...objectPokemon, dataPokemon])
-
-
-        console.log("Este es el objectPokemon:", objectPokemon)
-        console.log("Este es el namePokemon:", namePokemon)
-      } catch (e) {
-        console.log(e)
-        setNamePokemon("")
-        setObjectPokemon({})
+        } catch (e) {
+          alert("This isnt a pokemon")
+        }
       }
-    }
-    if (namePokemon !== "") {
-      fetchData();
-    }
+      if (namePokemon !== "") {
+        fetchData();
+      }
+    }, 2000)
+    return () => clearTimeout(getPokemon)
   }, [namePokemon]); // componentDidUpdate
-
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    setNamePokemon(e.target.input.value.toLowerCase())
-  };
 
   const takeChangeInput = (e) => {
     setInput(e.target.value);
+    e.preventDefault();
+    setNamePokemon(e.target.value.toLowerCase())
   };
 
 
   return <section>
     <h1>Catch a pokemon:</h1>
-    <form onSubmit={handleSubmit}>
+    <form>
       <input name="input" type="text" value={input} onChange={takeChangeInput} />
-      <button type="submit"> Search </button>
     </form>
-    <PokemonList data={objectPokemon} />
+    { status === 200 ?
+      <PokemonList data={objectPokemon} status={status} /> :
+      <></>
+    }
+
   </section>
 };
 
 export default Main;
+
