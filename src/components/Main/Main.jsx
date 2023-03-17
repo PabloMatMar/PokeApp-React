@@ -1,60 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios'
-import PokemonList from './PokemonList/PokemonList';
+import React from 'react';
+import Search from './Search/Search';
+import Form from './Form/Form';
+import Details from './Details/Details';
+import Card from './Pokelist/Card';
+import NotFound from './NotFound/NotFound';
+import { Routes, Route } from 'react-router-dom';
+
 
 const Main = () => {
-//OBJECT POKEMON ES UN ARRAY DE OBJETOS
-  const [namePokemon, setNamePokemon] = useState(""); // Para guardar el nombre del pokemon
-  const [objectPokemon, setObjectPokemon] = useState([]); // Para guardar el objeto
-  const [input, setInput] = useState('');
+  return <main className='main'>
+    <section>
+      <Routes>
+        <Route path="/" element={<Card />} />
+        <Route path="/pokemon/:id" element={<Details />} />
+        <Route path="/new" element={<Form />} />
+        <Route path="/search" element={<Search />} />
 
-  // equivale a un componentDidUpdate()
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        // Petición HTTP
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`);
-        const dataPokemon = res.data
-        setInput("")
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+    </section>
 
-        setNamePokemon(dataPokemon.name)
-        //usar pokemon
+  </main >
+}
 
-        setObjectPokemon([...objectPokemon, dataPokemon])
-
-
-        console.log("Este es el objectPokemon:", objectPokemon)
-        console.log("Este es el namePokemon:", namePokemon)
-      } catch (e) {
-        console.log(e)
-        setNamePokemon("")
-        setObjectPokemon({})
-      }
-    }
-    if (namePokemon !== "") {
-      fetchData();
-    }
-  }, [namePokemon]); // componentDidUpdate
-
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    setNamePokemon(e.target.input.value.toLowerCase())
-  };
-
-  const takeChangeInput = (e) => {
-    setInput(e.target.value);
-  };
-
-
-  return <section>
-    <h1>Catch a pokemon:</h1>
-    <form onSubmit={handleSubmit}>
-      <input name="input" type="text" value={input} onChange={takeChangeInput} />
-      <button type="submit"> Search </button>
-    </form>
-    <PokemonList data={objectPokemon} />
-  </section>
-};
 
 export default Main;
