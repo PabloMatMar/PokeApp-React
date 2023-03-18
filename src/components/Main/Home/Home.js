@@ -15,7 +15,7 @@ const Home = () => {
     async function fetchData() {
       if (dataPokemons.length <= 1) {
         try {
-          const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=902`);
+          const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=151`); //Cambiar 151 por 902 para obtenerlos todos
           const pokemons = res.data.results
 
           const urls = pokemons.map(pokemon => pokemon.url)
