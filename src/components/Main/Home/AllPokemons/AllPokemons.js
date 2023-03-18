@@ -1,5 +1,7 @@
 import React from 'react';
 
+//añadir boton para mostrar forma shyny/normal (normal por defecto)
+
 const AllPokemons = ({data, i}) => {
 
   const pokemon = data.data

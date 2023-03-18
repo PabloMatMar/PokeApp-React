@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Home = () => {
 
+  //Paginar mas adelante
+
   const [dataPokemons, setDataPokemons] = useState([])
 
 
