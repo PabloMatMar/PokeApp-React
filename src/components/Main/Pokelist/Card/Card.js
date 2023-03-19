@@ -10,6 +10,7 @@ const Card = ({data}) => {
       <img src={data.sprites.front_default} alt="frontd of pokemon" />
       <p>Back view pokemon image: </p>
       <img src={data.sprites.back_default} alt="back of pokemon" />
+      <a href={`http://localhost:3000/pokemon/${data.id}`}>Details of this pokemon</a>
     </span> :
     <p>No pokemon search.</p>
   }
