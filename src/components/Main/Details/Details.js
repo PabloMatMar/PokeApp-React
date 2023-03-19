@@ -9,6 +9,8 @@ const Details = () => {
   let { id } = useParams();
 
   const [data, setData] = useState({})
+  const [category, setCategory] = useState("")
+  const [shiny, setShiny] = useState("")
 
 
   useEffect(() => {
@@ -30,6 +32,22 @@ const Details = () => {
     // eslint-disable-next-line
   }, []);
 
+  const onChange = (e) => {
+    const categoryPrint = e.target.value
+    console.log(category)
+    setCategory(categoryPrint)
+  }
+
+  const onChangeShiny = (e) => {
+    const categoryShiny = e.target.value
+    if (category === "dream_world" && categoryShiny === "front_shiny") {
+      setShiny("front_default")
+      alert("Sorry, anime cant be shiny, enjoy look the normal version")
+    } else {
+      setShiny(categoryShiny)
+    }
+  }
+
   return <section>
     <article>
       {!(data // 👈 null and undefined check
@@ -38,10 +56,27 @@ const Details = () => {
 
         <article>
           <h3>Image of pokemon:</h3>
-          <img src={data.sprites.other.dream_world.front_default} alt="View fronted of pokemon" />
+          <label htmlFor="category">Choose how you look this image:</label>
+          <select onChange={(e) => onChange(e)}>
+            <option value={""}></option>
+            <option value={"dream_world"}>Anime</option>
+            <option value={"home"}>3D</option>
+            <option value={"official-artwork"}>Original</option>
+          </select>
+
+          <label htmlFor="category">Choose look normal or Shiny:</label>
+          <select onChange={(e) => onChangeShiny(e)}>
+            <option value={""}></option>
+            <option value={"front_shiny"}>Shiny!</option>
+            <option value={"front_default"}>Normal</option>
+          </select>
+
+          {category !== "" && shiny !== "" ?
+            <img src={data.sprites.other[category][shiny]} alt="View fronted of pokemon" /> :
+            <></>
+          }
 
           <h4><i>{data.name}</i></h4>
-
 
           <h3>Dimensions</h3>
 
