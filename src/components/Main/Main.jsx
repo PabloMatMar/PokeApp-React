@@ -4,7 +4,9 @@ import Form from './Form/Form';
 import Details from './Details/Details';
 import Home from './Home/Home';
 import NotFound from './NotFound/NotFound';
+import DetailsPokemonLocal from './DetailsPokemonLocal/DetailsPokemonLocal';
 import { Routes, Route } from 'react-router-dom';
+
 
 const Main = () => {
   return <main className='main'>
@@ -12,6 +14,7 @@ const Main = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pokemon/:id" element={<Details />} />
+        <Route path="/pokemon/local/:id" element={<DetailsPokemonLocal />} />
         <Route path="/new" element={<Form />} />
         <Route path="/search" element={<Search />} />
 

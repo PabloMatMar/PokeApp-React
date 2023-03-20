@@ -62,7 +62,7 @@ const Search = () => {
     </form>
     {status === 200 ?
       <pokeListContext.Provider value={objectPokemon}>
-        <PokemonList data={objectPokemon}/>
+        <PokemonList />
       </pokeListContext.Provider>
        :
       <></>

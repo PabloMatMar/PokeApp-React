@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import AllPokemons from "./AllPokemons/AllPokemons";
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
+import { newPokemonContext } from '../../../context/newPokemonContext';
 
 const Home = () => {
 
   const [dataPokemons, setDataPokemons] = useState([])
+  //traemos los pokemon creados que estan guardados en context
+  const { savePokemon } = useContext(newPokemonContext);
+  console.log("Esto es lo que hay en context", savePokemon);
 
 
   useEffect(() => {
@@ -29,12 +33,12 @@ const Home = () => {
     };
     fetchData()
     // eslint-disable-next-line
-  },[]);
+  }, []);
   console.log(dataPokemons)
 
   return <section>
-
-    {dataPokemons.map((pokemon, i) => <AllPokemons data={pokemon} key={uuidv4()} i={i}/>)}
+    {savePokemon.map((pokemon) => <AllPokemons created={pokemon} key={uuidv4()} />)}
+    {dataPokemons.map((pokemon, i) => <AllPokemons data={pokemon.data} key={uuidv4()} i={i} />)}
 
   </section>;
 };

@@ -32,9 +32,8 @@ function App() {
   const newPokemonsList = {
     savePokemon,
     setSavePokemon
-    // newPokemon, setNewPokemon
-
   }
+  
   return (
     <div className="App">
       <pokemonContext.Provider value = {pokemonsDatas}>
