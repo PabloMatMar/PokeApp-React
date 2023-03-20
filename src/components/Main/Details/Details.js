@@ -56,7 +56,7 @@ const Details = () => {
 
         <article>
           <h3>Image of pokemon:</h3>
-          <label htmlFor="category">Choose how you look this image:</label>
+          <label htmlFor="category">Choose the drawing style to see the pokemon:</label>
           <select onChange={(e) => onChange(e)}>
             <option value={""}></option>
             <option value={"dream_world"}>Anime</option>
@@ -64,19 +64,20 @@ const Details = () => {
             <option value={"official-artwork"}>Original</option>
           </select>
 
-          <label htmlFor="category">Choose look normal or Shiny:</label>
+          <label htmlFor="category"> Choose normal or shiny view of the pokemon</label>
           <select onChange={(e) => onChangeShiny(e)}>
             <option value={""}></option>
             <option value={"front_shiny"}>Shiny!</option>
             <option value={"front_default"}>Normal</option>
           </select>
 
-          {category !== "" && shiny !== "" ?
+          {category !== "" && shiny !== "" /*|| category === "dream_world" && shiny === "front_default"*/ ?
             <img src={data.sprites.other[category][shiny]} alt="View fronted of pokemon" /> :
             <></>
           }
 
           <h4><i>{data.name}</i></h4>
+
 
           <h3>Dimensions</h3>
 
@@ -104,8 +105,11 @@ const Details = () => {
           <p>Special-defense : {data.stats[4].base_stat}</p>
           <p>Speed : {data.stats[5].base_stat}</p>
 
-          <h3>Moves</h3>
-          {data.moves.map((move) => <p key={uuidv4()} >{move.move.name}</p>)} </article> :
+          <h3>Moves of this pokemon</h3>
+          <article>
+          {data.moves.map((move) => <p key={uuidv4()} >{move.move.name}</p>)}
+          </article>
+        </article> :
         <></>
       }
     </article>
