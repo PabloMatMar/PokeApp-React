@@ -6,7 +6,6 @@ import Home from './Home/Home';
 import NotFound from './NotFound/NotFound';
 import { Routes, Route } from 'react-router-dom';
 
-
 const Main = () => {
   return <main className='main'>
     <section>
