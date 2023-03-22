@@ -21,6 +21,7 @@ const DetailsPokemonLocal = () => {
           <h3>Image of pokemon:</h3>    
           <img src={data.sprites.other.dream_world.front_default} alt="View fronted of pokemon" />
           <h4><i>{data.name}</i></h4>
+          <p>Nº {data.id} in the pokedex</p>
 
           <h3>Dimensions</h3>
           <p>{data.height}"</p>

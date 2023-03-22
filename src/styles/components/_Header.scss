@@ -1,0 +1,18 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+.header {
+    @include row-center;
+    min-height: 15vh;
+    color: black;
+    background-color: #d50221;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 5px;
+
+}
+
+.iconNav {
+    width: 7%;
+    background-color: $shine-red;
+}

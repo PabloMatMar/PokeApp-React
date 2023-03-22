@@ -57,9 +57,11 @@ const Search = () => {
 
   return <section>
     <h1>Catch a pokemon:</h1>
+    <article>
     <form>
       <input name="input" type="text" value={input} onChange={takeChangeInput} />
-    </form>
+    </form>      
+    </article>
     {status === 200 ?
       <pokeListContext.Provider value={objectPokemon}>
         <PokemonList />

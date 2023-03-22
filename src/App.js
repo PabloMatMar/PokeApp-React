@@ -35,7 +35,7 @@ function App() {
   }
   
   return (
-    <div className="App">
+    <>
       <pokemonContext.Provider value = {pokemonsDatas}>
       <newPokemonContext.Provider value={newPokemonsList}>
       <BrowserRouter>
@@ -45,7 +45,7 @@ function App() {
       </newPokemonContext.Provider>
       </pokemonContext.Provider>
       <Footer />
-    </div>
+    </>
   );
 }
 

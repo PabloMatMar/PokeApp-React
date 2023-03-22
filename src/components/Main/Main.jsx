@@ -5,12 +5,13 @@ import Details from './Details/Details';
 import Home from './Home/Home';
 import NotFound from './NotFound/NotFound';
 import DetailsPokemonLocal from './DetailsPokemonLocal/DetailsPokemonLocal';
+import '../../styles/styles.scss'
 import { Routes, Route } from 'react-router-dom';
 
 
 const Main = () => {
   return <main className='main'>
-    <section>
+    <>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pokemon/:id" element={<Details />} />
@@ -20,7 +21,7 @@ const Main = () => {
 
         <Route path="/*" element={<NotFound />} />
       </Routes>
-    </section>
+    </>
 
   </main >
 }
