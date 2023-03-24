@@ -1,0 +1,13 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+footer{
+    @include row-center;
+    min-height:15vh;
+    color:black;
+    background-color:$granate;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding:5px;
+    // position: sticky;
+}
