@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from '@testing-library/react';
 import Form from "./Form";
 
 describe("Form", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<Form />);
-    expect(wrapper).toMatchSnapshot();
+    render(<Form />);
+    expect(screen).toMatchSnapshot();
   });
 });

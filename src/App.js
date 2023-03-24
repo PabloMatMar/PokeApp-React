@@ -1,7 +1,7 @@
 import Header from './components/Header'
 import Footer from './components/Footer';
 import Main from './components/Main';
-import {useState} from 'react';
+import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { pokemonContext } from './context/pokemonContext';
 import { newPokemonContext } from './context/newPokemonContext';
@@ -33,17 +33,18 @@ function App() {
     savePokemon,
     setSavePokemon
   }
-  
+
   return (
     <>
-      <pokemonContext.Provider value = {pokemonsDatas}>
-      <newPokemonContext.Provider value={newPokemonsList}>
+
       <BrowserRouter>
         <Header />
-        <Main />
+        <pokemonContext.Provider value={pokemonsDatas}>
+          <newPokemonContext.Provider value={newPokemonsList}>
+            <Main />
+          </newPokemonContext.Provider>
+        </pokemonContext.Provider>
       </BrowserRouter>
-      </newPokemonContext.Provider>
-      </pokemonContext.Provider>
       <Footer />
     </>
   );

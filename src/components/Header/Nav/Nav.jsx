@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NavbarWrapper } from "../styled";
+import { NavbarWrapper } from "../Styled-Components/styled";
 import '../../../styles/styles.scss';
 //TUTORIAL PARA CREAR MENU HAMBURGUESA USANDO STYLED
 // https://devxdev.net/react/menu-hamburguesa-reactjs/
