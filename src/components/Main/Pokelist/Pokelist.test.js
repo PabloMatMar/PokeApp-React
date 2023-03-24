@@ -9,11 +9,6 @@ describe("PokemonList", () => {
       name: "pikachu",
       sprites: {front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"},
 
-    },
-    {
-      name: "pikachu",
-      sprites: {front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"},
-
     }
   ]
 
