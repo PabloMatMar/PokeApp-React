@@ -34,7 +34,7 @@ const Details = () => {
 
   const onChange = (e) => {
     const categoryPrint = e.target.value
-    console.log(category)
+    // console.log(category)
     setCategory(categoryPrint)
   }
 

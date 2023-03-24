@@ -9,7 +9,7 @@ const Home = () => {
   const [dataPokemons, setDataPokemons] = useState([])
   //traemos los pokemon creados que estan guardados en context
   const { savePokemon } = useContext(newPokemonContext);
-  console.log("Esto es lo que hay en context", savePokemon);
+  // console.log("Esto es lo que hay en context", savePokemon);
 
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const Home = () => {
     fetchData()
     // eslint-disable-next-line
   }, []);
-  console.log(dataPokemons)
+  // console.log(dataPokemons)
 
   return <section>
     {savePokemon.map((pokemon) => <AllPokemons created={pokemon} key={uuidv4()} />)}

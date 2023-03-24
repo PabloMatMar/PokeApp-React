@@ -11,7 +11,7 @@ const Form = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = data => {
-    console.log(data)
+    // console.log(data);
 
     const newPokemon = {
       id: '-' + data.id,
@@ -39,10 +39,10 @@ const Form = () => {
       weight: data.weight,
       height: data.height
     }
-    console.log(newPokemon);
+    // console.log(newPokemon);
     if (data.typeOne !== data.typeTwo) {
       setSavePokemon(pokemon => pokemon.concat(newPokemon));
-      console.log(savePokemon);
+      // console.log(savePokemon);
       alert('Pokemon added!');
 
     } else {

@@ -5,24 +5,29 @@ import { newPokemonContext } from '../../../context/newPokemonContext';
 
 describe("DetailsPokemonLocal", () => {
   test("matches snapshot", () => {
-    let savePokemon = [{
-      id: 5,
-      name: "charmeleon",
-      pokemonCreated: {
-        sprites:
-        {
-          other:
+
+    const simulatedContext = {
+      savePokemon: [{
+        id: 5,
+        name: "charmeleon",
+        pokemonCreated: {
+          sprites:
           {
-            "official-artwork":
-              { front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" }
+            other:
+            {
+              "official-artwork":
+                { front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" }
+            }
           }
         }
-      }
-    }]
+      }]
+
+    }
     let id = 5
 
+
     render(
-      <newPokemonContext.Provider value={savePokemon}>
+      <newPokemonContext.Provider value={simulatedContext}>
         <DetailsPokemonLocal />
 
       </newPokemonContext.Provider>

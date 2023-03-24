@@ -19,9 +19,6 @@ const Nav = ({ open }) => {
       <button>
         <Link to="/search"> Search a pokemon </Link>
       </button>
-      {/* <button>
-      <Link to="/pokemon/:id"> </Link>
-      </button> */}
 
     </NavbarWrapper>
   );
