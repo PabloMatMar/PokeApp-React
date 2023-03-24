@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen } from '@testing-library/react';
 import PokemonList from "./Pokelist";
 import { v4 as uuidv4 } from 'uuid';
+import { pokeListContext } from "../../../context/pokeListContext";
 
 describe("PokemonList", () => {
   test("matches snapshot", () => {
@@ -11,7 +12,11 @@ describe("PokemonList", () => {
 
     }]
 
-    render(<PokemonList data={data} />);
+    render(<pokeListContext.Provider value={data}>
+      <PokemonList />
+
+    </pokeListContext.Provider>
+    );
     expect(screen).toMatchSnapshot();
   });
 });

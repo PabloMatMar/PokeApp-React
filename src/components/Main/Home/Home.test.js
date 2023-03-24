@@ -5,37 +5,8 @@ import { newPokemonContext } from '../../../context/newPokemonContext';
 
 describe("Home", () => {
   test("matches snapshot", () => {
-    const dataPokemons = [{
-      id: 5,
-      name: "charmeleon",
-      pokemonCreated: {
-        sprites:
-        {
-          other:
-          {
-            "official-artwork":
-              { front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" }
-          }
-        }
-      }
-    },
-    {
-      id: 6,
-      name: "charizard",
-      pokemonCreated: {
-        sprites:
-        {
-          other:
-          {
-            "official-artwork":
-              { front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" }
-          }
-        }
-      }
-    }
-    ]
 
-    const savePokemon = [{
+    let savePokemon = [{
       id: 5,
       name: "charmeleon",
       pokemonCreated: {
@@ -64,7 +35,12 @@ describe("Home", () => {
       }
     }
     ]
-    render(<Home dataPokemons={dataPokemons} savePokemon={savePokemon} />);
+    let dataPokemons = []
+    render(
+      <newPokemonContext.Provider value={savePokemon}>
+        <Home />
+      </newPokemonContext.Provider>
+    );
     expect(screen).toMatchSnapshot();
   });
 });
