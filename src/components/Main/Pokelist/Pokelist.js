@@ -13,7 +13,7 @@ const PokemonList = () => {
             {value.map((pokemon) => <Card data={pokemon} key={uuidv4()} />)}
           </article> :
           <>
-            {console.log("Error al procesar objectPokemon en pokeList")}
+            {/* {console.log("Error al procesar objectPokemon en pokeList")} */}
           </>
       }
     </pokeListContext.Consumer>

@@ -1,10 +1,15 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from '@testing-library/react';
 import Nav from "./Nav";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Nav", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<Nav />);
-    expect(wrapper).toMatchSnapshot();
+    render(
+      <BrowserRouter>
+          <Nav />
+      </BrowserRouter>
+    );
+    expect(screen).toMatchSnapshot();
   });
 });

@@ -1,10 +1,23 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from '@testing-library/react';
 import Form from "./Form";
+import { newPokemonContext } from "../../../context/newPokemonContext";
 
 describe("Form", () => {
+
   test("matches snapshot", () => {
-    const wrapper = shallow(<Form />);
-    expect(wrapper).toMatchSnapshot();
+
+    let savePokemon = []
+
+    render(
+
+      <newPokemonContext.Provider value={savePokemon}>
+        <Form />
+      </newPokemonContext.Provider>
+
+    );
+    
+    expect(screen).toMatchSnapshot();
   });
+
 });

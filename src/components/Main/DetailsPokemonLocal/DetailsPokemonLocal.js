@@ -4,18 +4,18 @@ import { newPokemonContext } from '../../../context/newPokemonContext';
 
 const DetailsPokemonLocal = () => {
   const { savePokemon } = useContext(newPokemonContext);
-  console.log("Esto es lo que hay en context", savePokemon);
+  // console.log("Esto es lo que hay en context", savePokemon);
   const {id} = useParams();
-  console.log(id);
+  // console.log(id);
   const arrFilt = savePokemon.filter(pokemon => pokemon.id === id);
-  console.log("Este es el array que devuelve filter", arrFilt);
+  // console.log("Este es el array que devuelve filter", arrFilt);
   const data = arrFilt[0]
-  console.log("Esto es lo que renderizamos:",data)
+  // console.log("Esto es lo que renderizamos:",data)
 
   return <section>
     <article>
       {!(data // 👈 null and undefined check
-        && Object.keys(data).length === 0) ?
+        && Object.keys(data).length === 0) && data !== undefined ?
 
         <article>
           <h3>Image of pokemon:</h3>    

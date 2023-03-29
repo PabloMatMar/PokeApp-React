@@ -1,10 +1,25 @@
-import React from "react";
-import { shallow } from "enzyme";
+import React, { useContext } from "react";
+import { render, screen } from '@testing-library/react';;
 import Search from "./Search";
+import { pokemonContext } from '../../../context/pokemonContext';
+
+
+
 
 describe("Search", () => {
   test("matches snapshot", () => {
-    const wrapper = shallow(<Search />);
-    expect(wrapper).toMatchSnapshot();
+    const simulatedContext = {
+      namePokemon: "",
+      objectPokemon: [],
+      arrayNamePokemons: [],
+      status: 0
+    }
+
+    render(
+      <pokemonContext.Provider value={simulatedContext}>
+        <Search />
+      </pokemonContext.Provider>
+    );
+    expect(screen).toMatchSnapshot();
   });
 });
