@@ -1,14 +1,15 @@
-@import '../utils/variables.scss';
-@import '../utils/mixins.scss';
+// @import '../utils/variables.scss';
+// @import '../utils/mixins.scss';
 
-.nav{
-    @include column-center;
-}
+// .nav{
+//     @include column-center;
+// }
 
 
-@media only screen and (min-width: 576px) {
+// @media only screen and (min-width: 576px) {
 
-    .nav{
-        @include row-center;
-    }
-}
+//     .nav{
+//         @include row-center;
+//     }
+// }
+
