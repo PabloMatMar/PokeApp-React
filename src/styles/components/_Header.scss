@@ -2,7 +2,6 @@
 @import '../utils/mixins.scss';
 
 .header {
-    @include row-center;
     min-height: 15vh;
     color: black;
     background-color: #d50221;

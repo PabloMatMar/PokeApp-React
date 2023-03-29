@@ -7,7 +7,7 @@ import Types from './types.json';
 
 const Form = () => {
 
-  const { savePokemon, setSavePokemon } = useContext(newPokemonContext);
+  const { /*savePokemon,*/ setSavePokemon } = useContext(newPokemonContext);
   const { register, handleSubmit } = useForm();
 
   const onSubmit = data => {
