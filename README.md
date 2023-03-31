@@ -11,9 +11,9 @@ https://poke-app-pablo.netlify.app/
 
 ## home
 
-This application will allow you to see the 902 existing pokemon. You can see them on the /. route.
-<!-- ![View Home](./public/assets/homeView.jpg) -->
-<img src="./public/assets/homeView.jpg" width="40%"/>
+This application will allow you can see from the pokemon with the index 1 to 902. You can see them on the /. (home) route.
+<img src="./public/assets/homeView.png" width="48%"/>
+<img src="./public/assets/902.png" width="47.5%"/>
 
 ## Details
 
@@ -54,7 +54,7 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-I like to check that my applications not only do what they should do but also that they don't do what they shouldn't do. Run the npm test command and you should see an image like this: ![Testig Whit Jest](./public/assets/testWhitJest.png )
+I like to check that my applications not only do what they are supposed to do, but also that they don't do what they are not supposed to do. Run the npm test command and wait. Press a key when the console prompts, then you will see an image like this:![Testig Whit Jest](./public/assets/testWhitJest.png )
 You can see in each component the snapshot with all small the tests that each test does.
 
 [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
