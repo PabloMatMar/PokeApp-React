@@ -11,7 +11,7 @@ https://poke-app-pablo.netlify.app/
 
 ## home
 
-This application will allow you can see from the pokemon with the index 1 to 902. You can see them on the / (home) route.
+This application will allow you can see from the pokemon with the index 1 to 902. You can see them in home.
 <img src="./public/assets/homeView.png" width="45%"/>
 <img src="./public/assets/902.png" width="45%"/>
 
