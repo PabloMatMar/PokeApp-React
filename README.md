@@ -5,22 +5,22 @@ Welcome to the Pokeapp!
 
 ## home
 
-This application will allow you to see the 902 existing pokemon. You can see them on the home route.
+This application will allow you to see the 902 existing pokemon. You can see them on the /. route.
 
 ## Details
 
-In each pokemon you can click on details, this will take you to the details route. In it you can choose with what style of drawing you can see the pokemon, and if you want to see the normal or shiny way. You will also see:
+In each pokemon you can click on details, this will take you to the /pokemon/:id route or pokemon/local/:id if the pokemon was created. In it you can choose with what style of drawing you can see the pokemon, and if you want to see the normal or shiny way. You will also see:
 - Their typologies
 - Your size and weight
 - His attacks
 
 ## Search
 
-In the nav-bar you can go to the search section, there you can put the name of the specific pokemon you are looking for, from there you will also have access to details.
+In the nav-bar you can go to the search section in the /search route, there you can put the name of the specific pokemon you are looking for, from there you will also have access to details.
 
 ## Add a pokemon
 
-Finally if you want to have more fun you can go add a new pokemon in the new route, here you can create a pokemon only with the basics or adding all the details. This will be included in the home list.
+Finally if you want to have more fun you can go add a new pokemon in the /new route through the nav bar button add a new pokemon, here you can create a pokemon only with the basics or adding all the details. This will be included in the home list and you redirected to over there when you created it.
 
 
 

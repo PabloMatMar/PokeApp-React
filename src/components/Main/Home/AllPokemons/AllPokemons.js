@@ -17,7 +17,7 @@ const AllPokemons = ({ data, i, created }) => {
           <img src={pokemonCreated.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />
           <p>Position number in poxedex: {pokemonCreated.id}</p>
           <button className='button-in-main'>
-          <Link to={`http://localhost:3000/pokemon/local/${pokemonCreated.id}`}>Look Details</Link>
+          <Link to={`/pokemon/local/${pokemonCreated.id}`}>Look Details</Link>
           </button>
         </span> :
         <></>
@@ -29,7 +29,7 @@ const AllPokemons = ({ data, i, created }) => {
           <img src={pokemon.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />
           <p>Position number in poxedex: {i + 1}</p>
           <button className='button-in-main'>
-          <a href={`http://localhost:3000/pokemon/${pokemon.id}`}>Look Details</a>
+          <Link to={`/pokemon/${pokemon.id}`}>Look Details</Link>
           </button>
         </span> :
         <></>

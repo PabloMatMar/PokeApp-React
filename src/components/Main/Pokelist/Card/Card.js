@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Card = ({ data }) => {
   return <div className="divCard">
     {data !== undefined ?
@@ -11,7 +12,7 @@ const Card = ({ data }) => {
         <img src={data.sprites.front_default} alt="frontd of pokemon" />
         <br />
         <button>
-          <a href={`http://localhost:3000/pokemon/${data.id}`}>Details of this pokemon</a>
+          <a href={`/pokemon/${data.id}`}>Details of this pokemon</a>
 
         </button>
       </> :
