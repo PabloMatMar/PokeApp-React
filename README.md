@@ -22,21 +22,21 @@ In each pokemon you can click on details, this will take you to the /pokemon/:id
 - Your size and weight
 - His attacks
 
-<img src="./public/assets/detailsChoiceStyle.jpg" width="42%"/>
-<img src="./public/assets/detailsTypes.jpg" width="42%"/>
+<img src="./public/assets/detailsChoiceStyle.jpg" width="40%"/>
+<img src="./public/assets/detailsTypes.jpg" width="40%"/>
 
 ## Search
 
 In the nav-bar you can go to the search section in the /search route, there you can put the name of the specific pokemon you are looking for, from there you will also have access to details.
 
-<img src="./public/assets/search.jpg" width="42%"/>
+<img src="./public/assets/search.jpg" width="40%"/>
 
 ## Add a pokémon
 
 Finally if you want to have more fun you can go add a new pokemon in the /new route through the nav bar button add a new pokemon, here you can create a pokemon only with the basics or adding all the details. This will be included in the home list and you redirected to over there when you created it.
 
-<img src="./public/assets/createPokemon.png" width="42%"/>
-<img src="./public/assets/addPokemonHome.png" width="42%">
+<img src="./public/assets/createPokemon.png" width="40%"/>
+<img src="./public/assets/addPokemonHome.png" width="40%">
 
 
 
