@@ -35,8 +35,8 @@ In the nav-bar you can go to the search section in the /search route, there you 
 
 Finally if you want to have more fun you can go add a new pokemon in the /new route through the nav bar button add a new pokemon, here you can create a pokemon only with the basics or adding all the details. This will be included in the home list and you redirected to over there when you created it.
 
-<img src="./public/assets/createPokemon.png" width="40%"/>
-<img src="./public/assets/addPokemonHome.png" width="40%">
+<img src="./public/assets/createPokemon.png" width="30%"/>
+<img src="./public/assets/addPokemonHome.png" width="30%">
 
 
 
