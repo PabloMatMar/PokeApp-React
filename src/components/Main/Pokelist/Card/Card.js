@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const Card = ({ data }) => {
@@ -12,8 +13,7 @@ const Card = ({ data }) => {
         <img src={data.sprites.front_default} alt="frontd of pokemon" />
         <br />
         <button>
-          <a href={`/pokemon/${data.id}`}>Details of this pokemon</a>
-
+          <Link to={`/pokemon/${data.id}`}>Details of this pokemon</Link>
         </button>
       </> :
       <p>No pokemon search.</p>

@@ -1,12 +1,16 @@
 @import '../utils/mixins.scss';
 
 .formSearch {
-   width: 200px;
-   height: 40px;
+    width: 200px;
+    height: 40px;
 }
 
-.searchSection{
+.searchSection {
     @include column-flex-start;
     gap: 10px;
-    height:65vh;
+}
+
+
+.empty {
+    height: 33vh;
 }
