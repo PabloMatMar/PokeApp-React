@@ -49,12 +49,12 @@ const Details = () => {
   }
 
   return <section>
-    <article>
+    <article className='details-container'>
       {!(data // 👈 null and undefined check
         && Object.keys(data).length === 0
         && Object.getPrototypeOf(data) === Object.prototype) ?
 
-        <article>
+        <article className='details-container'>
           <h3>Image of pokemon:</h3>
           <label htmlFor="category">Choose the drawing style to see the pokemon:</label>
           <select onChange={(e) => onChange(e)}>
@@ -106,7 +106,7 @@ const Details = () => {
           <p>Speed : {data.stats[5].base_stat}</p>
 
           <h3>Moves of this pokemon</h3>
-          <article>
+          <article className='details-container'>
           {data.moves.map((move) => <p key={uuidv4()} >{move.move.name}</p>)}
           </article>
         </article> :

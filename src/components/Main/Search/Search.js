@@ -55,12 +55,13 @@ const Search = () => {
   };
 
 
-  return <section>
+  return <section className='searchSection'>
     <h1>Catch a pokemon:</h1>
     <article>
-    <form>
+    <form className='formSearch'>
       <input name="input" type="text" value={input} onChange={takeChangeInput} />
-    </form>      
+    </form>
+    {/* <br /> */}
     </article>
     {status === 200 ?
       <pokeListContext.Provider value={objectPokemon}>

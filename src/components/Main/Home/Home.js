@@ -12,6 +12,7 @@ const Home = () => {
   // console.log("Esto es lo que hay en context", savePokemon);
 
 
+
   useEffect(() => {
 
     async function fetchData() {
@@ -36,7 +37,7 @@ const Home = () => {
   }, []);
   // console.log(dataPokemons)
 
-  return <section>
+  return <section className='home-container'>
     {savePokemon.map((pokemon) => <AllPokemons created={pokemon} key={uuidv4()} />)}
     {dataPokemons.map((pokemon, i) => <AllPokemons data={pokemon.data} key={uuidv4()} i={i} />)}
 

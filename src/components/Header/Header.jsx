@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Nav from './Nav/Nav'
 import { HeaderWrapper } from "./Styled-Components/HeaderWrapper";
 import MenuButton from "./Styled-Components/MenuButton";
-import '../../styles/styles.scss'
 
 
 

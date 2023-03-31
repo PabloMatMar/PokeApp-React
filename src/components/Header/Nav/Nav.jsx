@@ -1,14 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { NavbarWrapper } from "../Styled-Components/styled";
-import '../../../styles/styles.scss';
-//TUTORIAL PARA CREAR MENU HAMBURGUESA USANDO STYLED
-// https://devxdev.net/react/menu-hamburguesa-reactjs/
-// https://www.escuelafrontend.com/styled-components-en-react
 
 const Nav = ({ open }) => {
   return (
-    // eslint-disable-next-line
     <NavbarWrapper open={open} className="nav">
       <button>
         <Link to="/."> Home </Link>

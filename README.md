@@ -1,4 +1,4 @@
-# Poke-app
+# Poke-app <img src="https://cdn.emojidex.com/emoji/px32/pokeball.png?1469426901" width="36" height="36" alt="pokeball" />
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Welcome to the Pokeapp!

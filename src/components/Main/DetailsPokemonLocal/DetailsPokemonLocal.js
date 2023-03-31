@@ -12,8 +12,8 @@ const DetailsPokemonLocal = () => {
   const data = arrFilt[0]
   // console.log("Esto es lo que renderizamos:",data)
 
-  return <section>
-    <article>
+  return <section className='container-Details-Local'>
+    <article className='container-Details-Local'>
       {!(data // 👈 null and undefined check
         && Object.keys(data).length === 0) && data !== undefined ?
 

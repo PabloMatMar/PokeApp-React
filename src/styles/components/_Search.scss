@@ -1,0 +1,11 @@
+@import '../utils/mixins.scss';
+
+
+.formSearch {
+    padding-bottom: 15px;
+}
+
+.searchSection{
+    @include column-center;
+    height:65vh;
+}

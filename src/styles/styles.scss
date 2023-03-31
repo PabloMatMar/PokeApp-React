@@ -3,6 +3,15 @@
 @import './components/Main';
 @import './components/Fotter';
 @import './components/Nav';
+@import './components/Home';
+@import './components/Card';
+@import './components/PokeList';
+@import './components/Form';
+@import './components/Details';
+@import './components/AllPokemons';
+@import './components/Search';
+@import './components/DetailsPokemonLocal';
+
 
 
 
@@ -10,3 +19,4 @@
 //Elementos
 @import './elements/button';
 @import './elements/input';
+@import './elements/a';

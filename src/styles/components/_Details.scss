@@ -1,0 +1,10 @@
+@import '../utils/mixins.scss';
+
+
+
+.details-container {
+    @include column-center;
+    padding: 3px;
+    margin: 3px;
+}
+

@@ -1,0 +1,11 @@
+@import '../utils/mixins.scss';
+
+
+
+.container-Details-Local {
+    @include column-center;
+    padding: 3px;
+    margin: 3px;
+    height:100vh;
+}
+
