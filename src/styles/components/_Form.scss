@@ -2,4 +2,6 @@
 
 form {
     @include column-center;
+    gap: 20px;
+    height:50vh;
 }

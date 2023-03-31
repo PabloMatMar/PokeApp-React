@@ -10,7 +10,7 @@ footer{
     text-align: center;
     @include row-center;
     min-height:15vh;
-    color:black;
+    // color: $black;
     background-color:$granate;
     padding:5px;
     position: fixed;
@@ -18,7 +18,7 @@ footer{
     height: 5%;
     bottom: 0;
     left: 0;
-    border: 3px black solid;
+    border: 3px $black solid;
 
 }
 

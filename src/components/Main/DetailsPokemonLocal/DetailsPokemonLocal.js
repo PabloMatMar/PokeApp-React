@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { newPokemonContext } from '../../../context/newPokemonContext';
+import Type from './types.json';
 
 const DetailsPokemonLocal = () => {
   const { savePokemon } = useContext(newPokemonContext);
   // console.log("Esto es lo que hay en context", savePokemon);
-  const {id} = useParams();
+  const { id } = useParams();
   // console.log(id);
   const arrFilt = savePokemon.filter(pokemon => pokemon.id === id);
   // console.log("Este es el array que devuelve filter", arrFilt);
@@ -18,7 +19,7 @@ const DetailsPokemonLocal = () => {
         && Object.keys(data).length === 0) && data !== undefined ?
 
         <article>
-          <h3>Image of pokemon:</h3>    
+          <h3>Image of pokemon:</h3>
           <img src={data.sprites.other.dream_world.front_default} alt="View fronted of pokemon" />
           <h4><i>{data.name}</i></h4>
           <p>Nº {data.id} in the pokedex</p>
@@ -28,9 +29,15 @@ const DetailsPokemonLocal = () => {
           <p>{data.weight}lbs</p>
 
           <h3>Type of this pokemon:</h3>
+
           <p>{data.typeOne}</p>
-          {data.typesTwo ?
-            <p>{data.typeTwo}</p> :
+          <img src={Type[data.typeOne]} alt={Type[data.typeOne]} className="imagenType" />
+          {data.typeTwo !== undefined ?
+            <div>
+              <p>{data.typeTwo}</p>
+              <img src={Type[data.typeTwo]} alt={Type[data.typeTwo]} className="imagenType2" />
+
+            </div> :
             <></>}
 
           <h3>Base Stats</h3>

@@ -1,11 +1,17 @@
 @import '../utils/mixins.scss';
 
+.imagenType{
+    width: 10%;
+}
+
+.imagenType2 {
+    width: 75%
+}
 
 
 .container-Details-Local {
     @include column-center;
-    padding: 3px;
-    margin: 3px;
-    height:100vh;
+    padding: 0px;
+    margin: 0px;
 }
 

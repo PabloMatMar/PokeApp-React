@@ -14,11 +14,10 @@ const Header = () => {
   };
   return(
   <HeaderWrapper className="header">
-    <img src='assets/icon.webp' className="iconNav" alt="icon" />
+    <img src='../assets/icon.webp' className="iconNav" alt="icon" />
     <Nav open={open} />
     <MenuButton open={open} handleClick={handleClick} />
   </HeaderWrapper>);
-
 
 };
 

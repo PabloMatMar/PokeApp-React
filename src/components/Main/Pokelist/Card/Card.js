@@ -1,7 +1,7 @@
 import React from "react";
 
 const Card = ({ data }) => {
-  return <div>
+  return <div className="divCard">
     {data !== undefined ?
       <>
         <p>Name of pokemon: <br />
