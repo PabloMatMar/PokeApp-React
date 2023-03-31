@@ -1,11 +1,19 @@
 # Poke-app <img src="https://cdn.emojidex.com/emoji/px32/pokeball.png?1469426901" width="36" height="36" alt="pokeball" />
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Welcome to the Pokeapp!
+https://poke-app-pablo.netlify.app/
+
+- ### React.js
+- ### Mobile first
+- ### Testing whit JEST
+- ### SASS
+- ### Styled-Components
+
 
 ## home
 
 This application will allow you to see the 902 existing pokemon. You can see them on the /. route.
+<!-- ![View Home](./public/assets/homeView.jpg) -->
+<img src="./public/assets/homeView.jpg" width="40%"/>
 
 ## Details
 
@@ -14,14 +22,21 @@ In each pokemon you can click on details, this will take you to the /pokemon/:id
 - Your size and weight
 - His attacks
 
+<img src="./public/assets/detailsChoiceStyle.jpg" width="48%"/>
+<img src="./public/assets/detailsTypes.jpg" width="48%"/>
+
 ## Search
 
 In the nav-bar you can go to the search section in the /search route, there you can put the name of the specific pokemon you are looking for, from there you will also have access to details.
 
-## Add a pokemon
+<img src="./public/assets/search.jpg" width="48%"/>
+
+## Add a pokémon
 
 Finally if you want to have more fun you can go add a new pokemon in the /new route through the nav bar button add a new pokemon, here you can create a pokemon only with the basics or adding all the details. This will be included in the home list and you redirected to over there when you created it.
 
+<img src="./public/assets/createPokemon.png" width="48%"/>
+<img src="./public/assets/addPokemonHome.png" width="48%">
 
 
 
@@ -32,15 +47,17 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser. (First time you need run `npm i` to install dependencies)
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I like to check that my applications not only do what they should do but also that they don't do what they shouldn't do. Run the npm test command and you should see an image like this: ![Testig Whit Jest](./public/assets/testWhitJest.png )
+You can see in each component the snapshot with all small the tests that each test does.
+
+[running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
