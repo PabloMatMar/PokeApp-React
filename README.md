@@ -12,8 +12,14 @@ https://poke-app-pablo.netlify.app/
 ## home
 
 This application will allow you can see from the pokemon with the index 1 to 902. You can see them in home.
+<br>
+
+<div>
 <img src="./public/assets/homeView.png" width="42%"/>
 <img src="./public/assets/902.png" width="42%"/>
+<br>
+
+<div>
 
 ## Details
 
@@ -34,13 +40,25 @@ In each pokemon you can click on details, this will take you to the /pokemon/:id
 ## Search
 
 In the nav-bar you can go to the search section in the /search route, there you can put the name of the specific pokemon you are looking for, from there you will also have access to details.
+<br>
+
+<div>
 <img src="./public/assets/search.jpg" width="42%"/>
+<br>
+
+<div>
 
 ## Add a pokémon
 
 Finally if you want to have more fun you can go add a new pokemon in the /new route through the nav bar button add a new pokemon, here you can create a pokemon only with the basics or adding all the details. This will be included in the home list and you redirected to over there when you created it.
+<br>
+
+<div>
 <img src="./public/assets/createPokemon.png" width="42%"/>
 <img src="./public/assets/addPokemonHome.png" width="42%"/>
+<br>
+
+<div>
 
 
 
