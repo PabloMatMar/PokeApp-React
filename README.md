@@ -22,7 +22,6 @@ In each pokemon you can click on details, this will take you to the /pokemon/:id
 - Your size and weight
 - His attacks
 - 
-
 <img src="./public/assets/detailsChoiceStyle.png" width="42%"/>
 <img src="./public/assets/detailsTypes.png" width="42%"/>
 
