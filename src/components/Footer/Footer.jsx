@@ -1,10 +1,14 @@
-import React, { Component } from "react";
-import '../../styles/styles.scss';
+import React from "react";
 
-class Footer extends Component {
-  render() {
-    return <footer><a href="https://github.com/PabloMatMar" target="_blank" rel="noreferrer">Diseng by Pablo Mateos Martin</a> </footer>
-  }
+const Footer = () => {
+  return (
+    <footer>
+      <a href="https://github.com/PabloMatMar" target="_blank" rel="noreferrer" className ="ancor1">PabloMatMar</a>
+      <a href="https://github.com/PabloMatMar" target="_blank" rel="noreferrer" className ="ancor2"><img src="../assets/github.png" className="iconGithub" alt=" Github Logo" /></a>
+      <a href="https://github.com/PabloMatMar" target="_blank" rel="noreferrer" className ="ancor2">github.com</a>
+    </footer>
+  );
+
 }
 
 export default Footer;

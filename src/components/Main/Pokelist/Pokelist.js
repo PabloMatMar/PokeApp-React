@@ -9,7 +9,7 @@ const PokemonList = () => {
     <pokeListContext.Consumer>
       {(value) =>
         value !== undefined ?
-          <article>
+          <article className="pokeList-container">
             {value.map((pokemon) => <Card data={pokemon} key={uuidv4()} />)}
           </article> :
           <>

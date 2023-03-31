@@ -1,17 +1,52 @@
 @import '../utils/variables.scss';
-@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+body{
+    padding-top: 80px;
+}
 
 .header {
     min-height: 15vh;
     color: black;
-    background-color: #d50221;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    background-color: $shine-red;
     padding: 5px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: 3px black solid;
+    z-index: 9999;
 
 }
 
 .iconNav {
-    width: 7%;
-    background-color: $shine-red;
+    width: 15%;
+}
+
+@media only screen and (min-width: 576px) {
+
+    .iconNav {
+        width: 12%;
+    }
+
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    .iconNav {
+        width: 10%;
+    }
+
+
+}
+
+@media only screen and (min-width: 992px) {
+
+    .iconNav {
+        width: 7%;
+    }
+
+
+
 }

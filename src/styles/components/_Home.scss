@@ -1,0 +1,6 @@
+@import '../utils/mixins.scss';
+
+.home-container {
+    @include column-center;
+    gap: 15px;
+}

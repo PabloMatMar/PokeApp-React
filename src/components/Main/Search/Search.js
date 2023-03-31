@@ -8,11 +8,17 @@ const Search = () => {
   //OBJECT POKEMON ES UN ARRAY DE OBJETOS
   const { namePokemon, setNamePokemon, objectPokemon, setObjectPokemon, arrayNamePokemons, setArrayNamePokemons, status, setStatus } = useContext(pokemonContext)
   const [input, setInput] = useState(''); // Para vaciar el input una vez se envia
+  const [empty, setEmpty] = useState('empty')
 
   useEffect(() => {
 
+    if(objectPokemon.length !== 0){
+      setEmpty('')
+
+    }
+
     const getPokemon = setTimeout(() => {
-      
+
       async function fetchData() {
         try {
           if (!arrayNamePokemons.includes(namePokemon)) {
@@ -44,29 +50,34 @@ const Search = () => {
         fetchData();
       }
     }, 2000)
-    return () => clearTimeout(getPokemon)
+    return () => clearTimeout(getPokemon);
     // eslint-disable-next-line
   }, [namePokemon]); // componentDidUpdate
 
   const takeChangeInput = (e) => {
     setInput(e.target.value);
     e.preventDefault();
-    setNamePokemon(e.target.value.toLowerCase())
+    setNamePokemon(e.target.value.toLowerCase());
+    const valueIsEnter = setTimeout(() => {
+      setEmpty('')
+    }, 2000)
+    return () => clearTimeout(valueIsEnter);
+    
   };
 
 
-  return <section>
+  return <section className='searchSection'>
     <h1>Catch a pokemon:</h1>
-    <article>
-    <form>
-      <input name="input" type="text" value={input} onChange={takeChangeInput} />
-    </form>      
+    <article className={empty}>
+      <form className='formSearch'>
+        <input name="input" type="text" value={input} onChange={takeChangeInput} />
+      </form>
     </article>
     {status === 200 ?
       <pokeListContext.Provider value={objectPokemon}>
         <PokemonList />
       </pokeListContext.Provider>
-       :
+      :
       <></>
     }
   </section>

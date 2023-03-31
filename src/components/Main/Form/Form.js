@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { newPokemonContext } from "../../../context/newPokemonContext";
 import { v4 as uuidv4 } from 'uuid';
+import { Navigate } from "react-router-dom";
 import Types from './types.json';
 
 
@@ -9,9 +10,11 @@ const Form = () => {
 
   const { /*savePokemon,*/ setSavePokemon } = useContext(newPokemonContext);
   const { register, handleSubmit } = useForm();
+  const [wasCreated, setWasCreated] = useState(false);
 
   const onSubmit = data => {
     // console.log(data);
+    setWasCreated(false);
 
     const newPokemon = {
       id: '-' + data.id,
@@ -44,37 +47,45 @@ const Form = () => {
       setSavePokemon(pokemon => pokemon.concat(newPokemon));
       // console.log(savePokemon);
       alert('Pokemon added!');
+      setWasCreated(true);
 
     } else {
       alert('Pokemon cannot is the same type twice');
     }
 
+
+
   }
   //PENDIENTE DE REFACTORIZACION
   //Encontrar solucion a porque react-hook-form da error al intentar mapear los inputs debido al metodo register..
 
-  return <section>
+  return wasCreated ? <Navigate to='/' /> : <section>
 
     <h2>Create a Pokemon!</h2>
 
     <form onSubmit={handleSubmit(onSubmit)} >
-
-      <input type='number' placeholder='Id' {...register("id", { required: true, message: "error message" })} />
-      <input placeholder='Name of Pokemon' {...register("name", { required: true, minLength: 3, message: "error message" })} />
-      <input type='url' placeholder='Url Image' {...register("image", { required: true })} />
-      <input type='number' placeholder='Points of Life' {...register("life", { message: "error message" })} />
-      <input type='number' placeholder=' Points of attack' {...register("attack", { message: "error message" })} />
-      <input type='number' placeholder='Points of defense' {...register("defense", { message: "error message" })} />
-      <input type='number' placeholder='Points of special-attack' {...register("special_attack", { message: "error message" })} />
-      <input type='number' placeholder='Points of special-defense' {...register("special_defense", { message: "error message" })} />
-      <input type='number' placeholder='Points of speed' {...register("speed", { message: "error message" })} />
-      <input type='number' placeholder='Weight' {...register("weight", { message: "error message" })} />
-      <input type='number' placeholder='Height' min="10"{...register("height", { message: "error message" })} />
-      <input placeholder='Name of Move' {...register("nameMove", { minLength: 3, message: "error message" })} />
-      <select {...register("typeOne", { required: true, message: "error message" })}>
+      <span>
+        <input type='number' placeholder='Id' {...register("id", { required: true, message: "error message" })} />
+        <input placeholder='Name of Pokemon' {...register("name", { required: true, minLength: 3, message: "error message" })} />
+        <input type='url' placeholder='Url Image' {...register("image", { required: true })} />
+        <input type='number' placeholder='Points of Life' {...register("life", { message: "error message" })} />
+        <input type='number' placeholder=' Points of attack' {...register("attack", { message: "error message" })} />
+        <input type='number' placeholder='Points of defense' {...register("defense", { message: "error message" })} />
+      </span>
+      <span>
+        <input type='number' placeholder='Points of special-attack' {...register("special_attack", { message: "error message" })} />
+        <input type='number' placeholder='Points of special-defense' {...register("special_defense", { message: "error message" })} />
+        <input type='number' placeholder='Points of speed' {...register("speed", { message: "error message" })} />
+        <input type='number' placeholder='Weight' {...register("weight", { message: "error message" })} />
+        <input type='number' placeholder='Height' min="10"{...register("height", { message: "error message" })} />
+        <input placeholder='Name of Move' {...register("nameMove", { minLength: 3, message: "error message" })} />
+      </span>
+      <select placeholder="TypeOne" {...register("typeOne", { required: true, message: "error message" })}>
+        <option defaultValue="Select TypeOne">Select TypeOne</option>
         {Types.map((type) => <option value={type} key={uuidv4()}>{type}</option>)}
       </select>
-      <select {...register("typeTwo")}>
+      <select placeholder="TypeTwo" {...register("typeTwo")}>
+        <option defaultValue="Select TypeOne">Select TypeTwo</option>
         {Types.map((type) => <option value={type} key={uuidv4()}>{type}</option>)}
       </select>
 

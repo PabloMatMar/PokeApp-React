@@ -1,0 +1,21 @@
+{
+    "bug": "../assets/bug.png",
+    "dark":"../assets/dark.png",
+    "dragon":"../assets/dragon.png",
+    "electric":"../assets/electric.png",
+    "fairy":"../assets/fairy.png",
+    "fighting":"../assets/fighting.png",
+    "fire":"../assets/fire.png",
+    "flying":"../assets/flying.png",
+    "ghost":"../assets/ghost.png",
+    "grass":"../assets/grass.png",
+    "ground":"../assets/ground.png",
+    "ice":"../assets/ice.png",
+    "normal":"../assets/normal.png",
+    "poison":"../assets/poison.png",
+    "psychic":"../assets/psychic.png",
+    "rock":"../assets/rock.png",
+    "steel":"../assets/steel.png",
+    "water":"../assets/water.png"
+
+}

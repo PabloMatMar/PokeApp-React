@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const Card = ({ data }) => {
-  return <div>
+  return <div className="divCard">
     {data !== undefined ?
       <>
         <p>Name of pokemon: <br />
@@ -9,10 +11,10 @@ const Card = ({ data }) => {
         </p>
         <p>Nº {data.id} in the pokedex</p>
         <img src={data.sprites.front_default} alt="frontd of pokemon" />
-        {/* <p>Back view pokemon image: </p>
-      <img src={data.sprites.back_default} alt="back of pokemon" /> */}
         <br />
-        <a href={`http://localhost:3000/pokemon/${data.id}`}>Details of this pokemon</a>
+        <button>
+          <Link to={`/pokemon/${data.id}`}>Details of this pokemon</Link>
+        </button>
       </> :
       <p>No pokemon search.</p>
     }

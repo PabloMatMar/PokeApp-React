@@ -1,0 +1,7 @@
+@import '../utils/mixins.scss';
+
+form {
+    @include column-center;
+    gap: 20px;
+    height:60vh;
+}
