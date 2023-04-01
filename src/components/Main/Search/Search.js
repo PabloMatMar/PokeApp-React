@@ -59,7 +59,7 @@ const Search = () => {
     e.preventDefault();
     setNamePokemon(e.target.value.toLowerCase());
     const valueIsEnter = setTimeout(() => {
-      setEmpty('')
+      setEmpty('whitPokemons')
     }, 2000)
     return () => clearTimeout(valueIsEnter);
     
