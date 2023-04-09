@@ -1,0 +1,6 @@
+@import '../utils/mixins.scss';
+
+button {
+    @include column-centered-content
+}
+

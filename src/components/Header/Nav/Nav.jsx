@@ -6,13 +6,13 @@ const Nav = ({ open }) => {
   return (
     <NavbarWrapper open={open} className="nav">
       <button>
+        <Link to="/new"> Create Pokemon </Link>
+      </button>
+      <button>
         <Link to="/."> Home </Link>
       </button>
       <button>
-        <Link to="/new"> add a new Pokemon </Link>
-      </button>
-      <button>
-        <Link to="/search"> Search a pokemon </Link>
+        <Link to="/search"> Search Pokemon </Link>
       </button>
 
     </NavbarWrapper>

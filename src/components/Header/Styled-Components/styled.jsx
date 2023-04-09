@@ -4,13 +4,14 @@ export const NavbarWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   background: #d50221;
   position: fixed;
   top: 0;
+  //z-index: 5000;
   right: ${props => (props.open ? "0" : "-100%")};
   width: 100%;
-  // height: 90vh;
+  //height: 70vh;
   transition: right 0.3s linear;
 
   @media only screen and (min-width: 624px) {
@@ -23,7 +24,7 @@ export const NavbarWrapper = styled.nav`
 
   a {
     padding: 0.5rem 0.8rem;
-    color: grey;
+    color: green;
     text-decoration: none;
   }
 `;
