@@ -10,11 +10,11 @@ const Form = () => {
 
   const { /*savePokemon,*/ setSavePokemon } = useContext(newPokemonContext);
   const { register, handleSubmit } = useForm();
-  const [wasCreated, setWasCreated] = useState(false);
+  const [hasBeenCreated, setHasBeenCreated] = useState(false);
 
   const onSubmit = data => {
     // console.log(data);
-    setWasCreated(false);
+    setHasBeenCreated(false);
 
     const newPokemon = {
       id: '-' + data.id,
@@ -47,7 +47,7 @@ const Form = () => {
       setSavePokemon(pokemon => pokemon.concat(newPokemon));
       // console.log(savePokemon);
       alert('Pokemon added!');
-      setWasCreated(true);
+      setHasBeenCreated(true);
 
     } else {
       alert('Pokemon cannot is the same type twice');
@@ -59,9 +59,8 @@ const Form = () => {
   //PENDIENTE DE REFACTORIZACION
   //Encontrar solucion a porque react-hook-form da error al intentar mapear los inputs debido al metodo register..
 
-  return wasCreated ? <Navigate to='/' /> : <section>
+  return hasBeenCreated ? <Navigate to='/' /> : <section>
 
-    <h2>Create a Pokemon!</h2>
 
     <form onSubmit={handleSubmit(onSubmit)} >
       <span>

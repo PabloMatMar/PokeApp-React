@@ -7,7 +7,7 @@ export const NavbarWrapper = styled.nav`
   align-items: center;
   background: #d50221;
   position: fixed;
-  top: 10vh;
+  top: 0;
   right: ${props => (props.open ? "0" : "-100%")};
   width: 100%;
   // height: 90vh;

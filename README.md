@@ -88,4 +88,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ### `netlify deploy --prod`
 
-Deploys the app in the prod url, so it's available. The command will require you to include the directory in which the app's build is in. In this case, the directory is ./build.
+Deploys the app in the prod url, so it's available. The command will require you:
+-Choice "Link this directory
+ to an existing site" and choice again "poke-app-pablo"
+-Include the directory in which the app's build is in. In this case, the directory is ./build.
