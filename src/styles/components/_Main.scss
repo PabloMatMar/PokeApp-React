@@ -13,14 +13,11 @@ section {
 article {
     @include column-center;
     gap: 20px;
-
-    width: 100%;
 }
 
 
 
 .main {
-    @include row-center;
     padding: 40px 10px;
     min-height: 15vh;
     color: black;
@@ -36,9 +33,5 @@ article {
 
     article {
         gap: 50px;
-    }
-
-    .main {
-        @include column-center;
     }
 }

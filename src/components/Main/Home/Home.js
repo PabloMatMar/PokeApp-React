@@ -4,12 +4,15 @@ import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
 import { newPokemonContext } from '../../../context/newPokemonContext';
 
+
+
 const Home = () => {
 
   const [dataPokemons, setDataPokemons] = useState([])
   //traemos los pokemon creados que estan guardados en context
   const { savePokemon } = useContext(newPokemonContext);
   // console.log("Esto es lo que hay en context", savePokemon);
+
 
 
 
@@ -37,11 +40,14 @@ const Home = () => {
   }, []);
   // console.log(dataPokemons)
 
-  return <section className='home-container'>
-    {savePokemon.map((pokemon) => <AllPokemons created={pokemon} key={uuidv4()} />)}
-    {dataPokemons.map((pokemon, i) => <AllPokemons data={pokemon.data} key={uuidv4()} i={i} />)}
 
-  </section>;
+  return <section className='home-container'>
+
+    {savePokemon.map((pokemon, i) =>  <AllPokemons created={pokemon} key={uuidv4()}/>)}
+    {dataPokemons.map((pokemon, i) => <AllPokemons data={pokemon.data} key={uuidv4()} i={i} />)}
+    
+
+  </section >;
 };
 
 export default Home;

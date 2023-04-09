@@ -5,12 +5,10 @@ body{
     padding-bottom: 90px;
 }
 
-
 footer{
     text-align: center;
     @include row-center;
     min-height:15vh;
-    // color: $black;
     background-color:$granate;
     padding:5px;
     position: fixed;

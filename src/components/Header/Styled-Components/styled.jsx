@@ -14,7 +14,7 @@ export const NavbarWrapper = styled.nav`
   //height: 70vh;
   transition: right 0.3s linear;
 
-  @media only screen and (min-width: 624px) {
+  @media only screen and (min-width: 680px) {
     flex-direction: row;
     position: initial;
     height: auto;

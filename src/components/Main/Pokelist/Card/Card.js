@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-const Card = ({ data }) => {
+const Card = ({ data, length, i }) => {
   return <div className="divCard">
     {data !== undefined ?
       <>
+        {length === i + 1 ? <audio src="../assets/sauvagePokemon.mp3" autoPlay> </audio> : <></>}
         <p>Name of pokemon: <br />
           {data.name}
         </p>

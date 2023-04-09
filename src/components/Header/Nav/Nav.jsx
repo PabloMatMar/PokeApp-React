@@ -15,6 +15,7 @@ const Nav = ({ open }) => {
         <Link to="/search"> Search Pokemon </Link>
       </button>
 
+
     </NavbarWrapper>
   );
 

@@ -16,6 +16,10 @@ function App() {
   const [status, setStatus] = useState(0);  //Para llamar a los componentes que renderizan en caso de que la respuesta de la api sea correcta
   const [savePokemon, setSavePokemon] = useState([]); //Para guardar los pokemons que se crean en un array que luego se pasará por context a home para mostrarse en un listado distinto al de pokemons originales.
   // const [newPokemon, setNewPokemon] = useState([]);
+  const [empty, setEmpty] = useState('empty'); //Para rellenar search cuando esta vacio se pone aqui para evitar que al renderizar la vista se vuelva a setear
+  const [write, setWrite] = useState(false); //Para evitar que al volver a search te salte el alert debido al nombre del ultimo pokemon en el state.
+  const [count, setCount] =useState(1);
+
 
   const pokemonsDatas = {
     namePokemon,
@@ -25,7 +29,13 @@ function App() {
     arrayNamePokemons,
     setArrayNamePokemons,
     status,
-    setStatus
+    setStatus,
+    empty,
+    setEmpty,
+    write,
+    setWrite,
+    count,
+    setCount
 
   }
 

@@ -17,6 +17,7 @@ const Header = () => {
     <img src='../assets/icon.webp' className="iconNav" alt="icon" />
     <Nav open={open} />
     <MenuButton open={open} handleClick={handleClick} />
+    <audio src="../assets/pokemo.mp3" preload="none" controls className="audio"></audio>
   </HeaderWrapper>);
 
 };

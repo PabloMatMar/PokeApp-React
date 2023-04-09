@@ -6,16 +6,13 @@ import { pokeListContext } from '../../../context/pokeListContext';
 
 const Search = () => {
   //OBJECT POKEMON ES UN ARRAY DE OBJETOS
-  const { namePokemon, setNamePokemon, objectPokemon, setObjectPokemon, arrayNamePokemons, setArrayNamePokemons, status, setStatus } = useContext(pokemonContext)
+  const { namePokemon, setNamePokemon, objectPokemon, setObjectPokemon, arrayNamePokemons, setArrayNamePokemons, status, setStatus, empty, setEmpty, write, setWrite } = useContext(pokemonContext)
   const [input, setInput] = useState(''); // Para vaciar el input una vez se envia
-  const [empty, setEmpty] = useState('empty')
 
   useEffect(() => {
 
-    if(objectPokemon.length !== 0){
-      setEmpty('')
+    // objectPokemon.length === 0  ? setEmpty('empty') : setEmpty('whitPokemons');
 
-    }
 
     const getPokemon = setTimeout(() => {
 
@@ -26,24 +23,26 @@ const Search = () => {
             const dataPokemon = res.data
             const status = res.status
             setStatus(status)
-            if (status === undefined) {
-              setStatus(res.response.status)
-            }
+            if (status === undefined) setStatus(res.response.status)
             setInput("")
             if (status === 200) {
               setNamePokemon(dataPokemon.name)
               setArrayNamePokemons([...arrayNamePokemons, dataPokemon.name])
               setObjectPokemon([...objectPokemon, dataPokemon])
+              setWrite(false)
             }
-          } else {
-            setInput("")
-            alert("you catch this pokemon before")
+
+
+          } else if (write) {
+            setInput("");
+            alert("you catch this pokemon before");
+            setWrite(false);
           }
 
 
         } catch (e) {
-          alert("This isnt a pokemon")
-          setInput("")
+          alert("This isnt a pokemon");
+          setInput("");
         }
       }
       if (namePokemon !== "") {
@@ -55,6 +54,7 @@ const Search = () => {
   }, [namePokemon]); // componentDidUpdate
 
   const takeChangeInput = (e) => {
+    setWrite(true);
     setInput(e.target.value);
     e.preventDefault();
     setNamePokemon(e.target.value.toLowerCase());
@@ -62,7 +62,8 @@ const Search = () => {
       setEmpty('whitPokemons')
     }, 2000)
     return () => clearTimeout(valueIsEnter);
-    
+
+
   };
 
 

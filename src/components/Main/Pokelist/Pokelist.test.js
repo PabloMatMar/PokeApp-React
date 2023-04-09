@@ -9,6 +9,7 @@ describe("PokemonList", () => {
   test("matches snapshot", () => {
     const data = [{
       name: "pikachu",
+      id: 25,
       sprites: { front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" },
 
     }]

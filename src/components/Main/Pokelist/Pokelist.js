@@ -5,12 +5,13 @@ import { pokeListContext } from "../../../context/pokeListContext";
 
 const PokemonList = () => {
 
+
   return <>
     <pokeListContext.Consumer>
       {(value) =>
         value !== undefined ?
           <article className="pokeList-container">
-            {value.map((pokemon) => <Card data={pokemon} key={uuidv4()} />)}
+            {value.map((pokemon, i) => <Card data={pokemon} length={value.length} i={i} key={uuidv4()} />)}
           </article> :
           <>
             {/* {console.log("Error al procesar objectPokemon en pokeList")} */}

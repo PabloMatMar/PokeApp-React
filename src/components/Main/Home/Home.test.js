@@ -35,7 +35,6 @@ describe("Home", () => {
 
       }]
     }
-    let dataPokemons = []
     render(
       <BrowserRouter>
         <newPokemonContext.Provider value={simulatedContext}>

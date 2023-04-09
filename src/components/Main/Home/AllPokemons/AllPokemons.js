@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { scroller } from 'react-scroll';
 
 
 const AllPokemons = ({ data, i, created }) => {
@@ -22,6 +23,7 @@ const AllPokemons = ({ data, i, created }) => {
         </span> :
         <></>
       }
+
       {pokemon !== undefined ?
         <span>
           <p>Name of pokemon: <br />
