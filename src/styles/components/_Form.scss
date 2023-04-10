@@ -1,7 +1,7 @@
 @import '../utils/mixins.scss';
 
-form {
+.formCreate {
     @include column-center;
+    height: 80vh;
     gap: 10px;
-    height:60vh;
 }

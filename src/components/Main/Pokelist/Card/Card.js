@@ -1,22 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
 const Card = ({ data, length, i }) => {
-  // const sauvageMusic = setTimeout(() => {
+  const [namePokemon, setNamePokemon] = useState()
+  useEffect(() => {
+    if (data !== undefined) {
+      let pokemon = data.name
+        .charAt(0)
+        .toUpperCase()
+        .concat(data.name.slice(1));
+      setNamePokemon(pokemon)
+    }
 
-  //   return <audio src="../assets/audio/sauvagePokemon.mp3" autoPlay></audio>
+  }, [data])
 
-  //   // return () => clearTimeout(valueIsEnter);
-
-  // }, 2000)
 
   return <div className="divCard">
     {data !== undefined ?
       <>
-        {length === i + 1 ? <audio src="../assets/audio/sauvagePokemon.mp3" autoPlay> </audio> : <></>}
+        {/* {length === i + 1 ? <audio src="../assets/audio/sauvagePokemon.mp3" autoPlay> </audio> : <></>} */}
+        {console.log("RENDER")}
+        <audio src="../assets/audio/sauvagePokemon.mp3" autoPlay></audio>
         <p>Name of pokemon: <br />
-          {data.name}
+          {namePokemon}
         </p>
         <p>Nº {data.id} in the pokedex</p>
         <img src={data.sprites.front_default} alt="frontd of pokemon" />

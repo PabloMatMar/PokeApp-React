@@ -1,10 +1,5 @@
 @import '../utils/mixins.scss';
 
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
 .imagenType{
     width: 50px;
 }
@@ -18,26 +13,26 @@
 }
 
 .imgStylePokemon{
-    width: 45%;
+    width: 75%;
 }
 
 @media only screen and (min-width: 576px) {
     .imgStylePokemon{
-        width: 35%;
+        width: 48%;
     }
 
 }
 
 @media only screen and (min-width: 768px) {
     .imgStylePokemon{
-        width: 25%;
+        width: 37%;
     }
 
 }
 
 @media only screen and (min-width: 992px) {
     .imgStylePokemon{
-        width: 20%;
+        width: 29%;
     }
 
 }

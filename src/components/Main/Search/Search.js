@@ -45,9 +45,7 @@ const Search = () => {
           setInput("");
         }
       }
-      if (namePokemon !== "") {
-        fetchData();
-      }
+      if (namePokemon !== "") fetchData();
     }, 2000)
     return () => clearTimeout(getPokemon);
     // eslint-disable-next-line

@@ -25,18 +25,18 @@ const Nav = ({ open }) => {
   return (
     <NavbarWrapper open={open} className="nav">
       <button>
-        <Link to="/new"> Create Pokemon </Link>
+        <Link to="/new"> Create a Pokemon </Link>
       </button>
       <button>
         <Link to="/."> Home </Link>
       </button>
       <button>
-        <Link to="/search"> Search Pokemon </Link>
+        <Link to="/search"> Search a Pokemons </Link>
       </button>
       {width < 680 ? <button hidden={mobile}>
         <div className="div-Header">
           <label hidden={mobile} htmlFor={track}>🎵Music🎵</label>
-          <select hidden={mobile} onChange={(e) => onChange(e)}>
+          <select value={track} hidden={mobile} onChange={(e) => onChange(e)}>
             {Songs.map((song) => <option key={uuidv4()} value={song}>{song}</option>)}
           </select>
         </div>

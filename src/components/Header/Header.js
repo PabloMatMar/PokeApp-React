@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Nav from './Nav/Nav'
-import { HeaderWrapper } from "./Styled-Components/HeaderWrapper";
 import MenuButton from "./Styled-Components/MenuButton";
 import useScreenSize from '../../hook/useScreenSize';
 import Songs from './songs.json';
@@ -18,7 +17,7 @@ const Header = () => {
   useEffect(() => {
     if (width < 680) setMobile(true);
     else setMobile(false);
-    if(mobile) setTrack("");
+    if (mobile) setTrack("");
 
   }, [width, mobile])
 
@@ -31,18 +30,18 @@ const Header = () => {
     setOpen(!open);
   };
   return (
-    <HeaderWrapper className="header">
+    <header>
       <img src='../assets/icon.webp' className="iconNav" alt="icon" />
       <Nav open={open} />
-      <MenuButton open={open} handleClick={handleClick} />
       <div className="div-Header">
         <label hidden={mobile} htmlFor={track}>🎵Music🎵</label>
-        <select hidden={mobile} onChange={(e) => onChange(e)}>
-          {Songs.map((song) => <option key={uuidv4()} value={song}>{song}</option>)}
+        <select value={track} hidden={mobile} onChange={(e) => onChange(e)}>
+          {Songs.map((song) => <option value={song} key={uuidv4()}> {song} </option>)}
         </select>
       </div>
       <audio src={`../assets/audio/${track}.mp3`} preload="none" controls className="audio" hidden={true} autoPlay={true}></audio>
-    </HeaderWrapper>);
+      <MenuButton open={open} handleClick={handleClick} />
+    </header>);
 
 };
 
