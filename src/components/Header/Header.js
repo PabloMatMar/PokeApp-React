@@ -34,8 +34,8 @@ const Header = () => {
       <img src='../assets/icon.webp' className="iconNav" alt="icon" />
       <Nav open={open} />
       <div className="div-Header">
-        <label hidden={mobile} htmlFor={track}>🎵Music🎵</label>
-        <select value={track} hidden={mobile} onChange={(e) => onChange(e)}>
+        <label className="displayHeader"hidden={mobile} htmlFor={track}>🎵Music🎵</label>
+        <select className="displayHeader" value={track} hidden={mobile} onChange={(e) => onChange(e)}>
           {Songs.map((song) => <option value={song} key={uuidv4()}> {song} </option>)}
         </select>
       </div>
