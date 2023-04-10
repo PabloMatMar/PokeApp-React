@@ -16,3 +16,28 @@
 .details-container {
     @include column-center;
 }
+
+.imgStylePokemon{
+    width: 45%;
+}
+
+@media only screen and (min-width: 576px) {
+    .imgStylePokemon{
+        width: 35%;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    .imgStylePokemon{
+        width: 25%;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+    .imgStylePokemon{
+        width: 20%;
+    }
+
+}

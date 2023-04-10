@@ -1,9 +1,13 @@
-@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
 body{
     padding-top: 80px;
 }
+
+// .div-Header{
+//     @include column-center;
+// }
 
 .audio{
     width: 15%;
