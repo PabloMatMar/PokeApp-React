@@ -19,7 +19,7 @@ const Main = () => {
         <Route path="/pokemon/local/:id" element={<DetailsPokemonLocal />} />
         <Route path="/new" element={<Form />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/movesDescription/:url" element={<MovesDescription />} />
+        <Route path="/movesDescription/:url/:idToLinkToBack" element={<MovesDescription />} />
 
         <Route path="/*" element={<NotFound />} />
       </Routes>

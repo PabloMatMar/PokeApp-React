@@ -1,7 +1,9 @@
 import React from "react";
 import { render, screen } from '@testing-library/react';
-import MovesDescription from "./MovesDescription";
 import { pokemonContext } from "../../../context/pokemonContext";
+import { BrowserRouter } from "react-router-dom";
+import MovesDescription from "./MovesDescription";
+
 
 describe("MovesDescription", () => {
 
@@ -12,17 +14,24 @@ describe("MovesDescription", () => {
         damage_class: {
           name: "Pyshical"
         },
+        flavor_text_entries: [
+          {
+            flavor_text: "Description of special move.",
+          }
+        ],
         effect_entries: [
           {
             effect: "Im a testing Move!",
-            short_effect: "Me to"
+            short_effect: "Im a testing Move!"
           }
         ]
-      },
+      }
     }
     render(
       <pokemonContext.Provider value={simulatedDataOfContext}>
-        <MovesDescription />
+        <BrowserRouter>
+          <MovesDescription />
+        </BrowserRouter>
       </pokemonContext.Provider>
     );
     expect(screen).toMatchSnapshot();

@@ -1,13 +1,12 @@
 import React, { useEffect, useContext } from 'react';
 import axios from "axios";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { pokemonContext } from '../../../context/pokemonContext';
-// import Types from './types.json';
 import { v4 as uuidv4 } from 'uuid';
 
 const MovesDescription = () => {
 
-  let { url } = useParams();
+  let { url, idToLinkToBack } = useParams();
 
   const { data, setData } = useContext(pokemonContext);
 
@@ -30,28 +29,34 @@ const MovesDescription = () => {
 
 
   return <>
-    {data !== undefined  ?
+    {data !== undefined ? <>
+      <button className='button-in-main'>
+        <Link to={`http://localhost:3000/pokemon/${idToLinkToBack}`}> Go to Details Of Back</Link>
+      </button>
 
       <table className="table">
         <thead>
           <tr>
-            <th>Chance of impact: </th>
-            <th>Type of Damage: </th>
+          {data.accuracy !== null ? <th>Chance of impact: </th> : <th>Special Move </th>}
+            <th>Type of Damage</th>
             <th>Effect</th>
-            <th>Shor Effect</th>
+            {data.effect_entries[0].effect !== data.effect_entries[0].short_effect ? <th>Short Effect</th> : <></>}
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
 
           <tr key={uuidv4()}>
-            <td>{data.accuracy}%</td>
+            {data.accuracy !== null ? <td>{data.accuracy}%</td> : <td></td> }
             <td>{data.damage_class.name}</td>
             <td>{data.effect_entries[0].effect}</td>
-            <td>{data.effect_entries[0].short_effect}</td>
+            {data.effect_entries[0].effect !== data.effect_entries[0].short_effect ? <td>{data.effect_entries[0].short_effect}</td> : <></>}
+            <td>{data.flavor_text_entries[0].flavor_text}</td>
           </tr>
 
         </tbody>
-      </table> :
+      </table>
+    </> :
       <></>}
   </>;
 };

@@ -1,11 +1,5 @@
 @import '../utils/mixins.scss';
 
-table {
-    border: 3px black solid;
-    >& tr, td{
-        border: 3px black solid;
-    }
-}
 .imagenType{
     width: 50px;
 }

@@ -111,7 +111,7 @@ const Details = () => {
                 <tr key={uuidv4()}>
                   <td>{move.move.name}</td>
                   <td>{move.version_group_details[0].level_learned_at === 0 ? Math.trunc(Math.random() * 99) : move.version_group_details[0].level_learned_at}</td>
-                  <td><Link to={`/movesDescription/${move.move.url.replace('https://pokeapi.co/api/v2/move/', '')}`}>Effect</Link></td>
+                  <td><Link to={`/movesDescription/${move.move.url.replace('https://pokeapi.co/api/v2/move/', '')}${id}`}>Effect</Link></td>
                 </tr>
               ))
               }
