@@ -56,29 +56,25 @@ const Details = () => {
       && Object.getPrototypeOf(data) === Object.prototype) ?
 
       <article className='details-container'>
-        <h3>Image of pokemon:</h3>
-        <label htmlFor="category">Choose the drawing style to see the pokemon:</label>
-        <select onChange={(e) => onChange(e)}>
-          <option value={""}></option>
-          <option value={"dream_world"}>Anime</option>
-          <option value={"home"}>3D</option>
-          <option value={"official-artwork"}>Original</option>
-        </select>
-
-        <label htmlFor="category"> Choose normal or shiny view of the pokemon</label>
-        <select onChange={(e) => onChangeShiny(e)}>
-          <option value={""}></option>
-          <option value={"front_shiny"}>Shiny!</option>
-          <option value={"front_default"}>Normal</option>
-        </select>
-
+        <h4><i>{data.name}</i></h4>
         {category !== "" && shiny !== "" /*|| category === "dream_world" && shiny === "front_default"*/ ?
-          <img src={data.sprites.other[category][shiny]} alt="View fronted of pokemon" /> :
+          <img className="imgStylePokemon"src={data.sprites.other[category][shiny]} alt="View fronted of pokemon" /> :
           <></>
         }
-
-        <h4><i>{data.name}</i></h4>
-
+        {category === "" || shiny === "" ? <label htmlFor="category">To see imagen choose the drawing style and normal or shiny:</label> : <></>}
+        <div>
+          <select onChange={(e) => onChange(e)}>
+            <option value={""}></option>
+            <option value={"home"}>3D</option>
+            <option value={"official-artwork"}>Original</option>
+            <option value={"dream_world"}>Anime</option>
+          </select>
+          <select onChange={(e) => onChangeShiny(e)}>
+            <option value={""}></option>
+            <option value={"front_shiny"}>Shiny!</option>
+            <option value={"front_default"}>Normal</option>
+          </select>
+        </div>
 
         <h3>Dimensions</h3>
 

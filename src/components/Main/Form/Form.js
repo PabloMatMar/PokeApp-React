@@ -8,7 +8,7 @@ import Types from './types.json';
 
 const Form = () => {
 
-  const { /*savePokemon,*/ setSavePokemon } = useContext(newPokemonContext);
+  const { setSavePokemon } = useContext(newPokemonContext);
   const { register, handleSubmit } = useForm();
   const [hasBeenCreated, setHasBeenCreated] = useState(false);
 
@@ -60,27 +60,26 @@ const Form = () => {
   //Encontrar solucion a porque react-hook-form da error al intentar mapear los inputs debido al metodo register..
 
   return hasBeenCreated ? <Navigate to='/' /> : <section>
-
-
-    <form onSubmit={handleSubmit(onSubmit)} >
-      <span>
-        <input type='number' placeholder='Id' {...register("id", { required: true, message: "error message" })} />
-        <input placeholder='Name of Pokemon' {...register("name", { required: true, minLength: 3, message: "error message" })} />
-        <input type='url' placeholder='Url Image' {...register("image", { required: true })} />
+    <h2>Create a pokemon!</h2>
+    <form onSubmit={handleSubmit(onSubmit)} className="formCreate">
+      <div>
+        <input className="requiredInput" type='number' placeholder='Id' {...register("id", { required: true, message: "error message" })} />
+        <input className="requiredInput" placeholder='Name of Pokemon' {...register("name", { required: true, minLength: 3, message: "error message" })} />
+        <input className="requiredInput" type='url' placeholder='Url Image' {...register("image", { required: true })} />
         <input type='number' placeholder='Points of Life' {...register("life", { message: "error message" })} />
         <input type='number' placeholder=' Points of attack' {...register("attack", { message: "error message" })} />
         <input type='number' placeholder='Points of defense' {...register("defense", { message: "error message" })} />
-      </span>
-      <span>
+      </div>
+      <div>
         <input type='number' placeholder='Points of special-attack' {...register("special_attack", { message: "error message" })} />
         <input type='number' placeholder='Points of special-defense' {...register("special_defense", { message: "error message" })} />
         <input type='number' placeholder='Points of speed' {...register("speed", { message: "error message" })} />
         <input type='number' placeholder='Weight' {...register("weight", { message: "error message" })} />
         <input type='number' placeholder='Height' min="10"{...register("height", { message: "error message" })} />
         <input placeholder='Name of Move' {...register("nameMove", { minLength: 3, message: "error message" })} />
-      </span>
-      <select placeholder="TypeOne" {...register("typeOne", { required: true, message: "error message" })}>
-        <option defaultValue="Select TypeOne">Select TypeOne</option>
+      </div>
+      <select className="requiredSelect" placeholder="TypeOne" {...register("typeOne", { required: true, message: "error message" })}>
+        <option className="requiredSelect" defaultValue="Select TypeOne">Select TypeOne</option>
         {Types.map((type) => <option value={type} key={uuidv4()}>{type}</option>)}
       </select>
       <select placeholder="TypeTwo" {...register("typeTwo")}>

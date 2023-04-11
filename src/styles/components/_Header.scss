@@ -1,19 +1,15 @@
-@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
 @import '../utils/variables.scss';
 
-body{
-    padding-top: 80px;
+body {
+    padding-top: 45px;
 }
 
-.audio{
-    width: 15%;
-    height: 25%;
-}
-
-.header {
-    min-height: 15vh;
+header {
+    @include row-space-between;
     color: black;
     background-color: $shine-red;
+    height: 8vh;
     padding: 5px;
     position: fixed;
     width: 100%;
@@ -24,17 +20,27 @@ body{
 
 }
 
+
+
+// .displayHeader {
+//     width: 70%;
+//     height: 70%;
+
+// }
+
 .iconNav {
-    width: 15%;
+    width: 11%;
 }
+
+
 
 @media only screen and (min-width: 576px) {
 
     .iconNav {
-        width: 12%;
+        width: 8%;
     };
 
-    .audio{
+    .audio {
         width: 18%;
         height: 28%;
     }
@@ -45,10 +51,12 @@ body{
 @media only screen and (min-width: 768px) {
 
     .iconNav {
-        width: 10%;
-    };
+        width: 6.3%;
+    }
 
-    .audio{
+    ;
+
+    .audio {
         width: 15%;
         height: 28%;
     }
@@ -59,10 +67,12 @@ body{
 @media only screen and (min-width: 992px) {
 
     .iconNav {
-        width: 7%;
-    };
+        width: 4.5%;
+    }
 
-    .audio{
+    ;
+
+    .audio {
         width: 18%;
         height: 35%;
     }

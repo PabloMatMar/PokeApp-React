@@ -39,11 +39,18 @@
 
 }
 
+@mixin row-space-between {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
 @mixin row-flex-start {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 
 }
 

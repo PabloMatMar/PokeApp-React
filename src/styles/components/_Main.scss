@@ -1,6 +1,11 @@
 @import '../utils/variables.scss';
 @import '../utils/mixins.scss';
 
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 
 img {
     width: 48%;
@@ -17,15 +22,11 @@ article {
 
 
 
-.main {
-    padding: 40px 10px;
-    min-height: 15vh;
+main {
+    padding: 35px 10px;
     color: black;
     background-color: $pastel-yellow;
     margin: 0px;
-    padding-top: 80px;
-    padding-bottom: 130px;
-
 }
 
 @media only screen and (min-width: 576px) {

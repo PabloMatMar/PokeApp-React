@@ -14,7 +14,6 @@ const PokemonList = () => {
             {value.map((pokemon, i) => <Card data={pokemon} length={value.length} i={i} key={uuidv4()} />)}
           </article> :
           <>
-            {/* {console.log("Error al procesar objectPokemon en pokeList")} */}
           </>
       }
     </pokeListContext.Consumer>

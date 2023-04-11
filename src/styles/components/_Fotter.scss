@@ -2,13 +2,13 @@
 @import '../utils/mixins.scss';
 
 body{
-    padding-bottom: 90px;
+    padding-bottom: 45px;
 }
 
 footer{
     text-align: center;
     @include row-center;
-    min-height:15vh;
+    height: 8vh;
     background-color:$granate;
     padding:5px;
     position: fixed;
@@ -30,29 +30,4 @@ footer{
 
 .iconGithub {
     width: 30%;
-    // padding: 1px;
-    // margin: 1px;
-}
-
-
-@media only screen and (min-width: 576px) {
-
-    .iconGithub {
-        width: 60%;
-    }
-
-}
-
-@media only screen and (min-width: 768px) {
-
-    .iconGithub {
-        width: 50%;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-
-    .iconGithub {
-        width: 60%;
-    }
 }

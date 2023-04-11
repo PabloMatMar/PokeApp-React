@@ -10,7 +10,7 @@ import { Routes, Route } from 'react-router-dom';
 
 
 const Main = () => {
-  return <main className='main'>
+  return <main>
     <>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,7 +23,7 @@ const Main = () => {
       </Routes>
     </>
 
-  </main >
+  </main>
 }
 
 
