@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import Type from './types.json';
+import { Link } from 'react-router-dom';
 
 
 const Details = () => {
@@ -58,7 +59,7 @@ const Details = () => {
       <article className='details-container'>
         <h4><i>{data.name}</i></h4>
         {category !== "" && shiny !== "" /*|| category === "dream_world" && shiny === "front_default"*/ ?
-          <img className="imgStylePokemon"src={data.sprites.other[category][shiny]} alt="View fronted of pokemon" /> :
+          <img className="imgStylePokemon" src={data.sprites.other[category][shiny]} alt="View fronted of pokemon" /> :
           <></>
         }
         {category === "" || shiny === "" ? <label htmlFor="category">To see imagen choose the drawing style and normal or shiny:</label> : <></>}
@@ -97,7 +98,33 @@ const Details = () => {
 
         <h3>Moves of this pokemon</h3>
         <article className='details-container'>
-          {data.moves.map((move) => <p key={uuidv4()} >{move.move.name}</p>)}
+          {/* <table>
+            <tbody>
+              {data.moves.map((move, i) => {
+                if (i % 4 === 0) return <tr key={uuidv4()}></tr>
+                else return <td key={uuidv4()}><Link to={`/movesDescription/:${move.move.url}`}>{move.move.name}</Link></td>
+              })};
+            </tbody>
+          </table> */}
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Level to Learn</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.moves.map((move, i) => (
+                <tr key={uuidv4()}>
+                  <td>{move.move.name}</td>
+                  <td>{move.version_group_details[0].level_learned_at === 0 ? Math.trunc(Math.random() * 99) : move.version_group_details[0].level_learned_at}</td>
+                  <td><Link to={`/movesDescription/:${move.move.url}`}>Click Me</Link></td>
+                </tr>
+              ))
+              }
+            </tbody>
+          </table>
         </article>
       </article> :
       <></>
@@ -108,3 +135,4 @@ const Details = () => {
 }
 
 export default Details;
+
