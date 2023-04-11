@@ -98,28 +98,20 @@ const Details = () => {
 
         <h3>Moves of this pokemon</h3>
         <article className='details-container'>
-          {/* <table>
-            <tbody>
-              {data.moves.map((move, i) => {
-                if (i % 4 === 0) return <tr key={uuidv4()}></tr>
-                else return <td key={uuidv4()}><Link to={`/movesDescription/:${move.move.url}`}>{move.move.name}</Link></td>
-              })};
-            </tbody>
-          </table> */}
           <table className="table">
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Level to Learn</th>
+                <th>Level to learning</th>
                 <th>Link</th>
               </tr>
             </thead>
             <tbody>
-              {data.moves.map((move, i) => (
+              {data.moves.map(move => (
                 <tr key={uuidv4()}>
                   <td>{move.move.name}</td>
                   <td>{move.version_group_details[0].level_learned_at === 0 ? Math.trunc(Math.random() * 99) : move.version_group_details[0].level_learned_at}</td>
-                  <td><Link to={`/movesDescription/:${move.move.url}`}>Click Me</Link></td>
+                  <td><Link to={`/movesDescription/${move.move.url.replace('https://pokeapi.co/api/v2/move/', '')}`}>Effect</Link></td>
                 </tr>
               ))
               }
