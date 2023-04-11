@@ -13,12 +13,13 @@ const AllPokemons = ({ data, i, created }) => {
     return <article className='article-of-AllPokemons'>
       {pokemonCreated !== undefined ?
         <span>
-          <p>Name of pokemon: <br />
-            {pokemonCreated.name}</p>
+          <h2>
+            {pokemonCreated.name}
+          </h2>
           <img src={pokemonCreated.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />
-          <p>Position number in poxedex: {pokemonCreated.id}</p>
+          <p>Position in poxedex: {pokemonCreated.id}</p>
           <button className='button-in-main'>
-          <Link to={`/pokemon/local/${pokemonCreated.id}`}>Look Details</Link>
+            <Link to={`/pokemon/local/${pokemonCreated.id}`}>Look Details</Link>
           </button>
         </span> :
         <></>
@@ -26,12 +27,13 @@ const AllPokemons = ({ data, i, created }) => {
 
       {pokemon !== undefined ?
         <span>
-          <p>Name of pokemon: <br />
-            {pokemon.name}</p>
+          <h2>
+            {pokemon.name}
+          </h2>
           <img src={pokemon.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />
-          <p>Position number in poxedex: {i + 1}</p>
+          <p>Position in poxedex: {i + 1}</p>
           <button className='button-in-main'>
-          <Link to={`/pokemon/${pokemon.id}`}>Look Details</Link>
+            <Link to={`/pokemon/${pokemon.id}`}>Look Details</Link>
           </button>
         </span> :
         <></>

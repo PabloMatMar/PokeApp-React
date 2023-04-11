@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import axios from "axios";
 import { Link, useParams } from 'react-router-dom';
 import { pokemonContext } from '../../../context/pokemonContext';
-import { v4 as uuidv4 } from 'uuid';
+import SpecialEffect from './SpecialEffect/SpecialEffect';
 
 const MovesDescription = () => {
 
@@ -46,8 +46,8 @@ const MovesDescription = () => {
         </thead>
         <tbody>
 
-          <tr key={uuidv4()}>
-            {data.accuracy !== null ? <td>{data.accuracy}%</td> : <td></td> }
+          <tr>
+            {data.accuracy !== null ? <td>{data.accuracy}%</td> : <td><SpecialEffect data={data.contest_effect}/></td> }
             <td>{data.damage_class.name}</td>
             <td>{data.effect_entries[0].effect}</td>
             {data.effect_entries[0].effect !== data.effect_entries[0].short_effect ? <td>{data.effect_entries[0].short_effect}</td> : <></>}
