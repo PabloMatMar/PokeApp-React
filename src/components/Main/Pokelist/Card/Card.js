@@ -21,8 +21,6 @@ const Card = ({ data, length, i }) => {
     {data !== undefined ?
       <>
         {/* {length === i + 1 ? <audio src="../assets/audio/sauvagePokemon.mp3" autoPlay> </audio> : <></>} */}
-        {console.log("RENDER")}
-        <audio src="../assets/audio/sauvagePokemon.mp3" autoPlay></audio>
         <p>Name of pokemon: <br />
           {namePokemon}
         </p>
