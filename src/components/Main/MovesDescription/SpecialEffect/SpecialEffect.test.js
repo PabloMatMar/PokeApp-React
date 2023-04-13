@@ -33,7 +33,6 @@ describe("SpecialEffect", () => {
     render(
       <pokemonContext.Provider value={simulatedDataOfContext}>
         <SpecialEffect data={simulatedProps} />
-
       </pokemonContext.Provider>
     );
     expect(screen).toMatchSnapshot();

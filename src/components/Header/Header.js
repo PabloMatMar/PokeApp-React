@@ -31,7 +31,7 @@ const Header = () => {
   };
   return (
     <header>
-      <img src='../assets/icon.webp' className="iconNav" alt="icon" />
+      <img src='../../assets/icon.webp' className="iconNav" alt="icon" />
       <Nav open={open} />
       <div className="div-Header">
         <label className="displayHeader"hidden={mobile} htmlFor={track}>🎵Music🎵</label>
@@ -39,7 +39,7 @@ const Header = () => {
           {Songs.map((song) => <option value={song} key={uuidv4()}> {song} </option>)}
         </select>
       </div>
-      <audio src={`../assets/audio/${track}.mp3`} preload="none" controls className="audio" hidden={true} autoPlay={true}></audio>
+      <audio src={`../../assets/audio/${track}.mp3`} preload="none" controls className="audio" hidden={true} autoPlay={true}></audio>
       <MenuButton open={open} handleClick={handleClick} />
     </header>);
 
