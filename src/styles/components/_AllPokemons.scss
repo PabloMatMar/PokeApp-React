@@ -4,4 +4,172 @@
     border: 3px black solid;
     border-radius: 15px;
     gap: 50px;
+};
+
+.backGroundImage-grass{
+    background-image: url(../../imgsForImport/backGroundImages/grass.png);
+    background-repeat: no-repeat;
+    background-size: 157%;
+    border-radius: 11px;
+    
+};
+
+.backGroundImage-fire{
+    background-image: url(../../imgsForImport/backGroundImages/fire.png);
+    background-repeat: no-repeat;
+    background-size: 180%;
+    border-radius: 11px;
+    
+};
+
+
+.backGroundImage-electric{
+    background-image: url(../../imgsForImport/backGroundImages/electric.png);
+    background-repeat: no-repeat;
+    background-size: 155%;
+    border-radius: 11px;
+    
+};
+
+
+.backGroundImage-water{
+    background-image: url(../../imgsForImport/backGroundImages/water.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 11px;
+    
+};
+
+.backGroundImage-bug{
+    background-image: url(../../imgsForImport/backGroundImages/bug.png);
+    background-repeat: no-repeat;
+    background-size: 125%;
+    border-radius: 11px;
+    
+};
+
+
+.backGroundImage-flying{
+    background-image: url(../../imgsForImport/backGroundImages/flying.png);
+    background-repeat: no-repeat;
+    background-size: 125%;
+    border-radius: 11px;
+    
+};
+
+.backGroundImage-psychic{
+    background-image: url(../../imgsForImport/backGroundImages/psychic.png);
+    background-repeat: no-repeat;
+    background-size: 125%;
+    border-radius: 11px;
+    
+};
+
+
+.backGroundImage-ground{
+    background-image: url(../../imgsForImport/backGroundImages/ground.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 11px;
+    
+};
+
+.backGroundImage-rock{
+    background-image: url(../../imgsForImport/backGroundImages/rock.png);
+    background-repeat: no-repeat;
+    background-size: 135%;
+    border-radius: 11px;
+    
+};
+
+.backGroundImage-ice{
+    background-image: url(../../imgsForImport/backGroundImages/ice.png);
+    background-repeat: no-repeat;
+    background-size: 120%;
+    border-radius: 11px;
+    
+};
+
+.backGroundImage-poison{
+    background-image: url(../../imgsForImport/backGroundImages/poison.png);
+    background-repeat: no-repeat;
+    background-size: 148%;
+    border-radius: 11px;
+    
+};
+
+.backGroundImage-ghost{
+    background-image: url(../../imgsForImport/backGroundImages/ghost.png);
+    background-repeat: no-repeat;
+    background-size: 148%;
+    border-radius: 11px;
+    
+};
+
+.backGroundImage-fighting{
+    background-image: url(../../imgsForImport/backGroundImages/fighting.png);
+    background-repeat: no-repeat;
+    background-size: 163%;
+    border-radius: 11px;
+    
+};
+
+.backGroundImage-normal{
+    background-image: url(../../imgsForImport/backGroundImages/normal.png);
+    background-repeat: no-repeat;
+    background-size: 163%;
+    border-radius: 11px;
+    
+};
+
+.backGroundImage-fairy{
+    background-image: url(../../imgsForImport/backGroundImages/fairy.png);
+    background-repeat: no-repeat;
+    background-size: 163%;
+    border-radius: 11px;
+    
+};
+
+.backGroundImage-dragon{
+    background-image: url(../../imgsForImport/backGroundImages/dragon.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 11px;
+    
+};
+
+@media only screen and (min-width: 320px) {
+    .backGroundImage-grass{
+        background-image: url(../../imgsForImport/backGroundImages/grass.png);
+        background-repeat: no-repeat;
+        background-size: 147%;
+        border-radius: 11px;
+        
+    };
+    .backGroundImage-fire{
+        background-image: url(../../imgsForImport/backGroundImages/fire.png);
+        background-repeat: no-repeat;
+        background-size: 166%;
+        border-radius: 11px;
+        
+    };
+
+}
+
+@media only screen and (min-width: 390px) {
+    .backGroundImage-grass{
+        background-image: url(../../imgsForImport/backGroundImages/grass.png);
+        background-repeat: no-repeat;
+        background-size: 135%;
+        border-radius: 11px;
+        
+    };
+    .backGroundImage-fire{
+        background-image: url(../../imgsForImport/backGroundImages/fire.png);
+        background-repeat: no-repeat;
+        background-size: 152%;
+        border-radius: 11px;
+        
+    };
+
 }
