@@ -1,0 +1,59 @@
+import React, { useContext, useEffect } from "react";
+import axios from "axios";
+import { pokemonContext } from "../../../../context/pokemonContext";
+
+
+const Description = (props) => {
+
+  const { description, setDescription } = useContext(pokemonContext);
+
+  useEffect(() => {
+
+    async function fetchData() {
+      try {
+        await axios.get(props.data.url)
+          .then(res => setDescription(res.data));
+      } catch (e) {
+        console.log(e);
+      }
+
+    }
+    fetchData();
+    // eslint-disable-next-line
+  }, []);
+
+  const filt = () => {
+
+    let pokemonName = props.data.name
+    pokemonName = pokemonName
+      .charAt(0)
+      .toUpperCase()
+      .concat(pokemonName.slice(1));
+
+    return description.flavor_text_entries.filter(e => e.language.name === "en")
+      .map(e => e.flavor_text
+        .replaceAll(/\n/g, ' ')
+        // eslint-disable-next-line
+        .replaceAll(//g, '')
+        .replaceAll(/POKéMON/g, 'Pokémon')
+        .replaceAll(/they/g, `${pokemonName}`)
+        .replaceAll(/They/g,`${pokemonName}`)
+        .replaceAll(`${pokemonName.toUpperCase()}`,`${pokemonName}`)
+      )
+      .filter((e, i, arr) => arr.indexOf(e) === i)
+      .join(' ');
+  };
+
+  return <>
+    <h2>
+      description
+    </h2>
+    {description !== undefined ? <>
+      <p>{filt()}</p>
+    </> : <>
+    </>
+    };
+  </>
+};
+
+export default Description;

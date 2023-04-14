@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Type from './types.json';
 import { Link } from 'react-router-dom';
 import link from '../../../imgsForImport/link.png'
+import Description from './Description/Description';
 
 
 const Details = () => {
@@ -77,6 +78,8 @@ const Details = () => {
             <option value={"front_default"}>Normal</option>
           </select>
         </div>
+
+        <Description data={data.species} />
 
         <h3>Dimensions</h3>
 
