@@ -34,7 +34,7 @@ const MovesDescription = () => {
   return <section className='movesDescription'>
     {data !== undefined ? <>
       <button className='button-in-main'>
-        <Link to={`http://localhost:3000/pokemon/${idToLinkToBack}`}>Back to details</Link>
+        <Link to={`../pokemon/${idToLinkToBack}`}>Back to details</Link>
       </button>
       <table>
         <thead>

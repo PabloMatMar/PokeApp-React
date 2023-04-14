@@ -36,6 +36,7 @@ const AllPokemons = ({ data, i, created }) => {
           <h2>
             {pokemon.name}
           </h2>
+          <br/>
           <img src={pokemon.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />
         </span> :
         <> {pokemon.types[1].type.name === "flying" && PokeFly.includes(pokemon.name)?
@@ -47,6 +48,7 @@ const AllPokemons = ({ data, i, created }) => {
             <h2>
               {pokemon.name}
             </h2>
+            <br/>
             <img src={pokemon.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />
           </span> :
           <span className={`backGroundImage-${pokemon.types[0].type.name}`}>
@@ -55,8 +57,9 @@ const AllPokemons = ({ data, i, created }) => {
               <Link to={`/pokemon/${pokemon.id}`}>Look Details</Link>
             </button>
             <h2>
-              {pokemon.name}
+            {pokemon.name}
             </h2>
+            <br/>
             <img src={pokemon.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />
           </span>
         }</>

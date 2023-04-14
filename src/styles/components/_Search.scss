@@ -3,24 +3,22 @@
 .searchSection {
     @include column-flex-start;
     gap: 10px;
-}
-
+};
 
 .empty {
     height: 75vh;
-}
+};
 
 .whitPokemons {
     height: 25vh;
     padding-bottom: 65px;
-}
+};
 
 @media only screen and (min-width: 992px) {
 
     .whitPokemons {
         height: 25vh;
         padding-bottom: 130px;
-    }
+    };
 
-
-}
+};

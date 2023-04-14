@@ -3,7 +3,7 @@
 
 body{
     padding-bottom: 45px;
-}
+};
 
 footer{
     text-align: center;
@@ -18,16 +18,25 @@ footer{
     left: 0;
     border: 3px $black solid;
 
-}
+};
 
 
 .ancor1{
     text-align: right;
-}
+};
+
 .ancor1{
     text-align: left;
-}
+};
 
 .iconGithub {
-    width: 30%;
-}
+    width: 19%;
+};
+
+@media only screen and (min-width: 576px) {
+
+    .iconGithub {
+        width: 28%;
+    }
+
+};

@@ -66,13 +66,13 @@ const Details = () => {
         {category === "" || shiny === "" ? <label htmlFor="category">To see imagen choose the drawing style and normal or shiny:</label> : <></>}
         <div>
           <select onChange={(e) => onChange(e)}>
-            <option value={""}></option>
+            <option defaultValue="Select Style">Select Style</option>
             <option value={"home"}>3D</option>
             <option value={"official-artwork"}>Original</option>
             <option value={"dream_world"}>Anime</option>
           </select>
           <select onChange={(e) => onChangeShiny(e)}>
-            <option value={""}></option>
+            <option defaultValue="Select Effect">Select Effect</option>
             <option value={"front_shiny"}>Shiny!</option>
             <option value={"front_default"}>Normal</option>
           </select>
@@ -103,7 +103,7 @@ const Details = () => {
             <thead className='theadEffects'>
               <tr>
                 <th>Name</th>
-                <th>Level <br/> to learning</th>
+                <th>Level <br /> to learning</th>
                 <th>Effects</th>
               </tr>
             </thead>
@@ -112,7 +112,7 @@ const Details = () => {
                 <tr key={uuidv4()}>
                   <td>{move.move.name}</td>
                   <td>{move.version_group_details[0].level_learned_at === 0 ? Math.trunc(Math.random() * 99) : move.version_group_details[0].level_learned_at}</td>
-                  <td><Link to={`/movesDescription/${move.move.url.replace('https://pokeapi.co/api/v2/move/', '')}${id}`}><img src={link} alt="linkLogo"/></Link></td>
+                  <td><Link to={`/movesDescription/${move.move.url.replace('https://pokeapi.co/api/v2/move/', '')}${id}`}><img src={link} alt="linkLogo" /></Link></td>
                 </tr>
               ))
               }
