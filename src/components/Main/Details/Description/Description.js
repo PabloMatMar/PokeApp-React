@@ -11,7 +11,8 @@ const Description = (props) => {
 
     async function fetchData() {
       try {
-        await axios.get(props.data.url)
+        //Pese a que props.data.url ya es un string se requiere transformar la variable en string pues si no el test dara el fallo Cannot read properties of undefined (reading 'protocol') at isURLSameOrigin pese a que la peticion se reciba y el componente funcione bien aparentemente.
+        await axios.get(`${props.data.url}`)
           .then(res => setDescription(res.data));
       } catch (e) {
         console.log(e);
@@ -37,8 +38,8 @@ const Description = (props) => {
         .replaceAll(//g, '')
         .replaceAll(/POKéMON/g, 'Pokémon')
         .replaceAll(/they/g, `${pokemonName}`)
-        .replaceAll(/They/g,`${pokemonName}`)
-        .replaceAll(`${pokemonName.toUpperCase()}`,`${pokemonName}`)
+        .replaceAll(/They/g, `${pokemonName}`)
+        .replaceAll(`${pokemonName.toUpperCase()}`, `${pokemonName}`)
       )
       .filter((e, i, arr) => arr.indexOf(e) === i)
       .join(' ');
