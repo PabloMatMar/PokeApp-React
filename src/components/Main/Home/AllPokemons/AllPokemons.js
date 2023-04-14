@@ -10,6 +10,12 @@ const AllPokemons = ({ data, i, created }) => {
   //Usamos link en vez de ancor para evitar que se recarge la pagina y perdamos a los pokemons guardados en context
   // eslint-disable-next-line
 
+  const changeClass = () => {
+    if (PokeFly.includes(pokemon.name)) return pokemon.types[1].type.name
+    else return pokemon.types[0].type.name
+
+  }
+
   return <article className='article-of-AllPokemons'>
     {pokemonCreated !== undefined ?
       <span>
@@ -24,46 +30,19 @@ const AllPokemons = ({ data, i, created }) => {
       </span> :
       <></>
     }
+    {pokemon !== undefined ?
+      <span className={`backGroundImage-${changeClass()}`}>
+        <p>Position in poxedex: {i + 1}</p>
+        <button className='button-in-main'>
+          <Link to={`/pokemon/${pokemon.id}`}>Look Details</Link>
+        </button>
+        <h2>
+          {pokemon.name}
+        </h2>
+        <br />
+        <img src={pokemon.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />
+      </span>
 
-    {/* anidacion triple Primero comprueba que no sea indefinido o tenga datos, si los tine entra en el segundo ternario que comprueba si tiene uno o dos tipos, si tiene uno los renderiza con la imagen de fondo del tipo uno, si dos entra a otro ternario, que renderiza con la imagen del fondo del tipo 2 para voladores y del tipo 1  para el resto de pokemon con dos tipos. (sustituir por switch o usar logica fuera del render) */}
-    {pokemon !== undefined ? <>
-      {pokemon.types.length === 1 ?
-        <span className={`backGroundImage-${pokemon.types[0].type.name}`}>
-          <p>Position in poxedex: {i + 1}</p>
-          <button className='button-in-main'>
-            <Link to={`/pokemon/${pokemon.id}`}>Look Details</Link>
-          </button>
-          <h2>
-            {pokemon.name}
-          </h2>
-          <br/>
-          <img src={pokemon.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />
-        </span> :
-        <> {pokemon.types[1].type.name === "flying" && PokeFly.includes(pokemon.name)?
-          <span className={`backGroundImage-${pokemon.types[1].type.name}`}>
-            <p>Position in poxedex: {i + 1}</p>
-            <button className='button-in-main'>
-              <Link to={`/pokemon/${pokemon.id}`}>Look Details</Link>
-            </button>
-            <h2>
-              {pokemon.name}
-            </h2>
-            <br/>
-            <img src={pokemon.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />
-          </span> :
-          <span className={`backGroundImage-${pokemon.types[0].type.name}`}>
-            <p>Position in poxedex: {i + 1}</p>
-            <button className='button-in-main'>
-              <Link to={`/pokemon/${pokemon.id}`}>Look Details</Link>
-            </button>
-            <h2>
-            {pokemon.name}
-            </h2>
-            <br/>
-            <img src={pokemon.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />
-          </span>
-        }</>
-      } </>
       : <></>}
   </article>;
 

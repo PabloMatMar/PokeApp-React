@@ -1,11 +1,5 @@
 @import '../utils/mixins.scss';
 
-// #venusarError {
-//     position: relative;
-//     bottom: 0;
-
-// }
-
 .article-of-AllPokemons {
     border: 3px black solid;
     border-radius: 15px;
@@ -70,12 +64,11 @@
 .backGroundImage-psychic {
     background-image: url(../../imgsForImport/backGroundImages/psychic.png);
     background-repeat: no-repeat;
-    background-size: 110%;
+    background-size: 135%;
     border-radius: 11px;
     image-rendering: crisp-edges;
 
 };
-
 
 .backGroundImage-ground {
     background-image: url(../../imgsForImport/backGroundImages/ground.png);
@@ -169,6 +162,15 @@
 
     };
 
+    .backGroundImage-psychic {
+        background-image: url(../../imgsForImport/backGroundImages/psychic.png);
+        background-repeat: no-repeat;
+        background-size: 125%;
+        border-radius: 11px;
+        image-rendering: crisp-edges;
+    
+    };
+
 };
 
 @media only screen and (min-width: 390px) {
@@ -196,6 +198,15 @@
     
     };
 
+    .backGroundImage-psychic {
+        background-image: url(../../imgsForImport/backGroundImages/psychic.png);
+        background-repeat: no-repeat;
+        background-size: 115%;
+        border-radius: 11px;
+        image-rendering: crisp-edges;
+    
+    };
+
 };
 
 @media only screen and (min-width: 460px) {
@@ -213,6 +224,15 @@
         background-size: 160%;
         border-radius: 11px;
 
+    };
+
+    .backGroundImage-psychic {
+        background-image: url(../../imgsForImport/backGroundImages/psychic.png);
+        background-repeat: no-repeat;
+        background-size: 108%;
+        border-radius: 11px;
+        image-rendering: crisp-edges;
+    
     };
 
 };
