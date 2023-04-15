@@ -9,8 +9,10 @@ select {
     padding:5px;
 };
 
-.requiredInput::placeholder { color: red; font-weight: bold; }
+.requiredInput::placeholder {
+  color: red; font-weight: bold;
+};
 
 .requiredSelect {
   color: red;
-}
+};

@@ -6,6 +6,7 @@ import Type from './types.json';
 import { Link } from 'react-router-dom';
 import link from '../../../imgsForImport/link.png'
 import Description from './Description/Description';
+import Graphic from './Graphic/Graphic';
 
 
 const Details = () => {
@@ -96,9 +97,19 @@ const Details = () => {
 
           </div> :
           <></>}
-        <h3>Base Stats</h3>
-
-        <p><strong>Life :</strong> {data.stats[0].base_stat} <strong>Attack :</strong>{data.stats[1].base_stat} <strong>Defense :</strong> {data.stats[2].base_stat} <strong>Special_attack :</strong>{data.stats[3].base_stat} <strong>Special_defense :</strong>{data.stats[4].base_stat} <strong>Speed :</strong>{data.stats[5].base_stat}</p>
+        <Graphic data={[{
+          data: {
+            Special_attack: data.stats[3].base_stat * 0.01,
+            Attack: data.stats[1].base_stat * 0.01,
+            Defense: data.stats[2].base_stat * 0.01,
+            Special_defense: data.stats[4].base_stat * 0.01,
+            Life: data.stats[0].base_stat * 0.01,
+            Speed: data.stats[5].base_stat * 0.01
+          },
+          meta: {
+            color: 'green'
+          }
+        }]}/>
 
         <h3>Moves of this pokemon</h3>
         <article className='details-container'>

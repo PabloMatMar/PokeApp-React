@@ -13,41 +13,36 @@ td {
         border-radius: 5px;
         padding: 7px;
 
-    }
+    };
 
     >thead > tr > td {
         background-color: $magenta;
         box-shadow: inset 0 0 0 5px $shine-purple;
 
-    }
+    };
 
     > tbody >tr > td {
         background-color: $white;
-    }
+    };
     
     >img {
         width: 50px;
 
-    }
+    };
 
     > a > img {
         width: 50px;
 
-    }
-}
-
-// td {
-//     background-color: $magenta;
-//     box-shadow: inset 0 0 0 5px $shine-purple;
-// }
+    };
+};
 
 
 .theadEffects{
     background-color: $pastel-yellow;
 
-}
+};
 
 
 .tableEffects {
     text-align: center;
-}
+};
