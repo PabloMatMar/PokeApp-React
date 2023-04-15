@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { render, screen } from '@testing-library/react';
 import Home from "./Home";
 import { newPokemonContext } from '../../../context/newPokemonContext';
+import { chartContext } from "../../../context/chartContext";
 import { BrowserRouter } from "react-router-dom";
 
 describe("Home", () => {
@@ -36,10 +37,26 @@ describe("Home", () => {
       }]
     }
 
+    let simulatedChartContex = {
+      limitOfLive: 250,
+
+      limitOfAttack: 130,
+
+      limitOfDefense: 125,
+
+      limitOfSpecialAttack: 190,
+
+      limitOfSpecialDefense: 87,
+
+      limitOfSpeed: 180
+    }
+
     render(
       <BrowserRouter>
         <newPokemonContext.Provider value={simulatedContext}>
+          <chartContext.Provider value={simulatedChartContex}>
             <Home />
+          </chartContext.Provider>
         </newPokemonContext.Provider>
       </BrowserRouter>
 
