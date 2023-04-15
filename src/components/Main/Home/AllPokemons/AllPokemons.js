@@ -7,13 +7,10 @@ const AllPokemons = ({ data, i, created }) => {
 
   const pokemon = data
   const pokemonCreated = created
-  //Usamos link en vez de ancor para evitar que se recarge la pagina y perdamos a los pokemons guardados en context
-  // eslint-disable-next-line
 
   const changeClass = () => {
     if (PokeFly.includes(pokemon.name)) return pokemon.types[1].type.name
     else return pokemon.types[0].type.name
-
   }
 
   return <article className='article-of-AllPokemons'>

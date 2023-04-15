@@ -47,7 +47,7 @@ describe("AllPokemons", () => {
 
     }
     render(<BrowserRouter>
-      <AllPokemons data={pokemon} created={pokemonCreated} />
+      <AllPokemons data={pokemon} created={pokemonCreated} i={4} />
     </BrowserRouter>
 
     );

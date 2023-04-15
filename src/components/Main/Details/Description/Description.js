@@ -36,10 +36,12 @@ const Description = (props) => {
         .replaceAll(/\n/g, ' ')
         // eslint-disable-next-line
         .replaceAll(//g, '')
-        .replaceAll(/POKéMON/g, 'Pokémon')
-        .replaceAll(/they/g, `${pokemonName}`)
-        .replaceAll(/They/g, `${pokemonName}`)
+        .replaceAll(/[[:print:]]he/gi, ` ${pokemonName}`)
+        .replaceAll(/she/gi, `${pokemonName}`)
+        .replaceAll(/this Pokémon/gi, `${pokemonName}`)
+        .replaceAll(/they/gi, `${pokemonName}`)
         .replaceAll(`${pokemonName.toUpperCase()}`, `${pokemonName}`)
+        .replaceAll(/POKéMON/g, 'Pokémon')
       )
       .filter((e, i, arr) => arr.indexOf(e) === i)
       .join(' ');
@@ -53,7 +55,7 @@ const Description = (props) => {
       <p>{filt()}</p>
     </> : <>
     </>
-    };
+    }
   </>
 };
 
