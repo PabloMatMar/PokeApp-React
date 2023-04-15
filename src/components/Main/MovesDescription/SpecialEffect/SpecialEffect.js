@@ -8,13 +8,12 @@ const SpecialEffect = (props) => {
   const { specialEffect, setSpecialEffect } = useContext(pokemonContext);
 
   useEffect(() => {
-    if (props.data.url === 'https://pokeapi.co/api/v2/contest-effect/32/') console.log("SIIIIII")
 
     async function fetchData() {
       try {
+        //Pese a que props.data.url ya es un string se requiere transformar la variable en string pues si no el test dara el fallo Cannot read properties of undefined (reading 'protocol') at isURLSameOrigin pese a que la peticion se reciba y el componente funcione bien aparentemente.
         await axios.get(`${props.data.url}`)
           .then(res => setSpecialEffect(res.data));
-        console.log(specialEffect)
 
       } catch (e) {
         console.log(e)

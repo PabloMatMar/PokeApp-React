@@ -15,7 +15,21 @@ describe("AllPokemons", () => {
           "official-artwork":
             { front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" }
         }
-      }
+      },
+      types: [
+        {
+          type: {
+            name: "normal"
+          }
+
+        },
+        {
+          type: {
+            name: "flying"
+          }
+
+        }
+      ]
 
     }
 
@@ -33,7 +47,7 @@ describe("AllPokemons", () => {
 
     }
     render(<BrowserRouter>
-      <AllPokemons data={pokemon} created={pokemonCreated} />
+      <AllPokemons data={pokemon} created={pokemonCreated} i={4} />
     </BrowserRouter>
 
     );

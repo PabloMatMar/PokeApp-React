@@ -43,7 +43,7 @@ const Home = () => {
 
   return <section className='home-container'>
 
-    {savePokemon.map((pokemon, i) =>  <AllPokemons created={pokemon} key={uuidv4()}/>)}
+    {savePokemon.map((pokemon) =>  <AllPokemons created={pokemon} key={uuidv4()}/>)}
     {dataPokemons.map((pokemon, i) => <AllPokemons data={pokemon.data} key={uuidv4()} i={i} />)}
     
 

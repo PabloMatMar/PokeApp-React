@@ -17,8 +17,9 @@ function App() {
   const [savePokemon, setSavePokemon] = useState([]); //Para guardar los pokemons que se crean en un array que luego se pasará por context a home para mostrarse en un listado distinto al de pokemons originales.
   const [empty, setEmpty] = useState('empty'); //Para rellenar search cuando esta vacio se pone aqui para evitar que al renderizar la vista se vuelva a setear
   const [write, setWrite] = useState(false); //Para evitar que al volver a search te salte el alert debido al nombre del ultimo pokemon en el state.
-  const [data, setData] = useState();
-  const [specialEffect, setSpecialEffect] = useState();
+  const [data, setData] = useState(); //Para setear la respuesta a la api de los efectos de un moviento seleccionado.
+  const [specialEffect, setSpecialEffect] = useState(); //Para setear la respuesta de la api para con los efectos especiales de un moviento.
+  const [description, setDescription] = useState();
 
 
   const pokemonsDatas = {
@@ -37,7 +38,9 @@ function App() {
     data,
     setData,
     specialEffect,
-    setSpecialEffect
+    setSpecialEffect,
+    description,
+    setDescription
 
   }
 
