@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { pokemonContext } from './context/pokemonContext';
 import { newPokemonContext } from './context/newPokemonContext';
+import { chartContext } from './context/chartContext';
 
 
 
@@ -20,7 +21,14 @@ function App() {
   const [data, setData] = useState(); //Para setear la respuesta a la api de los efectos de un moviento seleccionado.
   const [specialEffect, setSpecialEffect] = useState(); //Para setear la respuesta de la api para con los efectos especiales de un moviento.
   const [description, setDescription] = useState(); //Para setear la respuesta de la api de la descripcion del pokemon.
-  const [chartSize, setChartSize] = useState([0,0]);
+  const [chartSize, setChartSize] = useState([0, 0]); //Para setear el tamaño de la grafica en funcion del width 
+
+  const [limitOfLive, setLimitOfLive] = useState();
+  const [limitOfAttack, setLimitOfAttack] = useState();
+  const [limitOfDefense, setLimitOfDefense] = useState();
+  const [limitOfSpecialAttack, setLimitOfSpecialAttack] = useState();
+  const [limitOfSpecialDefense, setLimitOfSpecialDefense] = useState();
+  const [limitOfSpeed, setLimitOfSpeed] = useState();
 
 
   const pokemonsDatas = {
@@ -52,6 +60,21 @@ function App() {
     setSavePokemon
   }
 
+  const chartsData = {
+    limitOfLive,
+    setLimitOfLive,
+    limitOfAttack,
+    setLimitOfAttack,
+    limitOfDefense,
+    setLimitOfDefense,
+    limitOfSpecialAttack,
+    setLimitOfSpecialAttack,
+    limitOfSpecialDefense,
+    setLimitOfSpecialDefense,
+    limitOfSpeed,
+    setLimitOfSpeed
+  }
+
   return (
     <>
 
@@ -59,7 +82,9 @@ function App() {
         <Header />
         <pokemonContext.Provider value={pokemonsDatas}>
           <newPokemonContext.Provider value={newPokemonsList}>
-            <Main />
+            <chartContext.Provider value={chartsData}>
+              <Main />
+            </chartContext.Provider>
           </newPokemonContext.Provider>
         </pokemonContext.Provider>
       </BrowserRouter>

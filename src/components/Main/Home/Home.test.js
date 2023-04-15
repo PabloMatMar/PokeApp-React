@@ -35,10 +35,11 @@ describe("Home", () => {
 
       }]
     }
+
     render(
       <BrowserRouter>
         <newPokemonContext.Provider value={simulatedContext}>
-          <Home />
+            <Home />
         </newPokemonContext.Provider>
       </BrowserRouter>
 

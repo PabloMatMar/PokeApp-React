@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import Type from './types.json';
 import { Link } from 'react-router-dom';
+import { chartContext } from '../../../context/chartContext';
 import link from '../../../imgsForImport/link.png'
 import Description from './Description/Description';
 import Graphic from './Graphic/Graphic';
@@ -13,6 +14,8 @@ const Details = () => {
 
   let { id } = useParams();
 
+
+  const { limitOfLive, limitOfAttack, limitOfDefense, limitOfSpecialAttack, limitOfSpecialDefense, limitOfSpeed } = useContext(chartContext);
   const [data, setData] = useState({})
   const [category, setCategory] = useState("")
   const [shiny, setShiny] = useState("")
@@ -99,17 +102,17 @@ const Details = () => {
           <></>}
         <Graphic data={[{
           data: {
-            Special_attack: data.stats[3].base_stat * 0.01,
-            Attack: data.stats[1].base_stat * 0.01,
-            Defense: data.stats[2].base_stat * 0.01,
-            Special_defense: data.stats[4].base_stat * 0.01,
-            Life: data.stats[0].base_stat * 0.01,
-            Speed: data.stats[5].base_stat * 0.01
+            Special_attack: data.stats[3].base_stat / limitOfSpecialAttack,
+            Attack: data.stats[1].base_stat / limitOfAttack,
+            Defense: data.stats[2].base_stat / limitOfDefense,
+            Special_defense: data.stats[4].base_stat / limitOfSpecialDefense,
+            Life: data.stats[0].base_stat / limitOfLive,
+            Speed: data.stats[5].base_stat / limitOfSpeed
           },
           meta: {
             color: 'green'
           }
-        }]}/>
+        }]} />
 
         <h3>Moves of this pokemon</h3>
         <article className='details-container'>

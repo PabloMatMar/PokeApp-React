@@ -3,15 +3,15 @@ import AllPokemons from "./AllPokemons/AllPokemons";
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
 import { newPokemonContext } from '../../../context/newPokemonContext';
+import { chartContext } from '../../../context/chartContext';
 
 
 
 const Home = () => {
 
-  const [dataPokemons, setDataPokemons] = useState([])
-  //traemos los pokemon creados que estan guardados en context
+  const { setLimitOfLive, setLimitOfAttack, setLimitOfDefense, setLimitOfSpecialAttack, setLimitOfSpecialDefense, setLimitOfSpeed } = useContext(chartContext);
+  const [dataPokemons, setDataPokemons] = useState([]);
   const { savePokemon } = useContext(newPokemonContext);
-  // console.log("Esto es lo que hay en context", savePokemon);
 
 
 
@@ -26,9 +26,8 @@ const Home = () => {
 
           const urls = pokemons.map(pokemon => pokemon.url)
 
-          axios.all(urls.map((url) => axios.get(url))).then(
-            (dataOfEachPokemon) => setDataPokemons(dataOfEachPokemon)
-          );
+          axios.all(urls.map((url) => axios.get(url)))
+            .then(dataOfEachPokemon => setDataPokemons(dataOfEachPokemon))
         } catch (e) {
           alert("Oh, We have a problem, recharged to solution")
         }
@@ -38,14 +37,37 @@ const Home = () => {
     fetchData()
     // eslint-disable-next-line
   }, []);
-  // console.log(dataPokemons)
+
+
+  useEffect(() => {
+    if (dataPokemons.length > 0) {
+      let arrOfArrs = []
+      for (let i = 0; i < 6; i++) {
+        console.log(dataPokemons)
+        let arr = dataPokemons
+        function getAllStatsOfAllPokemons() {
+          arrOfArrs.push(arr
+            .map((e) => e.data.stats[i].base_stat)
+            .sort(((a, b) => b - a))
+          )
+        };
+        getAllStatsOfAllPokemons()
+      }
+      setLimitOfLive(arrOfArrs[0][0]);
+      setLimitOfAttack(arrOfArrs[1][0]);
+      setLimitOfDefense(arrOfArrs[2][0]);
+      setLimitOfSpecialAttack(arrOfArrs[3][0]);
+      setLimitOfSpecialDefense(arrOfArrs[4][0]);
+      setLimitOfSpeed(arrOfArrs[5][0]);
+    }
+
+  }, [dataPokemons, setLimitOfLive, setLimitOfAttack, setLimitOfDefense, setLimitOfSpecialAttack, setLimitOfSpecialDefense, setLimitOfSpeed])
 
 
   return <section className='home-container'>
 
-    {savePokemon.map((pokemon) =>  <AllPokemons created={pokemon} key={uuidv4()}/>)}
+    {savePokemon.map(pokemon => <AllPokemons created={pokemon} key={uuidv4()} />)}
     {dataPokemons.map((pokemon, i) => <AllPokemons data={pokemon.data} key={uuidv4()} i={i} />)}
-    
 
   </section >;
 };

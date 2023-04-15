@@ -6,7 +6,7 @@ import { pokemonContext } from '../../../../context/pokemonContext';
 
 const Graphic = (props) => {
 
-  const { chartSize, setChartSize } = useContext(pokemonContext);
+  const { chartSize, setChartSize/*, dataPokemons*/ } = useContext(pokemonContext);
   const { width } = useScreenSize();
 
   useEffect(() => {
@@ -28,6 +28,27 @@ const Graphic = (props) => {
     };
     chartSize();
   }, [width, setChartSize])
+
+  // useEffect(() => {
+  //   let arrOfArrs = []
+  //   for (let i = 0; i < 6; i++) {
+  //     let arr = dataPokemons
+  //     function getAllStatsOfAllPokemons() {
+  //       arrOfArrs.push(arr
+  //         .map((e) => e.data.stats[i].base_stat)
+  //         .sort(((a, b) => b - a))
+  //       )
+  //     };
+  //     getAllStatsOfAllPokemons()
+  //   }
+  //   let limitOfLive = arrOfArrs[0][2]
+  //   let limitOfAttack = arrOfArrs[1][2]
+  //   let limitOfDefense = arrOfArrs[2][2]
+  //   let limitOfSpecialAttack = arrOfArrs[3][2]
+  //   let limitOfSpecialDefense = arrOfArrs[4][2]
+  //   let limitOfSpeed = arrOfArrs[5][2]
+
+  // }, [])
 
   const noSmoothing = points => {
     let d = 'M' + points[0][0].toFixed(4) + ',' + points[0][1].toFixed(4);
