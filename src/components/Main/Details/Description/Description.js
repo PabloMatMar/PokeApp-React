@@ -11,14 +11,15 @@ const Description = (props) => {
 
     async function fetchData() {
       try {
-        //Pese a que props.data.url ya es un string se requiere transformar la variable en string pues si no el test dara el fallo Cannot read properties of undefined (reading 'protocol') at isURLSameOrigin pese a que la peticion se reciba y el componente funcione bien aparentemente.
+        //Pese a que props.data.url ya es un string se requiere recoger la variable como template string
+        //pues si no el test dara el fallo "Cannot read properties of undefined (reading 'protocol')
+        //at isURLSameOrigin" pese a que la peticion se reciba y el componente funcione bien aparentemente.
         await axios.get(`${props.data.url}`)
           .then(res => setDescription(res.data));
       } catch (e) {
         console.log(e);
-      }
-
-    }
+      };
+    };
     fetchData();
     // eslint-disable-next-line
   }, []);

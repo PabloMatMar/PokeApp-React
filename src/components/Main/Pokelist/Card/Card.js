@@ -1,20 +1,19 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
-const Card = ({ data, length, i }) => {
-  const [namePokemon, setNamePokemon] = useState()
+const Card = ({ data/*, length, i */}) => {
+  const [namePokemon, setNamePokemon] = useState();
   useEffect(() => {
     if (data !== undefined) {
       let pokemon = data.name
         .charAt(0)
         .toUpperCase()
         .concat(data.name.slice(1));
-      setNamePokemon(pokemon)
+      setNamePokemon(pokemon);
     }
 
-  }, [data])
+  }, [data]);
 
 
   return <div className="divCard">

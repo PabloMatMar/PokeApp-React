@@ -5,7 +5,6 @@ import { pokeListContext } from "../../../context/pokeListContext";
 
 const PokemonList = () => {
 
-
   return <>
     <pokeListContext.Consumer>
       {(value) =>
