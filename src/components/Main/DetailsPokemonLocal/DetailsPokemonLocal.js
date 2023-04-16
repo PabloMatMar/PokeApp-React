@@ -5,13 +5,9 @@ import Type from './types.json';
 
 const DetailsPokemonLocal = () => {
   const { savePokemon } = useContext(newPokemonContext);
-  // console.log("Esto es lo que hay en context", savePokemon);
   const { id } = useParams();
-  // console.log(id);
   const arrFilt = savePokemon.filter(pokemon => pokemon.id === id);
-  // console.log("Este es el array que devuelve filter", arrFilt);
   const data = arrFilt[0]
-  // console.log("Esto es lo que renderizamos:",data)
 
   return <section className='container-Details-Local'>
     <article className='container-Details-Local'>

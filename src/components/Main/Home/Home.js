@@ -13,25 +13,21 @@ const Home = () => {
   const [dataPokemons, setDataPokemons] = useState([]);
   const { savePokemon } = useContext(newPokemonContext);
 
-
-
-
   useEffect(() => {
-
     async function fetchData() {
-      if (dataPokemons.length <= 1) {
+      if (dataPokemons.length < 1) {
         try {
           const res = await axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=151`);
-          const pokemons = res.data.results
+          const pokemons = res.data.results;
 
-          const urls = pokemons.map(pokemon => pokemon.url)
+          const urls = pokemons.map(pokemon => pokemon.url);
 
           axios.all(urls.map((url) => axios.get(url)))
-            .then(dataOfEachPokemon => setDataPokemons(dataOfEachPokemon))
+            .then(dataOfEachPokemon => setDataPokemons(dataOfEachPokemon));
         } catch (e) {
-          alert("Oh, We have a problem, recharged to solution")
-        }
-      }
+          alert("Oh, We have a problem, recharged to solution");
+        };
+      };
 
     };
     fetchData()
@@ -43,25 +39,23 @@ const Home = () => {
     if (dataPokemons.length > 0) {
       let arrOfArrs = []
       for (let i = 0; i < 6; i++) {
-        console.log(dataPokemons)
-        let arr = dataPokemons
         function getAllStatsOfAllPokemons() {
-          arrOfArrs.push(arr
+          arrOfArrs.push(dataPokemons
             .map((e) => e.data.stats[i].base_stat)
             .sort(((a, b) => b - a))
-          )
+          );
         };
         getAllStatsOfAllPokemons()
       }
-      setLimitOfLive(arrOfArrs[0][0]);
+      setLimitOfLive(arrOfArrs[0][1]); //indice 0 = 260, indice 1 = 160, [0][0] estropea la congruencia del grafico
       setLimitOfAttack(arrOfArrs[1][0]);
       setLimitOfDefense(arrOfArrs[2][0]);
       setLimitOfSpecialAttack(arrOfArrs[3][0]);
       setLimitOfSpecialDefense(arrOfArrs[4][0]);
       setLimitOfSpeed(arrOfArrs[5][0]);
-    }
+    };
 
-  }, [dataPokemons, setLimitOfLive, setLimitOfAttack, setLimitOfDefense, setLimitOfSpecialAttack, setLimitOfSpecialDefense, setLimitOfSpeed])
+  }, [dataPokemons, setLimitOfLive, setLimitOfAttack, setLimitOfDefense, setLimitOfSpecialAttack, setLimitOfSpecialDefense, setLimitOfSpeed]);
 
 
   return <section className='home-container'>

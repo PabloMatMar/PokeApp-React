@@ -24,7 +24,7 @@ const Details = () => {
   useEffect(() => {
 
     async function fetchData() {
-      if ((data // 👈 null and undefined check
+      if ((data // 👈 comprobando que data esta vacio
         && Object.keys(data).length === 0
         && Object.getPrototypeOf(data) === Object.prototype)) {
         try {

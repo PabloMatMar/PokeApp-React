@@ -13,9 +13,7 @@ const Form = () => {
   const [hasBeenCreated, setHasBeenCreated] = useState(false);
 
   const onSubmit = data => {
-    // console.log(data);
     setHasBeenCreated(false);
-
     const newPokemon = {
       id: '-' + data.id,
       name: data.name.toLowerCase(),
@@ -41,7 +39,7 @@ const Form = () => {
       moves: [{ move: { name: data.nameMove } }],
       weight: data.weight,
       height: data.height
-    }
+    };
     // console.log(newPokemon);
     if (data.typeOne !== data.typeTwo) {
       setSavePokemon(pokemon => pokemon.concat(newPokemon));
@@ -51,13 +49,10 @@ const Form = () => {
 
     } else {
       alert('Pokemon cannot is the same type twice');
-    }
-
-
-
-  }
+    };
+  };
   //PENDIENTE DE REFACTORIZACION
-  //Encontrar solucion a porque react-hook-form da error al intentar mapear los inputs debido al metodo register..
+  //!!Encontrar solucion a porque react-hook-form da error al intentar mapear los inputs debido al metodo register..
 
   return hasBeenCreated ? <Navigate to='/' /> : <section>
     <h2>Create a pokemon!</h2>

@@ -21,8 +21,6 @@ function App() {
   const [data, setData] = useState(); //Para setear la respuesta a la api de los efectos de un moviento seleccionado.
   const [specialEffect, setSpecialEffect] = useState(); //Para setear la respuesta de la api para con los efectos especiales de un moviento.
   const [description, setDescription] = useState(); //Para setear la respuesta de la api de la descripcion del pokemon.
-  const [chartSize, setChartSize] = useState([0, 0]); //Para setear el tamaño de la grafica en funcion del width 
-
   const [limitOfLive, setLimitOfLive] = useState();
   const [limitOfAttack, setLimitOfAttack] = useState();
   const [limitOfDefense, setLimitOfDefense] = useState();
@@ -49,9 +47,7 @@ function App() {
     specialEffect,
     setSpecialEffect,
     description,
-    setDescription,
-    chartSize,
-    setChartSize
+    setDescription
 
   }
 
@@ -77,7 +73,6 @@ function App() {
 
   return (
     <>
-
       <BrowserRouter>
         <Header />
         <pokemonContext.Provider value={pokemonsDatas}>

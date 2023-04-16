@@ -10,26 +10,51 @@ describe("DetailsPokemonLocal", () => {
       savePokemon: [{
         id: 5,
         name: "charmeleon",
-        pokemonCreated: {
-          sprites:
+        height: 25,
+        weigth: 33,
+        stats: [
           {
-            other:
-            {
-              "official-artwork":
-                { front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" }
+            base_stat: 16
+          },
+          {
+            base_stat: 23
+          },
+          {
+            base_stat: 43
+          },
+          {
+            base_stat: 32
+          },
+          {
+            base_stat: 27
+          },
+          {
+            base_stat: 45
+          }
+        ],
+        moves: [{
+          move: {
+
+          }
+        }
+        ],
+        pokemonCreated: {
+          sprites: {
+            other: {
+              "official-artwork": {
+                front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png"
+              }
             }
           }
         }
       }]
 
-    }
-    let id = 5
+    };
 
 
     render(
       <newPokemonContext.Provider value={simulatedContext}>
         <DetailsPokemonLocal />
-
       </newPokemonContext.Provider>
 
     );

@@ -4,18 +4,18 @@ import Details from "./Details";
 import { chartContext } from "../../../context/chartContext";
 
 let simulatedChartContex = {
-  limitOfLive: 250,
+  limitOfLive: 160,
 
-  limitOfAttack: 130,
+  limitOfAttack: 134,
 
-  limitOfDefense: 125,
+  limitOfDefense: 180,
 
-  limitOfSpecialAttack: 190,
+  limitOfSpecialAttack: 154,
 
-  limitOfSpecialDefense: 87,
+  limitOfSpecialDefense: 125,
 
-  limitOfSpeed: 180
-}
+  limitOfSpeed: 150
+};
 
 describe("Details", () => {
   test("matches snapshot", () => {

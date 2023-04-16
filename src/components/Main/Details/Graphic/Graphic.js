@@ -1,54 +1,35 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useState} from 'react';
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css'
 import useScreenSize from '../../../../hook/useScreenSize';
-import { pokemonContext } from '../../../../context/pokemonContext';
 
 const Graphic = (props) => {
 
-  const { chartSize, setChartSize/*, dataPokemons*/ } = useContext(pokemonContext);
+  const [chartSize, setChartSize] = useState([]);
   const { width } = useScreenSize();
 
   useEffect(() => {
-    //Creo esta funcion para regular el tamaño en funcion del width de la pantalla (podria crear 10 if a mano en lugar de esta funcion pero me parece menos escalable y mucho mas feo)
-    let num = 700;
-    let size = 505;
-    let letter = 18.5;
-    function chartSize() {
-      for (let i = 0; i < 13; i++) {
-        num = num - 40;
-        size = size - 20;
-        letter = letter - 0.5;
-        if (i > 11) num = size - 20;
-        if (width > num) {
-          setChartSize([size, letter])
-          return chartSize;
-        }
+
+    if (chartSize.length > 0 ) {
+      let num = 700;
+      let size = 505;
+      let letter = 18.5;
+      function chartSize() {
+        for (let i = 0; i < 13; i++) {
+          num = num - 40;
+          size = size - 20;
+          letter = letter - 0.5;
+          if (i > 11) num = size - 20;
+          if (width > num) {
+            setChartSize([size, letter]);
+            return chartSize;
+          }
+        };
       };
-    };
-    chartSize();
-  }, [width, setChartSize])
+      chartSize();
 
-  // useEffect(() => {
-  //   let arrOfArrs = []
-  //   for (let i = 0; i < 6; i++) {
-  //     let arr = dataPokemons
-  //     function getAllStatsOfAllPokemons() {
-  //       arrOfArrs.push(arr
-  //         .map((e) => e.data.stats[i].base_stat)
-  //         .sort(((a, b) => b - a))
-  //       )
-  //     };
-  //     getAllStatsOfAllPokemons()
-  //   }
-  //   let limitOfLive = arrOfArrs[0][2]
-  //   let limitOfAttack = arrOfArrs[1][2]
-  //   let limitOfDefense = arrOfArrs[2][2]
-  //   let limitOfSpecialAttack = arrOfArrs[3][2]
-  //   let limitOfSpecialDefense = arrOfArrs[4][2]
-  //   let limitOfSpeed = arrOfArrs[5][2]
-
-  // }, [])
+    }
+  }, [width, chartSize, setChartSize]);
 
   const noSmoothing = points => {
     let d = 'M' + points[0][0].toFixed(4) + ',' + points[0][1].toFixed(4);
