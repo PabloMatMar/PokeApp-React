@@ -110,7 +110,7 @@ const Details = () => {
             Speed: data.stats[5].base_stat / limitOfSpeed
           },
           meta: {
-            color: 'green'
+            color: 'purple'
           }
         }]} />
 
