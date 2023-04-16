@@ -1,13 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { newPokemonContext } from '../../../context/newPokemonContext';
+import { chartContext } from '../../../context/chartContext';
 import Type from './types.json';
+import Graphic from '../Details/Graphic/Graphic';
 
 const DetailsPokemonLocal = () => {
+  const { limitOfLive, limitOfAttack, limitOfDefense, limitOfSpecialAttack, limitOfSpecialDefense, limitOfSpeed } = useContext(chartContext);
+  const [stats, setStats] = useState();
   const { savePokemon } = useContext(newPokemonContext);
   const { id } = useParams();
-  const arrFilt = savePokemon.filter(pokemon => pokemon.id === id);
-  const data = arrFilt[0]
+  const data = savePokemon.filter(pokemon => pokemon.id === id)[0];
+
+  useEffect(() => {
+    setStats(data.stats.filter(e => e.base_stat !== ""))
+  }, [data.stats])
+
 
   return <section className='container-Details-Local'>
     <article className='container-Details-Local'>
@@ -16,7 +24,7 @@ const DetailsPokemonLocal = () => {
 
         <article>
           <h3>Image of pokemon:</h3>
-          <img src={data.sprites.other.dream_world.front_default} alt="View fronted of pokemon" />
+          <img src={data.image} alt="View fronted of pokemon" />
           <h4><i>{data.name}</i></h4>
           <p>Nº {data.id} in the pokedex</p>
 
@@ -35,14 +43,21 @@ const DetailsPokemonLocal = () => {
 
             </div> :
             <></>}
-
-          <h3>Base Stats</h3>
-          <p>Life : {data.stats[0].base_stat}</p>
-          <p>Attack : {data.stats[1].base_stat}</p>
-          <p>Defense : {data.stats[2].base_stat}</p>
-          <p>Special-attack : {data.stats[3].base_stat}</p>
-          <p>Special-defense : {data.stats[4].base_stat}</p>
-          <p>Speed : {data.stats[5].base_stat}</p>
+          {stats !== undefined && stats.length > 0 ?
+            <Graphic data={[{
+              data: {
+                Special_attack: data.stats[3].base_stat / limitOfSpecialAttack,
+                Attack: data.stats[1].base_stat / limitOfAttack,
+                Defense: data.stats[2].base_stat / limitOfDefense,
+                Special_defense: data.stats[4].base_stat / limitOfSpecialDefense,
+                Life: data.stats[0].base_stat / limitOfLive,
+                Speed: data.stats[5].base_stat / limitOfSpeed
+              },
+              meta: {
+                color: 'green'
+              }
+            }]} /> :
+            <></>}
 
           <h3>Moves of this pokemon</h3>
           <p>{data.moves[0].move.name}</p>

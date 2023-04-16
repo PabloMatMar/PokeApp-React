@@ -17,22 +17,7 @@ const Form = () => {
     const newPokemon = {
       id: '-' + data.id,
       name: data.name.toLowerCase(),
-      sprites: {
-        other: {
-          dream_world: {
-            front_default: data.image
-
-          },
-          home: {
-            front_default: data.image
-
-          },
-          // eslint-disable-next-line
-          ["official-artwork"]: {
-            front_default: data.image
-          }
-        },
-      },
+      image: data.image,
       typeOne: data.typeOne,
       typeTwo: data.typeTwo,
       stats: [{ base_stat: data.life }, { base_stat: data.attack }, { base_stat: data.defense }, { base_stat: data.special_attack }, { base_stat: data.special_defense }, { base_stat: data.speed }],

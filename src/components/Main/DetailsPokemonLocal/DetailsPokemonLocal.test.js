@@ -2,13 +2,14 @@ import React from "react";
 import { render, screen } from '@testing-library/react';
 import DetailsPokemonLocal from "./DetailsPokemonLocal";
 import { newPokemonContext } from '../../../context/newPokemonContext';
+import { chartContext } from "../../../context/chartContext";
 
 describe("DetailsPokemonLocal", () => {
   test("matches snapshot", () => {
 
     const simulatedContext = {
       savePokemon: [{
-        id: 5,
+        id: undefined,
         name: "charmeleon",
         height: 25,
         weigth: 33,
@@ -38,24 +39,31 @@ describe("DetailsPokemonLocal", () => {
           }
         }
         ],
-        pokemonCreated: {
-          sprites: {
-            other: {
-              "official-artwork": {
-                front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png"
-              }
-            }
-          }
-        }
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy6zXnsMduLNmdH8uDGFrjFJGu-K-J2yxXg8iwFF66XA&s"
       }]
 
+    };
+    const simulatedChartContex = {
+      limitOfLive: 160,
+    
+      limitOfAttack: 134,
+    
+      limitOfDefense: 180,
+    
+      limitOfSpecialAttack: 154,
+    
+      limitOfSpecialDefense: 125,
+    
+      limitOfSpeed: 150
     };
 
 
     render(
+      <chartContext.Provider value={simulatedChartContex}>
       <newPokemonContext.Provider value={simulatedContext}>
         <DetailsPokemonLocal />
       </newPokemonContext.Provider>
+      </chartContext.Provider>
 
     );
     expect(screen).toMatchSnapshot();
