@@ -11,10 +11,7 @@ describe("Card", () => {
       front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
     }
 
-  }
-
-  const length = 1
-  const i = 0
+  };
 
   test("matches snapshot", () => {
     render(

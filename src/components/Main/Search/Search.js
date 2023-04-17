@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios'
-import PokemonList from '../Pokelist/Pokelist';
+import PokeList from '../Search/Pokelist/Pokelist';
 import { pokemonContext } from '../../../context/pokemonContext';
-import { pokeListContext } from '../../../context/pokeListContext';
 
 const Search = () => {
   //OBJECT POKEMON ES UN ARRAY DE OBJETOS
@@ -69,9 +68,7 @@ const Search = () => {
       </form>
     </article>
     {objectPokemon.length > 0 ?
-      <pokeListContext.Provider value={objectPokemon}>
-        <PokemonList />
-      </pokeListContext.Provider>
+        <PokeList data={objectPokemon}/>
       :
       <></>
     }
