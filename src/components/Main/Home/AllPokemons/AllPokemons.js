@@ -34,7 +34,10 @@ const AllPokemons = ({ data, i, created }) => {
           <Link to={`/pokemon/${pokemon.id}`}>Look Details</Link>
         </button>
         <h2>
-          {pokemon.name}
+          {data.name
+            .charAt(0)
+            .toUpperCase()
+            .concat(data.name.slice(1))}
         </h2>
         <br />
         <img src={pokemon.sprites.other["official-artwork"].front_default} alt="frontd of pokemon" />

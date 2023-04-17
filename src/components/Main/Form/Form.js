@@ -25,16 +25,14 @@ const Form = () => {
       weight: data.weight,
       height: data.height
     };
-    // console.log(newPokemon);
+    
     if (data.typeOne !== data.typeTwo) {
       setSavePokemon(pokemon => pokemon.concat(newPokemon));
-      // console.log(savePokemon);
       alert('Pokemon added!');
       setHasBeenCreated(true);
 
-    } else {
-      alert('Pokemon cannot is the same type twice');
-    };
+    }
+    else alert('Pokemon cannot is the same type twice');
   };
   //PENDIENTE DE REFACTORIZACION
   //!!Encontrar solucion a porque react-hook-form da error al intentar mapear los inputs debido al metodo register..

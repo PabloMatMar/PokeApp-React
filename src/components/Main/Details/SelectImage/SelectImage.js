@@ -24,7 +24,7 @@ const SelectImage = ({data}) => {
       <img className="imgStylePokemon" src={data.sprites.other[category][shiny]} alt="View fronted of pokemon" /> :
       <></>
     }
-    {category === "" || shiny === "" ? <label htmlFor="category">To see imagen choose the drawing style and normal or shiny:</label> : <></>}
+    {category === "" || shiny === "" ? <label htmlFor="category">TO SEE IMAGEN CHOOSE THE DRAWING STYLE AND EFFECT:</label> : <></>}
     <div>
       <select onChange={(e) => onChange(e)}>
         <option defaultValue="Select Style">Select Style</option>
