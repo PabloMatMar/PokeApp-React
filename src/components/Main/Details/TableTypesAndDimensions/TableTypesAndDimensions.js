@@ -1,8 +1,8 @@
 import React from "react";
 import Type from './types.json';
 
-const TableTypes = (props) => {
-  const data = props.data
+const TableTypes = ({data}) => {
+
   return <>
     <table className="smallTables">
       <thead>
@@ -34,10 +34,10 @@ const TableTypes = (props) => {
             </td> :
             <></>}
           <td>
-            {props.data.height}"
+            {data.height}"
           </td>
           <td>
-            {props.data.weight}"
+            {data.weight}"
           </td>
         </tr>
       </tbody>

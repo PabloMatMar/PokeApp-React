@@ -4,9 +4,8 @@ import link from '../../../../imgsForImport/link.png';
 import { v4 as uuidv4 } from 'uuid';
 
 
-const TableMoves = (props) => {
-  const data = props.data
-  const id = props.id
+const TableMoves = ({data, id}) => {
+
   return <>
     <h3>Moves:</h3>
     <article className='details-container'>

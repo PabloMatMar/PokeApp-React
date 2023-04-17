@@ -6,18 +6,15 @@ import Description from './Description/Description';
 import Graphic from './Graphic/Graphic';
 import TableTypesAndDimensions from './TableTypesAndDimensions/TableTypesAndDimensions';
 import TableMoves from './TableMoves/TableMoves';
+import SelectImage from './SelectImage/SelectImage';
 
 
 const Details = () => {
 
   let { id } = useParams();
 
-
   const { limitOfLive, limitOfAttack, limitOfDefense, limitOfSpecialAttack, limitOfSpecialDefense, limitOfSpeed } = useContext(chartContext);
   const [data, setData] = useState({})
-  const [category, setCategory] = useState("")
-  const [shiny, setShiny] = useState("")
-
 
   useEffect(() => {
 
@@ -38,47 +35,15 @@ const Details = () => {
     // eslint-disable-next-line
   }, []);
 
-  const onChange = (e) => {
-    const categoryPrint = e.target.value
-    setCategory(categoryPrint)
-  }
-
-  const onChangeShiny = (e) => {
-    const categoryShiny = e.target.value
-    if (category === "dream_world" && categoryShiny === "front_shiny") {
-      setShiny("front_default")
-      alert("Sorry, anime cant be shiny, enjoy look the normal version")
-    }
-    else setShiny(categoryShiny)
-  }
 
   return <section className='details'>
 
-    {!(data // 👈 null and undefined check
+    {!(data // 👈Compruebo que el objeto data no sea undefined y no este vacio
       && Object.keys(data).length === 0
       && Object.getPrototypeOf(data) === Object.prototype) ?
 
       <article className='details-container'>
-        <h4><i>{data.name}</i></h4>
-        {category !== "" && shiny !== "" /*|| category === "dream_world" && shiny === "front_default"*/ ?
-          <img className="imgStylePokemon" src={data.sprites.other[category][shiny]} alt="View fronted of pokemon" /> :
-          <></>
-        }
-        {category === "" || shiny === "" ? <label htmlFor="category">To see imagen choose the drawing style and normal or shiny:</label> : <></>}
-        <div>
-          <select onChange={(e) => onChange(e)}>
-            <option defaultValue="Select Style">Select Style</option>
-            <option value={"home"}>3D</option>
-            <option value={"official-artwork"}>Original</option>
-            <option value={"dream_world"}>Anime</option>
-          </select>
-          <select onChange={(e) => onChangeShiny(e)}>
-            <option defaultValue="Select Effect">Select Effect</option>
-            <option value={"front_shiny"}>Shiny!</option>
-            <option value={"front_default"}>Normal</option>
-          </select>
-        </div>
-
+        <SelectImage data={data} />
         <Description data={data.species} />
         <TableTypesAndDimensions data={data} />
         <Graphic data={[{
@@ -94,9 +59,7 @@ const Details = () => {
             color: 'purple'
           }
         }]} />
-
         <TableMoves data={data} id={id} />
-
       </article> :
       <></>
     }
