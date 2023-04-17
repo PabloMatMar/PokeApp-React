@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { render, screen } from '@testing-library/react';
 import Home from "./Home";
 import { newPokemonContext } from '../../../context/newPokemonContext';
