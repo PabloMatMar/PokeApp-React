@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
-import { Link } from 'react-router-dom';
 import { chartContext } from '../../../context/chartContext';
-import link from '../../../imgsForImport/link.png'
 import Description from './Description/Description';
 import Graphic from './Graphic/Graphic';
 import TableTypesAndDimensions from './TableTypesAndDimensions/TableTypesAndDimensions';
+import TableMoves from './TableMoves/TableMoves';
 
 
 const Details = () => {
@@ -42,7 +40,6 @@ const Details = () => {
 
   const onChange = (e) => {
     const categoryPrint = e.target.value
-    // console.log(category)
     setCategory(categoryPrint)
   }
 
@@ -51,9 +48,8 @@ const Details = () => {
     if (category === "dream_world" && categoryShiny === "front_shiny") {
       setShiny("front_default")
       alert("Sorry, anime cant be shiny, enjoy look the normal version")
-    } else {
-      setShiny(categoryShiny)
     }
+    else setShiny(categoryShiny)
   }
 
   return <section className='details'>
@@ -99,28 +95,8 @@ const Details = () => {
           }
         }]} />
 
-        <h3>Moves of this pokemon</h3>
-        <article className='details-container'>
-          <table className="table">
-            <thead className='theadEffects'>
-              <tr>
-                <th>Name</th>
-                <th>Level <br /> to learning</th>
-                <th>Effects</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.moves.map(move => (
-                <tr key={uuidv4()}>
-                  <td>{move.move.name}</td>
-                  <td>{move.version_group_details[0].level_learned_at === 0 ? Math.trunc(Math.random() * 99) : move.version_group_details[0].level_learned_at}</td>
-                  <td><Link to={`/movesDescription/${move.move.url.replace('https://pokeapi.co/api/v2/move/', '')}${id}`}><img src={link} alt="linkLogo" /></Link></td>
-                </tr>
-              ))
-              }
-            </tbody>
-          </table>
-        </article>
+        <TableMoves data={data} id={id} />
+
       </article> :
       <></>
     }
