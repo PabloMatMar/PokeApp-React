@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import Type from './types.json';
 import { Link } from 'react-router-dom';
 import { chartContext } from '../../../context/chartContext';
 import link from '../../../imgsForImport/link.png'
 import Description from './Description/Description';
 import Graphic from './Graphic/Graphic';
+import TableTypesAndDimensions from './TableTypesAndDimensions/TableTypesAndDimensions';
 
 
 const Details = () => {
@@ -84,22 +84,7 @@ const Details = () => {
         </div>
 
         <Description data={data.species} />
-
-        <h3>Dimensions</h3>
-
-        <p>Height: {data.height}" Weight: {data.weight}lbs</p>
-
-        <h3>Type of this pokemon:</h3>
-
-        <p>{data.types[0].type.name}</p>
-        <img src={Type[data.types[0].type.name]} alt={data.types[0].type.name} className="imagenType" />
-        {data.types.length > 1 ?
-          <div>
-            <p>{data.types[1].type.name}</p>
-            <img src={Type[data.types[1].type.name]} alt={data.types[1].type.name} className="imagenType2" />
-
-          </div> :
-          <></>}
+        <TableTypesAndDimensions data={data} />
         <Graphic data={[{
           data: {
             Special_attack: data.stats[3].base_stat / limitOfSpecialAttack,
