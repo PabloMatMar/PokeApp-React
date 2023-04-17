@@ -6,20 +6,22 @@ import { pokeListContext } from '../../../context/pokeListContext';
 
 const Search = () => {
   //OBJECT POKEMON ES UN ARRAY DE OBJETOS
-  const { namePokemon, setNamePokemon, objectPokemon, setObjectPokemon, arrayNamePokemons, setArrayNamePokemons, status, setStatus, empty, setEmpty, write, setWrite } = useContext(pokemonContext)
+  const { namePokemon, setNamePokemon, objectPokemon, setObjectPokemon, arrayNamePokemons, setArrayNamePokemons} = useContext(pokemonContext);
+
+  const [empty, setEmpty] = useState('empty');
+  const [write, setWrite] = useState(false);
   const [input, setInput] = useState('');
 
   useEffect(() => {
     const getPokemon = setTimeout(() => {
 
       async function fetchData() {
+        if(objectPokemon.length > 0) setEmpty('whitPokemons')
         try {
           if (!arrayNamePokemons.includes(namePokemon)) {
             const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`);
             const dataPokemon = res.data;
             const status = res.status;
-            setStatus(status);
-            if (status === undefined) setStatus(res.response.status);
             setInput("");
             if (status === 200) {
               setNamePokemon(dataPokemon.name);
@@ -66,7 +68,7 @@ const Search = () => {
         <input name="input" type="text" value={input} onChange={takeChangeInput} />
       </form>
     </article>
-    {status === 200 ?
+    {objectPokemon.length > 0 ?
       <pokeListContext.Provider value={objectPokemon}>
         <PokemonList />
       </pokeListContext.Provider>
