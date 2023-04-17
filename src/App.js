@@ -11,16 +11,16 @@ import { chartContext } from './context/chartContext';
 
 function App() {
 
+  //HOOKS USADOS EN CONTEXT PARA EVITAR QUE EL RENDERIZADO LOS VUELVA A INICIALIZAR
   const [namePokemon, setNamePokemon] = useState(""); // Para guardar el nombre del pokemon
   const [objectPokemon, setObjectPokemon] = useState([]); // Para guardar todos los objetos con cada pokemon
-  const [arrayNamePokemons, setArrayNamePokemons] = useState([]) //para filtrar
-  const [status, setStatus] = useState(0);  //Para llamar a los componentes que renderizan en caso de que la respuesta de la api sea correcta
-  const [savePokemon, setSavePokemon] = useState([]); //Para guardar los pokemons que se crean en un array que luego se pasará por context a home para mostrarse en un listado distinto al de pokemons originales.
-  const [empty, setEmpty] = useState('empty'); //Para rellenar search cuando esta vacio se pone aqui para evitar que al renderizar la vista se vuelva a setear
-  const [write, setWrite] = useState(false); //Para evitar que al volver a search te salte el alert debido al nombre del ultimo pokemon en el state.
-  const [data, setData] = useState(); //Para setear la respuesta a la api de los efectos de un moviento seleccionado.
-  const [specialEffect, setSpecialEffect] = useState(); //Para setear la respuesta de la api para con los efectos especiales de un moviento.
-  const [description, setDescription] = useState(); //Para setear la respuesta de la api de la descripcion del pokemon.
+  const [arrayNamePokemons, setArrayNamePokemons] = useState([]); //para evitar guardar pokemons repetidos
+
+
+  //HOOKS USADOS PARA TRANSMITIR DATOS ENTRE COMPONENTES QUE NO SON PADRE-HIJO ***
+  //***(Posiblemente se actualizaran algunos de ellos a comunicacion sibling-sibling)
+  const [savePokemon, setSavePokemon] = useState([]); //Para guardar los pokemons que se crean.
+  //Todos estos hooks son para definir los limites de la grafica.
   const [limitOfLive, setLimitOfLive] = useState();
   const [limitOfAttack, setLimitOfAttack] = useState();
   const [limitOfDefense, setLimitOfDefense] = useState();
@@ -28,27 +28,13 @@ function App() {
   const [limitOfSpecialDefense, setLimitOfSpecialDefense] = useState();
   const [limitOfSpeed, setLimitOfSpeed] = useState();
 
-
   const pokemonsDatas = {
     namePokemon,
     setNamePokemon,
     objectPokemon,
     setObjectPokemon,
     arrayNamePokemons,
-    setArrayNamePokemons,
-    status,
-    setStatus,
-    empty,
-    setEmpty,
-    write,
-    setWrite,
-    data,
-    setData,
-    specialEffect,
-    setSpecialEffect,
-    description,
-    setDescription
-
+    setArrayNamePokemons
   }
 
   const newPokemonsList = {

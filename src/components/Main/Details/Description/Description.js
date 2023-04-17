@@ -1,11 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { pokemonContext } from "../../../../context/pokemonContext";
 
 
 const Description = (props) => {
 
-  const { description, setDescription } = useContext(pokemonContext);
+  const [description, setDescription] = useState();
 
   useEffect(() => {
 

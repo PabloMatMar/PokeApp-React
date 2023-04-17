@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios'
-import PokemonList from '../Pokelist/Pokelist';
+import PokeList from '../Pokelist/Pokelist';
 import { pokemonContext } from '../../../context/pokemonContext';
 import { pokeListContext } from '../../../context/pokeListContext';
 
@@ -68,7 +68,7 @@ const Search = () => {
     </article>
     {status === 200 ?
       <pokeListContext.Provider value={objectPokemon}>
-        <PokemonList />
+        <PokeList />
       </pokeListContext.Provider>
       :
       <></>
