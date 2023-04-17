@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { render, screen } from '@testing-library/react';;
 import Search from "./Search";
 import { pokemonContext } from '../../../context/pokemonContext';
@@ -11,8 +11,7 @@ describe("Search", () => {
     const simulatedContext = {
       namePokemon: "",
       objectPokemon: [],
-      arrayNamePokemons: [],
-      status: 0
+      arrayNamePokemons: []
     }
 
     render(

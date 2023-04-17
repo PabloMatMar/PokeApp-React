@@ -49,7 +49,7 @@ const Description = (props) => {
 
   return <>
     <h2>
-      description
+      Description
     </h2>
     {description !== undefined ? <>
       <p>{filt()}</p>

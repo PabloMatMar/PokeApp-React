@@ -11,8 +11,7 @@ describe("Main", () => {
   const pokemonsDatas = {
     namePokemon: "",
     objectPokemon: [],
-    arrayNamePokemons: [],
-    status: 0
+    arrayNamePokemons: []
 
   }
 
