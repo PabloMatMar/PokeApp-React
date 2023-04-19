@@ -21,18 +21,12 @@
 };
 
 .shape {
-    fill-opacity: .5; //Opacidad de la figura que forman los stats
+    fill-opacity: .6; //Opacidad de la figura que forman los stats
 };
 
 .shape:hover{
     fill-opacity: .9; //Opacidad de la figura que forman los stats cuando se pasa el raton por encima
     z-index: 100; //Ni idea
-};
-
-.circle{
-    fill: #be0979; //Color de los circulos(de todos, snif)
-    stroke: black; //color de la linea perimetral que separa los circulos
-    stroke-width: .9; //Intensidad del color de la linea perimetral que separa los circulos
 };
 
 .axis{
@@ -48,7 +42,7 @@
 
 
 .circle0{
-    fill: #D4AF37; //Color de los circulos(de todos, snif)
+    fill: #ffcd43; //Color de los circulos(de todos, snif)
     stroke: black; //color de la linea perimetral que separa los circulos
     stroke-width: .9; //Intensidad del color de la linea perimetral que separa los circulos
 };
@@ -60,12 +54,12 @@
     stroke-width: .9; //Intensidad del color de la linea perimetral que separa los circulos
 };
 .circle2{
-    fill: #CD7F32; //Color de los circulos(de todos, snif)
+    fill: #ffb998; //Color de los circulos(de todos, snif)
     stroke: black; //color de la linea perimetral que separa los circulos
     stroke-width: .9; //Intensidad del color de la linea perimetral que separa los circulos
 };
 .circle3{
-    fill: #c35831; //Color de los circulos(de todos, snif)
+    fill: #ff7543; //Color de los circulos(de todos, snif)
     stroke: black; //color de la linea perimetral que separa los circulos
     stroke-width: .9; //Intensidad del color de la linea perimetral que separa los circulos
 };

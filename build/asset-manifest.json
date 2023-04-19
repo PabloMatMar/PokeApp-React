@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.67faa186.css",
-    "main.js": "/static/js/main.be5ec715.js",
+    "main.css": "/static/css/main.8fd78950.css",
+    "main.js": "/static/js/main.637663b1.js",
     "static/js/787.246f5904.chunk.js": "/static/js/787.246f5904.chunk.js",
     "static/media/rock.png": "/static/media/rock.c74e6e96c4107b24efc6.png",
     "static/media/ice.png": "/static/media/ice.346a9d6db25417bcd2e6.png",
@@ -11,6 +11,8 @@
     "static/media/grass.png": "/static/media/grass.65d9f9d379eacac0b353.png",
     "static/media/fire.png": "/static/media/fire.0cd8bfc4da54538331ea.png",
     "static/media/ground.png": "/static/media/ground.2007ee0af9577b297315.png",
+    "static/media/dark.png": "/static/media/dark.7f562feea211dff2af58.png",
+    "static/media/steel.png": "/static/media/steel.da929f0b2dadaf95a01d.png",
     "static/media/dragon.png": "/static/media/dragon.f2b63458ddb2f234337f.png",
     "static/media/water.png": "/static/media/water.1896a7e4506c5eda9d44.png",
     "static/media/bug.png": "/static/media/bug.eeea11f37ddb281d3b40.png",
@@ -19,12 +21,12 @@
     "static/media/poison.png": "/static/media/poison.55d59e8f9d3a497e08af.png",
     "static/media/fairy.png": "/static/media/fairy.19c5e523fcb2a2f0cb5c.png",
     "index.html": "/index.html",
-    "main.67faa186.css.map": "/static/css/main.67faa186.css.map",
-    "main.be5ec715.js.map": "/static/js/main.be5ec715.js.map",
+    "main.8fd78950.css.map": "/static/css/main.8fd78950.css.map",
+    "main.637663b1.js.map": "/static/js/main.637663b1.js.map",
     "787.246f5904.chunk.js.map": "/static/js/787.246f5904.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.67faa186.css",
-    "static/js/main.be5ec715.js"
+    "static/css/main.8fd78950.css",
+    "static/js/main.637663b1.js"
   ]
 }

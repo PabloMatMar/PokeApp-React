@@ -52,7 +52,7 @@ const Description = (props) => {
       Description
     </h2>
     {description !== undefined ? <>
-      <p>{filt()}</p>
+      <p className="pokemonDescription">{filt()}</p>
     </> : <>
     </>
     }

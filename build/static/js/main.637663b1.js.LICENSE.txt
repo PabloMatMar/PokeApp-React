@@ -90,3 +90,5 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+
+//!!Encontrar solucion a porque react-hook-form da error al intentar mapear los inputs debido al metodo register..

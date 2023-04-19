@@ -49,4 +49,23 @@ td {
 
 .table {
     text-align: center;
+};
+
+.smallTables {
+    >thead > tr > th {
+        background-color: $pastel-yellow;
+        box-shadow: inset 0 0 0 5px $pastel-yellow;
+        border: 3px black solid;
+        border-radius: 5px;
+        padding: 7px;
+
+    };
+    >thead > tr > td {
+        background-color: $pastel-yellow;
+        box-shadow: inset 0 0 0 5px $pastel-yellow;
+
+    };
+    > tbody >tr > td {
+        background-color: $pastel-yellow;
+    };
 }
