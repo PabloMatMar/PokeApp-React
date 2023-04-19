@@ -9,60 +9,40 @@ describe("DetailsPokemonLocal", () => {
 
     const simulatedContext = {
       savePokemon: [{
-        id: undefined,
+        id: 1,
         name: "charmeleon",
         height: 25,
         weigth: 33,
+        typeOne: "fire",
+        typeTwo: "flying",
         stats: [
-          {
-            base_stat: 16
-          },
-          {
-            base_stat: 23
-          },
-          {
-            base_stat: 43
-          },
-          {
-            base_stat: 32
-          },
-          {
-            base_stat: 27
-          },
-          {
-            base_stat: 45
-          }
+          45, 57, 89, 42, 34, 28
         ],
-        moves: [{
-          move: {
-
-          }
-        }
-        ],
+        move: "Lanzar Piedra",
         image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy6zXnsMduLNmdH8uDGFrjFJGu-K-J2yxXg8iwFF66XA&s"
       }]
 
     };
     const simulatedChartContex = {
       limitOfLive: 160,
-    
+
       limitOfAttack: 134,
-    
+
       limitOfDefense: 180,
-    
+
       limitOfSpecialAttack: 154,
-    
+
       limitOfSpecialDefense: 125,
-    
+
       limitOfSpeed: 150
     };
 
 
     render(
       <chartContext.Provider value={simulatedChartContex}>
-      <newPokemonContext.Provider value={simulatedContext}>
-        <DetailsPokemonLocal />
-      </newPokemonContext.Provider>
+        <newPokemonContext.Provider value={simulatedContext}>
+          <DetailsPokemonLocal />
+        </newPokemonContext.Provider>
       </chartContext.Provider>
 
     );

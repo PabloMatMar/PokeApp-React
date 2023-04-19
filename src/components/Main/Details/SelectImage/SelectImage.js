@@ -1,6 +1,6 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
-const SelectImage = ({data}) => {
+const SelectImage = ({ data }) => {
 
   const [category, setCategory] = useState("")
   const [shiny, setShiny] = useState("")
@@ -19,7 +19,12 @@ const SelectImage = ({data}) => {
     else setShiny(categoryShiny)
   }
   return <>
-    <h4><i>{data.name}</i></h4>
+    <h4>
+      {data.name
+        .charAt(0)
+        .toUpperCase()
+        .concat(data.name.slice(1))}
+    </h4>
     {category !== "" && shiny !== "" /*|| category === "dream_world" && shiny === "front_default"*/ ?
       <img className="imgStylePokemon" src={data.sprites.other[category][shiny]} alt="View fronted of pokemon" /> :
       <></>

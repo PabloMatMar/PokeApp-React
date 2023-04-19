@@ -20,12 +20,12 @@ const Form = () => {
       image: data.image,
       typeOne: data.typeOne,
       typeTwo: data.typeTwo,
-      stats: [{ base_stat: data.life }, { base_stat: data.attack }, { base_stat: data.defense }, { base_stat: data.special_attack }, { base_stat: data.special_defense }, { base_stat: data.speed }],
-      moves: [{ move: { name: data.nameMove } }],
+      stats: [data.life, data.attack, data.defense, data.special_attack, data.special_defense, data.speed],
+      move: data.nameMove,
       weight: data.weight,
       height: data.height
     };
-    
+
     if (data.typeOne !== data.typeTwo) {
       setSavePokemon(pokemon => pokemon.concat(newPokemon));
       alert('Pokemon added!');

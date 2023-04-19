@@ -2,70 +2,64 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { newPokemonContext } from '../../../context/newPokemonContext';
 import { chartContext } from '../../../context/chartContext';
-import Type from './types.json';
 import Graphic from '../Details/Graphic/Graphic';
+import TableDimensionsAndTypes from './TableDimensionsAndTypes/TableDimensionsAndTypes';
 
 const DetailsPokemonLocal = () => {
   const { limitOfLive, limitOfAttack, limitOfDefense, limitOfSpecialAttack, limitOfSpecialDefense, limitOfSpeed } = useContext(chartContext);
-  const [stats, setStats] = useState();
   const { savePokemon } = useContext(newPokemonContext);
+
+  const [stats, setStats] = useState();
   const { id } = useParams();
-  const data = savePokemon.filter(pokemon => pokemon.id === id)[0];
+
+  const data = savePokemon[savePokemon.length - 1]
+  let check = false;
+
+  for (let i = 0; i < savePokemon.length; i++) {
+    savePokemon[0].id === id ? check = true : check = false;
+    if (check === true) break;
+  };
+
+
 
   useEffect(() => {
-    setStats(data.stats.filter(e => e.base_stat !== ""))
-  }, [data.stats])
+    setStats(savePokemon[0].stats.filter(e => e !== ""))
+    // eslint-disable-next-line
+  }, [])
 
 
   return <section className='container-Details-Local'>
-    <article className='container-Details-Local'>
-      {!(data // 👈 null and undefined check
-        && Object.keys(data).length === 0) && data !== undefined ?
-
-        <article>
-          <h3>Image of pokemon:</h3>
-          <img src={data.image} alt="View fronted of pokemon" />
-          <h4><i>{data.name}</i></h4>
-          <p>Nº {data.id} in the pokedex</p>
-
-          <h3>Dimensions</h3>
-          <p>{data.height}"</p>
-          <p>{data.weight}lbs</p>
-
-          <h3>Type of this pokemon:</h3>
-
-          <p>{data.typeOne}</p>
-          <img src={Type[data.typeOne]} alt={Type[data.typeOne]} className="imagenType" />
-          {data.typeTwo !== undefined ?
-            <div>
-              <p>{data.typeTwo}</p>
-              <img src={Type[data.typeTwo]} alt={Type[data.typeTwo]} className="imagenType2" />
-
-            </div> :
-            <></>}
-          {stats !== undefined && stats.length > 0 ?
-            <Graphic data={[{
-              data: {
-                Special_attack: data.stats[3].base_stat / limitOfSpecialAttack,
-                Attack: data.stats[1].base_stat / limitOfAttack,
-                Defense: data.stats[2].base_stat / limitOfDefense,
-                Special_defense: data.stats[4].base_stat / limitOfSpecialDefense,
-                Life: data.stats[0].base_stat / limitOfLive,
-                Speed: data.stats[5].base_stat / limitOfSpeed
-              },
-              meta: {
-                color: 'green'
-              }
-            }]} /> :
-            <></>}
-
-          <h3>Moves of this pokemon</h3>
-          <p>{data.moves[0].move.name}</p>
-        </article> :
-        <></>
-      }
-    </article>
-
+    {check !== false ?
+      <article>
+        <img src={data.image} alt="View fronted of pokemon" />
+        <h4>
+          {data.name
+            .charAt(0)
+            .toUpperCase()
+            .concat(data.name.slice(1))}
+        </h4>
+        <p>Nº {data.id} in pokedex</p>
+        <TableDimensionsAndTypes data={data} />
+        {stats !== undefined && stats.length > 0 ?
+          <Graphic data={[{
+            data: {
+              Special_attack: data.stats[3] / limitOfSpecialAttack,
+              Attack: data.stats[1] / limitOfAttack,
+              Defense: data.stats[2] / limitOfDefense,
+              Special_defense: data.stats[4] / limitOfSpecialDefense,
+              Life: data.stats[0] / limitOfLive,
+              Speed: data.stats[5] / limitOfSpeed
+            },
+            meta: {
+              color: 'green'
+            }
+          }]} /> :
+          <></>}
+        {data.move !== '' ? <><h5>Move of the pokemon</h5>
+          <p>{data.move}</p></> : <></>}
+      </article> :
+      <></>
+    }
   </section>;
 };
 

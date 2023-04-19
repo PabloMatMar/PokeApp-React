@@ -1,9 +1,5 @@
 @import '../utils/mixins.scss';
 
-.pokemonDescription{
-    text-align: justify;
-}
-
 .imagenType{
     width: 50px;
 };
@@ -17,4 +13,5 @@
     @include column-center;
     padding: 0px;
     margin: 0px;
+    height: 80vh;
 };

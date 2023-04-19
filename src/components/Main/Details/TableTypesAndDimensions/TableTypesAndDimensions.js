@@ -7,18 +7,12 @@ const TableTypes = ({data}) => {
     <table className="smallTables">
       <thead>
         <tr>
-          <td>
-            <h4>Type One</h4>
-          </td>
+          <td><h4>Type One</h4></td>
           {data.types.length > 1 ?
             <td><h4>Type Two</h4></td> :
             <></>}
-          <td>
-            <h4>Height</h4>
-          </td>
-          <td>
-            <h4>Weight</h4>
-          </td>
+          <td><h4>Height</h4></td>
+          <td><h4>Weight</h4></td>
         </tr>
       </thead>
       <tbody>

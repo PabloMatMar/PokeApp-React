@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from '@testing-library/react';
-import TableTypes from "./TableTypesAndDimensions";
+import TableTypesAndDimensions from "./TableTypesAndDimensions";
 
 describe("TableTypes", () => {
   test("matches snapshot", () => {
@@ -21,7 +21,7 @@ describe("TableTypes", () => {
       ]
 
     };
-    render(<TableTypes data={simulatedProps} />);
+    render(<TableTypesAndDimensions data={simulatedProps} />);
     expect(screen).toMatchSnapshot();
   });
 });
