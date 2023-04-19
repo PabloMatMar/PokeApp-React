@@ -5,6 +5,7 @@ import SelectImage from "./SelectImage";
 describe("SelectImage", () => {
   test("matches snapshot", () => {
     const simulatedProps = {
+      name: "bulbasaur",
       other: {
         dream_world: {
           front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
