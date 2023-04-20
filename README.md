@@ -123,9 +123,8 @@ In the nav-bar, in addition to the routes, you can select songs from the first p
 <div>
 <img src="./public/assets/readMe/nav-bar.jpg" width="80%"/>
 
-## Video screen in responsive:
- <video src="public\assets\readMe\React App - Google Chrome 2023-04-20 15-56-17.mp4" preload="none" controls></video>
-
+## Responsive
+I invited you to make git clone or fork and check this 😉
 
 
 # Available Scripts
