@@ -3,6 +3,9 @@
 
 .pokemonDescription{
     text-align: justify;
+    background-color: $white;
+    border: 3px $black solid;
+    border-style:dashed;
 }
 
 .imagenType{

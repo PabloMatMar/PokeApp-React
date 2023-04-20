@@ -13,7 +13,7 @@ const TableMoves = ({data, id}) => {
         <thead className='theadEffects'>
           <tr>
             <th>Name</th>
-            <th>Level <br /> to learning</th>
+            <th>way of learning</th>
             <th>Effects</th>
           </tr>
         </thead>
@@ -21,7 +21,7 @@ const TableMoves = ({data, id}) => {
           {data.moves.map(move => (
             <tr key={uuidv4()}>
               <td>{move.move.name}</td>
-              <td>{move.version_group_details[0].level_learned_at === 0 ? Math.trunc(Math.random() * 99) : move.version_group_details[0].level_learned_at}</td>
+              <td>{move.version_group_details[0].level_learned_at === 0 ? 'Learning whit Machine' : `${move.version_group_details[0].level_learned_at} Lv`}</td>
               <td><Link to={`/movesDescription/${move.move.url.replace('https://pokeapi.co/api/v2/move/', '')}${id}`}><img src={link} alt="linkLogo" /></Link></td>
             </tr>
           ))
