@@ -7,7 +7,7 @@ https://poke-app-pablo.netlify.app/
 
 This is a app of react.js whit 22 components and git control versions.
 
-- ### React.js  {hooks: [ useForm, useState, useContext, useParams, useScreenSize]}
+- ### React.js  {hooks: [ useForm, useState, useEffect, useContext, useParams, useScreenSize]}
 - ### Testing whit JEST
 - ### API handling with four levels of nesting and passing through urls
 - ### Axios
