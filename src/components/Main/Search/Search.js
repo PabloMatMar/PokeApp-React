@@ -5,7 +5,7 @@ import { pokemonContext } from '../../../context/pokemonContext';
 
 const Search = () => {
   //OBJECT POKEMON ES UN ARRAY DE OBJETOS
-  const { namePokemon, setNamePokemon, objectPokemon, setObjectPokemon, arrayNamePokemons, setArrayNamePokemons} = useContext(pokemonContext);
+  const { namePokemon, setNamePokemon, objectPokemon, arrayNamePokemons, setArrayNamePokemons } = useContext(pokemonContext);
 
   const [empty, setEmpty] = useState('empty');
   const [write, setWrite] = useState(false);
@@ -15,7 +15,7 @@ const Search = () => {
     const getPokemon = setTimeout(() => {
 
       async function fetchData() {
-        if(objectPokemon.length > 0) setEmpty('whitPokemons')
+        if (objectPokemon.length > 0) setEmpty('whitPokemons')
         try {
           if (!arrayNamePokemons.includes(namePokemon)) {
             const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`);
@@ -25,7 +25,7 @@ const Search = () => {
             if (status === 200) {
               setNamePokemon(dataPokemon.name);
               setArrayNamePokemons([...arrayNamePokemons, dataPokemon.name]);
-              setObjectPokemon([...objectPokemon, dataPokemon]);
+              objectPokemon.unshift(dataPokemon)
               setWrite(false);
             }
 
@@ -43,7 +43,7 @@ const Search = () => {
         }
       }
       if (namePokemon !== "") fetchData();
-    }, 2000);
+    }, 4000);
     return () => clearTimeout(getPokemon);
     // eslint-disable-next-line
   }, [namePokemon]);
@@ -55,7 +55,7 @@ const Search = () => {
     setNamePokemon(e.target.value.toLowerCase());
     const valueIsEnter = setTimeout(() => {
       setEmpty('whitPokemons')
-    }, 2000);
+    }, 5500);
     return () => clearTimeout(valueIsEnter);
   };
 
@@ -68,7 +68,7 @@ const Search = () => {
       </form>
     </article>
     {objectPokemon.length > 0 ?
-        <PokeList data={objectPokemon}/>
+      <PokeList data={objectPokemon} />
       :
       <></>
     }

@@ -13,7 +13,7 @@ function App() {
 
   //HOOKS USADOS EN CONTEXT PARA EVITAR QUE EL RENDERIZADO LOS VUELVA A INICIALIZAR
   const [namePokemon, setNamePokemon] = useState(""); // Para guardar el nombre del pokemon
-  const [objectPokemon, setObjectPokemon] = useState([]); // Para guardar todos los objetos con cada pokemon
+  const [objectPokemon] = useState([]); // Para guardar todos los objetos con cada pokemon
   const [arrayNamePokemons, setArrayNamePokemons] = useState([]); //para evitar guardar pokemons repetidos
 
 
@@ -32,7 +32,6 @@ function App() {
     namePokemon,
     setNamePokemon,
     objectPokemon,
-    setObjectPokemon,
     arrayNamePokemons,
     setArrayNamePokemons
   }

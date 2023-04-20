@@ -2,64 +2,129 @@
 
 https://poke-app-pablo.netlify.app/
 
-- ### React.js
-- ### Mobile first
+# Technical part
+
+This is a app of react.js whit 22 components and git control versions.
+
+- ### React.js  {hooks: [ useForm, useState, useContext, useParams, useScreenSize]}
 - ### Testing whit JEST
+- ### API handling with four levels of nesting and passing through urls
+- ### Axios
+- ### RegEx
+- ### react-svg-radar-chart
+- ### Mobile first
 - ### SASS
 - ### Styled-Components
+- ### normalize.css
+- ### react-router-dom
+- ### uuid
+- ### create-react-component-folder
+- ### netlify-cli
+<!-- - ### Cariño, esfuerzo y logica. -->
 
+## Atention:
+The application was initially designed with useContext instead of useState because its dimensions were still being studied, the changes can be observed in the changeContext-ToState and Improvements branches.
+
+
+## `npm test`
+
+I like to check that my applications not only do what they are supposed to do, but also that they don't do what they are not supposed to do. Run the npm test command and wait. Press a key when the console prompts, then you will see an image like this:![Testig Whit Jest](./public/assets/testWhitJest.png )
+You can see in each component the snapshot with all small tests that each test does.
+
+[Running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+
+# Visual part
 
 ## home
 
-This application will allow you can see from the pokemon with the index 1 to 902. You can see them in home.
-<br>
+This application will allow you can see from the pokemon with the index 1 to 151. You can see them in home.
 
+I get the photo of the pokemon from the API but I add the background image by mapping it according to the type of pokemon
+<br>
 <div>
-<img src="./public/assets/homeView.png" width="42%"/>
-<img src="./public/assets/902.png" width="42%"/>
+<img src="./public/assets/readMe/home1.jpg" width="32%"/>
+<img src="./public/assets/readMe/home2.jpg" width="32%"/>
+<img src="./public/assets/readMe/home3.jpg" width="32%"/>
+<img src="./public/assets/readMe/home4.jpg" width="32%"/>
+<img src="./public/assets/readMe/home5.jpg" width="32%"/>
+<img src="./public/assets/readMe/home6.jpg"
+width="32%"/>
+
 <br>
 
 <div>
 
 ## Details
 
-In each pokemon you can click on details, this will take you to the /pokemon/:id route or pokemon/local/:id if the pokemon was created. In it you can choose with what style of drawing you can see the pokemon, and if you want to see the normal or shiny way. You will also see:
-- Their typologies
-- Your size and weight
-- His attacks
+In each pokemon you can click on button details, this will take you to the /pokemon/:id route or pokemon/local/:id if the pokemon was created. You will see:
+- Choose drawing style and normal or shiny shape of the image (<strong><b><i>hook and onChange magic</i></b></strong>):
+<br>
+<div>
+<img src="./public/assets/readMe/detailsImage1.jpg" width="32%"/>
+<img src="./public/assets/readMe/detailsImage2.jpg" width="32%"/>
+<img src="./public/assets/readMe/detailsImage4.jpg" width="32%"/>
+
+
+- The description was separated into fragments(game version) in the api. They are mixed according to language, repeated and contained non-alphabetic characters. The data has been
+treated <strong><b><i>(map, filter, replace, regEx...)</strong></b></i> and here we have them all in a nice text!:
+<br>
+<div>
+<img src="./public/assets/readMe/description1.jpg" width="32%"/>
+<img src="./public/assets/readMe/description2.jpg" width="32%"/>
+<img src="./public/assets/readMe/description3.jpg" width="32%"/>
+
+- A graph in which to see their stats. The limits of the graph have been defined by obtaining in a two-dimensional array the scores of all the pokemon and choosing the highest in each stat <strong><b><i>(context, map, sort, for...)</strong></b></i>
+<br>
+<div>
+<img src="./public/assets/readMe/graphic.jpg" width="80%"/>
+
+- A table with all the movements of the pokemon and if you click (API callback through link) on the link you will see the normal and special effects (API callback through link) of the movement:
+<br>
+<div>
+<img src="./public/assets/readMe/allMoves.jpg" width="42%"/>
+<img src="./public/assets/readMe/moveEffects.jpg" width="42%"/>
 
 <br>
-
-<div>
-<img src="./public/assets/detailsChoiceStyle.png" width="42%"/>
-<img src="./public/assets/detailsTypes.png" width="42%"/>
 <br>
-
-<div>
 
 ## Search
 
-In the nav-bar you can go to the search section in the /search route, there you can put the name of the specific pokemon you are looking for, from there you will also have access to details.
+Through the nav-bar you can go to Search. There you can write the name of the pokemon you want to search for (There are more than 900!) It works with <strong><b><i>Debounce</strong></b></i>, so after finishing writing you will only have to wait 4 seconds for the pokemon to appear. You can also look at details of the searched pokemon.
 <br>
-
 <div>
-<img src="./public/assets/search.jpg" width="42%"/>
+<img src="./public/assets/readMe/search0.jpg" width="32%"/>
+<img src="./public/assets/readMe/search1.jpg" width="32%"/>
+<img src="./public/assets/readMe/search2.jpg" width="32%"/>
+
+You can continue browsing the page, your pokemon will be captured thanks to <strong><b><i>context!</strong></b></i>
+
 <br>
-
-<div>
+<br>
 
 ## Add a pokémon
 
-Finally if you want to have more fun you can go add a new pokemon in the /new route through the nav bar button add a new pokemon, here you can create a pokemon only with the basics or adding all the details. This will be included in the home list and you redirected to over there when you created it.
+Finally, if you want to have more fun, you can add a new <strong><b><i>(useForm)</strong></b></i> pokemon through the navigation bar, here you can create a pokemon with just the basics or adding all the details. This will be done in the home list and you will be redirected <strong><b><i>(navigate of react router dom)</strong></b></i> there when you created it. The feel basic to create are in red color.
 <br>
 
 <div>
-<img src="./public/assets/createPokemon.png" width="42%"/>
-<img src="./public/assets/addPokemonHome.png" width="42%"/>
+<img src="./public/assets/readMe/formCreated.jpg" width="32%"/>
+<img src="./public/assets/readMe/pokemonCreatedInHome.png" width="32%"/>
+<img src="public\assets\readMe\detailsPokemonCreated.png" width="32%"/>
+
+<br>
+<br>
+
+## Nav-Bar
+
+In the nav-bar, in addition to the routes, you can select songs from the first pokemon session!
 <br>
 
 <div>
+<img src="./public/assets/readMe/nav-bar.jpg" width="80%"/>
 
+## Responsive
+I invited you to make git clone or fork and check this 😉
 
 
 # Available Scripts
@@ -76,19 +141,4 @@ You may also see any lint errors in the console.
 
 ### `npm test`
 
-I like to check that my applications not only do what they are supposed to do, but also that they don't do what they are not supposed to do. Run the npm test command and wait. Press a key when the console prompts, then you will see an image like this:![Testig Whit Jest](./public/assets/testWhitJest.png )
-You can see in each component the snapshot with all small the tests that each test does.
-
-[running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-### `netlify deploy --prod`
-
-Deploys the app in the prod url, so it's available. The command will require you:
--Choice "Link this directory
- to an existing site" and choice again "poke-app-pablo"
--Include the directory in which the app's build is in. In this case, the directory is ./build.
+Testing whit jest!

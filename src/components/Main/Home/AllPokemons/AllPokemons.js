@@ -27,6 +27,8 @@ const AllPokemons = ({ data, i, created }) => {
             .toUpperCase()
             .concat(pokemonCreated.name.slice(1))}
         </h2>
+        <br />
+        <br />
         <img src={pokemonCreated.image} alt="frontd of pokemon" />
         <p>Position in Pokedex: {pokemonCreated.id}</p>
         <button className='button-in-main'>
