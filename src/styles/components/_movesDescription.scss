@@ -1,0 +1,68 @@
+@import '../utils/mixins.scss';
+
+.movesDescription {
+    @include contact-content;
+};
+
+.movesDescription{
+    font-size: 8px;
+    padding-top: 20px;
+    min-height: 80vh;
+    height: auto;
+};
+
+@media only screen and (min-width: 275px) {
+    .movesDescription{
+        font-size: 9px;
+    };
+
+};
+
+@media only screen and (min-width: 290px) {
+    .movesDescription{
+        font-size: 10px;
+    };
+
+};
+
+@media only screen and (min-width: 310px) {
+    .movesDescription{
+        font-size: 11px;
+    };
+
+};
+
+@media only screen and (min-width: 330px) {
+    .movesDescription{
+        font-size: 12px;
+    };
+
+};
+
+@media only screen and (min-width: 350px) {
+    .movesDescription{
+        font-size: 13px;
+    };
+
+};
+
+@media only screen and (min-width: 370px) {
+    .movesDescription{
+        font-size: 14px;
+    };
+
+};
+
+@media only screen and (min-width: 385px) {
+    .movesDescription{
+        font-size: 15px;
+    };
+
+};
+
+@media only screen and (min-width: 410px) {
+    .movesDescription{
+        font-size: 16px;
+    };
+
+};

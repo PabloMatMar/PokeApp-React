@@ -1,0 +1,18 @@
+@import '../utils/variables.scss';
+input{
+    border-radius: 10px;
+    padding:5px;
+};
+
+select {
+    border-radius: 5px;
+    padding:5px;
+};
+
+.requiredInput::placeholder {
+  color: red; font-weight: bold;
+};
+
+.requiredSelect {
+  color: red;
+};

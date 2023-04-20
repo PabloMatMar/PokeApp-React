@@ -1,0 +1,46 @@
+@import '../utils/mixins.scss';
+
+
+.pokemonDescription{
+    text-align: justify;
+    background-color: $white;
+    border: 3px $black solid;
+    border-style:dashed;
+}
+
+.imagenType{
+    width: 50px;
+};
+
+.imagenType2 {
+    width: 50px;
+};
+
+.details-container {
+    @include column-center;
+};
+
+.imgStylePokemon{
+    width: 75%;
+};
+
+@media only screen and (min-width: 576px) {
+    .imgStylePokemon{
+        width: 48%;
+    };
+
+};
+
+@media only screen and (min-width: 768px) {
+    .imgStylePokemon{
+        width: 37%;
+    };
+
+};
+
+@media only screen and (min-width: 992px) {
+    .imgStylePokemon{
+        width: 29%;
+    };
+
+};

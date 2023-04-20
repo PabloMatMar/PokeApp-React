@@ -1,0 +1,40 @@
+@import '../utils/variables.scss';
+@import '../utils/mixins.scss';
+
+* {
+    margin: 0px;
+    padding: 0px;
+};
+
+h4{
+    font-style: italic;
+}
+
+img {
+    width: 48%;
+};
+
+section {
+    text-align: center;
+};
+
+article {
+    @include column-center;
+    gap: 20px;
+};
+
+
+
+main {
+    padding: 35px 10px;
+    color: black;
+    background-color: $pastel-yellow;
+    margin: 0px;
+};
+
+@media only screen and (min-width: 576px) {
+
+    article {
+        gap: 50px;
+    };
+};

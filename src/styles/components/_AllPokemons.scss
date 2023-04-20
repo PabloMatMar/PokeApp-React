@@ -1,0 +1,256 @@
+@import '../utils/mixins.scss';
+
+.article-of-AllPokemons {
+    border: 3px black solid;
+    border-radius: 15px;
+    gap: 50px;
+};
+
+.backGroundImage-grass {
+    background-image: url(../../imgsForImport/backGroundImages/grass.png);
+    background-repeat: no-repeat;
+    background-size: 171%;
+    border-radius: 11px;
+    image-rendering: crisp-edges;
+    // image-rendering: optimizeQuality;
+
+};
+
+.backGroundImage-fire {
+    background-image: url(../../imgsForImport/backGroundImages/fire.png);
+    background-repeat: no-repeat;
+    background-size: 194%;
+    border-radius: 11px;
+
+};
+
+
+.backGroundImage-electric {
+    background-image: url(../../imgsForImport/backGroundImages/electric.png);
+    background-repeat: no-repeat;
+    background-size: 167%;
+    border-radius: 11px;
+    image-rendering: crisp-edges;
+
+};
+
+
+.backGroundImage-water {
+    background-image: url(../../imgsForImport/backGroundImages/water.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 11px;
+    image-rendering: optimizeQuality;
+
+};
+
+.backGroundImage-bug {
+    background-image: url(../../imgsForImport/backGroundImages/bug.png);
+    background-repeat: no-repeat;
+    background-size: 140%;
+    border-radius: 11px;
+
+};
+
+
+.backGroundImage-flying {
+    background-image: url(../../imgsForImport/backGroundImages/flying.png);
+    background-repeat: no-repeat;
+    background-size: 125%;
+    border-radius: 11px;
+
+};
+
+.backGroundImage-psychic {
+    background-image: url(../../imgsForImport/backGroundImages/psychic.png);
+    background-repeat: no-repeat;
+    background-size: 135%;
+    border-radius: 11px;
+    image-rendering: crisp-edges;
+
+};
+
+.backGroundImage-ground {
+    background-image: url(../../imgsForImport/backGroundImages/ground.png);
+    background-repeat: no-repeat;
+    background-size: 130%;
+    border-radius: 11px;
+
+};
+
+.backGroundImage-rock {
+    background-image: url(../../imgsForImport/backGroundImages/rock.png);
+    background-repeat: no-repeat;
+    background-size: 148%;
+    border-radius: 11px;
+    image-rendering: crisp-edges;
+
+};
+
+.backGroundImage-ice {
+    background-image: url(../../imgsForImport/backGroundImages/ice.png);
+    background-repeat: no-repeat;
+    background-size: 134%;
+    border-radius: 11px;
+
+};
+
+.backGroundImage-poison {
+    background-image: url(../../imgsForImport/backGroundImages/poison.png);
+    background-repeat: no-repeat;
+    background-size: 162%;
+    border-radius: 11px;
+
+};
+
+.backGroundImage-ghost {
+    background-image: url(../../imgsForImport/backGroundImages/ghost.png);
+    background-repeat: no-repeat;
+    background-size: 148%;
+    border-radius: 11px;
+    image-rendering: optimizeQuality;
+
+};
+
+.backGroundImage-fighting {
+    background-image: url(../../imgsForImport/backGroundImages/fighting.png);
+    background-repeat: no-repeat;
+    background-size: 177%;
+    border-radius: 11px;
+
+};
+
+.backGroundImage-normal {
+    background-image: url(../../imgsForImport/backGroundImages/normal.png);
+    background-repeat: no-repeat;
+    background-size: 163%;
+    border-radius: 11px;
+    image-rendering: crisp-edges;
+
+};
+
+.backGroundImage-fairy {
+    background-image: url(../../imgsForImport/backGroundImages/fairy.png);
+    background-repeat: no-repeat;
+    background-size: 163%;
+    border-radius: 11px;
+
+};
+
+.backGroundImage-dragon {
+    background-image: url(../../imgsForImport/backGroundImages/dragon.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 11px;
+
+};
+
+.backGroundImage-steel {
+    background-image: url(../../imgsForImport/backGroundImages/steel.png);
+    background-repeat: no-repeat;
+    background-size: 140%;
+    border-radius: 11px;
+    image-rendering: crisp-edges;
+
+};
+
+.backGroundImage-dark {
+    background-image: url(../../imgsForImport/backGroundImages/dark.png);
+    background-repeat: no-repeat;
+    background-size: 110%;
+    border-radius: 11px;
+    image-rendering: crisp-edges;
+
+};
+
+@media only screen and (min-width: 320px) {
+    .backGroundImage-grass {
+        background-image: url(../../imgsForImport/backGroundImages/grass.png);
+        background-repeat: no-repeat;
+        background-size: 158%;
+        border-radius: 11px;
+
+    };
+
+    .backGroundImage-fire {
+        background-image: url(../../imgsForImport/backGroundImages/fire.png);
+        background-repeat: no-repeat;
+        background-size: 180%;
+        border-radius: 11px;
+
+    };
+
+    .backGroundImage-psychic {
+        background-image: url(../../imgsForImport/backGroundImages/psychic.png);
+        background-repeat: no-repeat;
+        background-size: 125%;
+        border-radius: 11px;
+        image-rendering: crisp-edges;
+    
+    };
+
+};
+
+@media only screen and (min-width: 390px) {
+    .backGroundImage-grass {
+        background-image: url(../../imgsForImport/backGroundImages/grass.png);
+        background-repeat: no-repeat;
+        background-size: 144%;
+        border-radius: 11px;
+
+    };
+
+    .backGroundImage-fire {
+        background-image: url(../../imgsForImport/backGroundImages/fire.png);
+        background-repeat: no-repeat;
+        background-size: 164%;
+        border-radius: 11px;
+
+    };
+
+    .backGroundImage-ground {
+        background-image: url(../../imgsForImport/backGroundImages/ground.png);
+        background-repeat: no-repeat;
+        background-size: 111%;
+        border-radius: 11px;
+    
+    };
+
+    .backGroundImage-psychic {
+        background-image: url(../../imgsForImport/backGroundImages/psychic.png);
+        background-repeat: no-repeat;
+        background-size: 115%;
+        border-radius: 11px;
+        image-rendering: crisp-edges;
+    
+    };
+
+};
+
+@media only screen and (min-width: 460px) {
+    .backGroundImage-grass {
+        background-image: url(../../imgsForImport/backGroundImages/grass.png);
+        background-repeat: no-repeat;
+        background-size: 136%;
+        border-radius: 11px;
+
+    };
+
+    .backGroundImage-fire {
+        background-image: url(../../imgsForImport/backGroundImages/fire.png);
+        background-repeat: no-repeat;
+        background-size: 160%;
+        border-radius: 11px;
+
+    };
+
+    .backGroundImage-psychic {
+        background-image: url(../../imgsForImport/backGroundImages/psychic.png);
+        background-repeat: no-repeat;
+        background-size: 108%;
+        border-radius: 11px;
+        image-rendering: crisp-edges;
+    
+    };
+
+};

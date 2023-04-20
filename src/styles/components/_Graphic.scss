@@ -1,0 +1,70 @@
+@import '../utils/mixins.scss';
+
+.chart{
+   img{
+    width: 10px;
+   };
+//    @include contact-content;
+};
+
+@media only screen and (min-width: 500px) {
+    .chart{
+        img{
+         width: 20px;
+        };
+
+        h6 {
+            font-size: 16px;
+        }
+    };
+
+};
+
+.shape {
+    fill-opacity: .6; //Opacidad de la figura que forman los stats
+};
+
+.shape:hover{
+    fill-opacity: .9; //Opacidad de la figura que forman los stats cuando se pasa el raton por encima
+    z-index: 100; //Ni idea
+};
+
+.axis{
+    stroke: black; //Color de los ejes axiales
+    stroke-width: .9 //opacidad del color de los ejes axiales
+};
+
+.caption{
+    fill: #5d588e;
+    font-weight: 400;
+    text-shadow: 1px 1px 0 #fff;
+};
+
+
+.circle0{
+    fill: #ffcd43; //Color de los circulos(de todos, snif)
+    stroke: black; //color de la linea perimetral que separa los circulos
+    stroke-width: .9; //Intensidad del color de la linea perimetral que separa los circulos
+};
+
+
+.circle1{
+    fill: #848482; //Color de los circulos(de todos, snif)
+    stroke: black; //color de la linea perimetral que separa los circulos
+    stroke-width: .9; //Intensidad del color de la linea perimetral que separa los circulos
+};
+.circle2{
+    fill: #ffb998; //Color de los circulos(de todos, snif)
+    stroke: black; //color de la linea perimetral que separa los circulos
+    stroke-width: .9; //Intensidad del color de la linea perimetral que separa los circulos
+};
+.circle3{
+    fill: #ff7543; //Color de los circulos(de todos, snif)
+    stroke: black; //color de la linea perimetral que separa los circulos
+    stroke-width: .9; //Intensidad del color de la linea perimetral que separa los circulos
+};
+.circle4{
+    fill: #e7beda; //Color de los circulos(de todos, snif)
+    stroke: black; //color de la linea perimetral que separa los circulos
+    stroke-width: .9; //Intensidad del color de la linea perimetral que separa los circulos
+};
